@@ -31,7 +31,7 @@ const Main = () => {
                 <CopyBlock text={item.CodeSnippet || ""} language={LANGUAGE} />
               </CardContent>
               <CardFooter className="flex items-center justify-center w-full">
-                <Button asChild>
+                <Button variant={"cool"} asChild>
                   <a href={item.href}>
                     <FaChevronDown className="w-4 h-4" />
                   </a>
