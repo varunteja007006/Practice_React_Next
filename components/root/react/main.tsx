@@ -11,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { CopyBlock } from "react-code-blocks";
 import { FaChevronDown } from "react-icons/fa";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const LANGUAGE = "jsx";
 
@@ -27,8 +28,14 @@ const Main = () => {
               </CardHeader>
               <CardContent>{item?.Component ?? null}</CardContent>
 
-              <CardContent className="mx-10 my-5 border border-gray-600 rounded bg-gray-50">
-                <CopyBlock text={item.CodeSnippet || ""} language={LANGUAGE} />
+              <CardContent className="m-3 overflow-hidden border border-gray-600 rounded md:mx-10 md:my-5 bg-gray-50">
+                <ScrollArea className="min-h-[200px] min-w-[350px] ">
+                  <ScrollBar orientation="horizontal" />
+                  <CopyBlock
+                    text={item.CodeSnippet || ""}
+                    language={LANGUAGE}
+                  />
+                </ScrollArea>
               </CardContent>
               <CardFooter className="flex items-center justify-center w-full">
                 <Button variant={"cool"} asChild>
