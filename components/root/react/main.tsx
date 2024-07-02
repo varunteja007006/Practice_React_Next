@@ -26,7 +26,11 @@ const Main = () => {
                 <CardTitle>{item.title}</CardTitle>
                 <CardDescription>{item.explanation}</CardDescription>
               </CardHeader>
-              <CardContent>{item?.Component ?? null}</CardContent>
+              <CardContent className="p-2 m-3 border rounded-md md:mx-10 md:my-5">
+                <p className="py-1 font-semibold">Code Demo:</p>
+                <div className="h-[1px] bg-zinc-500 w-full mb-3"></div>
+                {item?.Component ?? null}
+              </CardContent>
 
               <CardContent className="m-3 overflow-hidden border border-gray-600 rounded md:mx-10 md:my-5 bg-gray-50">
                 <ScrollArea className="min-h-[200px] min-w-[350px] ">

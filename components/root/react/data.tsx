@@ -1,3 +1,4 @@
+import LearnUseEffectDemo from "./learn-useEffect/learn-useEffect-demo";
 import LearnUseStateDemo from "./learn-useState/learn-useState-demo";
 
 // LearnUseEffectCleanup,
@@ -22,7 +23,10 @@ export const react_data = [
     ],
     Component: <LearnUseStateDemo />,
     CodeSnippet: `
-    function SampleCode () {
+    import { Button } from "@/components/ui/button";
+    import React from "react";
+
+    export default function SampleCode () {
     const [value, setValue] = React.useState(0);
     return (
             <div className="flex flex-row items-center gap-4">
@@ -41,10 +45,35 @@ export const react_data = [
     id: "useEffect",
     title: "Learn useEffect",
     explanation: [],
-    Component: null,
+    Component: <LearnUseEffectDemo />,
     CodeSnippet: `
+    import React from "react";
+    export default function LearnUseEffectDemo () {
+    const [posts, setPosts] = React.useState<Posts[] | null>(null);
+    const fetchPosts = async () => {
+      try {
+        const res: Response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+          method: "GET",
+        });
+        const data: Posts[] = await res.json();
+        setPosts(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    React.useEffect(() => {
+      fetchPosts();
+    }, []);
+
+    return <div>
+      {posts?.slice(0, 5)?.map((item) => {
+        return <p key={item.id}>{item.title}</p>;
+      })}
+    </div>;
+    };
     `,
-    href: "#useEffect",
+    href: "#useReducer",
   },
   {
     id: "useReducer",
