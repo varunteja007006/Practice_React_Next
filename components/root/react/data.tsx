@@ -1,3 +1,4 @@
+import LearnMemoDemo from "./learn-memo/learn-memo-demo";
 import LearnUseEffectDemo from "./learn-useEffect/learn-useEffect-demo";
 import LearnUseStateDemo from "./learn-useState/learn-useState-demo";
 
@@ -151,10 +152,49 @@ export const react_data = [
     id: "memo",
     title: "Learn memo",
     explanation: [],
-    Component: null,
+    Component: <LearnMemoDemo />,
     CodeSnippet: `
+    // Parent component
+    import { Button } from "@/components/ui/button";
+    import React from "react";
+    import Child from "./child";
+    const LearnMemoDemo = () => {
+      const [value, setValue] = React.useState(0);
+      return (
+        <div className="space-y-4">
+          <Button onClick={() => setValue(value + 1)}>Click me</Button>
+          <div>
+            <Child value={value} />
+          </div>
+        </div>
+      );
+    };
+    export default LearnMemoDemo;
+
+    //child component
+    import React from "react";
+    const dummyArray = Array.from({ length: 50 }, (_, index) => {
+      return index;
+    });
+    const Child = (props: { value: number }) => {
+      return (
+        <div>
+          <p>Value: {props?.value}</p>
+          <div className="flex flex-wrap items-center gap-2">
+            {dummyArray.map((item, index) => {
+              return (
+                <div key={index} className="p-1 bg-blue-100 border border-blue-500">
+                  {item + 1}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      );
+    };
+    export default React.memo(Child);
     `,
-    href: "#useEffect",
+    href: "#custom-hooks",
   },
   {
     id: "custom-hooks",
