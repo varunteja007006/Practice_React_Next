@@ -1,3 +1,4 @@
+import LearnChildrenPropsDemo from "./learn-children-props/learn-children-demo";
 import LearnMemoDemo from "./learn-memo/learn-memo-demo";
 import LearnUseEffectDemo from "./learn-useEffect/learn-useEffect-demo";
 import LearnUseStateDemo from "./learn-useState/learn-useState-demo";
@@ -137,16 +138,38 @@ export const react_data = [
     Component: null,
     CodeSnippet: `
     `,
-    href: "#useEffect",
+    href: "#children-props",
   },
   {
-    id: "children Props",
+    id: "children-props",
     title: "Learn children Props",
     explanation: [],
-    Component: null,
+    Component: <LearnChildrenPropsDemo />,
     CodeSnippet: `
+    import React from "react";
+
+    const LearnChildrenPropsDemo = () => {
+      return (
+        <div>
+          <Child>
+            <p>This will render inside a child component.</p>
+          </Child>
+        </div>
+      );
+    };
+
+    const Child = ({ children }: { children: React.ReactNode }) => {
+      return (
+        <div>
+          <p className="font-semibold">This is child component</p>
+          {children}
+        </div>
+      );
+    };
+
+    export default LearnChildrenPropsDemo;
     `,
-    href: "#useEffect",
+    href: "#memo",
   },
   {
     id: "memo",
