@@ -9,9 +9,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CopyBlock } from "react-code-blocks";
 import { FaChevronDown } from "react-icons/fa";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const LANGUAGE = "jsx";
 
@@ -35,10 +36,9 @@ const Main = () => {
               <CardContent className="m-3 overflow-hidden border border-gray-600 rounded md:mx-10 md:my-5 bg-gray-50">
                 <ScrollArea className="min-h-[200px] min-w-[350px] ">
                   <ScrollBar orientation="horizontal" />
-                  <CopyBlock
-                    text={item.CodeSnippet || ""}
-                    language={LANGUAGE}
-                  />
+                  <SyntaxHighlighter style={docco} language={LANGUAGE}>
+                    {item.CodeSnippet || ""}
+                  </SyntaxHighlighter>
                 </ScrollArea>
               </CardContent>
               <CardFooter className="flex items-center justify-center w-full">

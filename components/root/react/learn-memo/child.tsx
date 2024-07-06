@@ -11,7 +11,10 @@ const Child = (props: { value: number }) => {
       <div className="flex flex-wrap items-center gap-2">
         {dummyArray.map((item, index) => {
           return (
-            <div key={index} className="p-1 bg-blue-100 border border-blue-500">
+            <div
+              key={index}
+              className="inline-flex items-center justify-center p-1 bg-blue-100 border border-blue-500 size-10"
+            >
               {item + 1}
             </div>
           );
