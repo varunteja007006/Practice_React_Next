@@ -73,9 +73,8 @@ export const projects: { title: string; href: string; description: string }[] =
     },
     {
       title: "React Table",
-      href: "/docs/primitives/tooltip",
-      description:
-        "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      href: "/react-next-projects/react-table",
+      description: "In-line editable react table.",
     },
     {
       title: "Progress on Scroll",
