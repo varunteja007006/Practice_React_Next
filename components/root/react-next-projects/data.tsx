@@ -61,7 +61,7 @@ export const projects: { title: string; href: string; description: string }[] =
     },
     {
       title: "Tailwind",
-      href: "/docs/primitives/tooltip",
+      href: "/react-next-projects/tailwind",
       description:
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
