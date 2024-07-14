@@ -1,5 +1,5 @@
-import { jobtoday, jobtoday1, jobtoday2, jobtoday3 } from "../public";
-import { fit, fit1, fit2 } from "../public";
+import { jobtoday, jobtoday1, jobtoday2, jobtoday3 } from "@/public";
+import { fit, fit1, fit2 } from "@/public";
 import {
   sentiment,
   sentiment1,
@@ -8,7 +8,7 @@ import {
   sentiment4,
   sentiment5,
   sentiment6,
-} from "../public";
+} from "@/public";
 import {
   sportsmanagement,
   sportsmanagement1,
@@ -20,10 +20,10 @@ import {
   sportsmanagement7,
   sportsmanagement8,
   sportsmanagement9,
-} from "../public";
-import { collabs, collabs1, collabs2, collabs3, collabs4 } from "../public";
+} from "@/public";
+import { collabs, collabs1, collabs2, collabs3, collabs4 } from "@/public";
 
-import { budget, budget1, budget2, budget3, budget4 } from "../public";
+import { budget, budget1, budget2, budget3, budget4 } from "@/public";
 
 const projectData = [
   {

@@ -5,16 +5,18 @@ import Academics from "@/components/root/home/academics";
 import Experience from "@/components/root/home/experience";
 import Intro from "@/components/root/home/intro";
 import Skills from "@/components/root/home/skill";
+import Projects from "@/components/root/home/projects";
 
 export default function Homepage() {
   return (
-    <div className="p-2 lg:p-5 space-y-20">
+    <div className="p-2 md:py-3 md:px-10 lg:py-5 lg:px-24 space-y-20">
       {/* sections */}
 
       <Intro />
       <Skills />
       <Experience />
       <Academics />
+      <Projects />
       <Certifications />
       <ContactMe />
     </div>

@@ -18,9 +18,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body
-        className={`w-full min-w-[300px] dark:bg-black bg-blue-50 ${openSan.className} overflow-hidden`}
+        className={`w-full min-w-[300px] dark:bg-black bg-blue-50 ${openSan.className} scroll-smooth`}
       >
         <ThemeProvider
           attribute="class"
@@ -30,6 +30,7 @@ export default function RootLayout({
         >
           <main className="min-h-[calc(100vh-10rem)] h-screen overflow-auto">
             <Navbar />
+            <div className="h-16"></div>
             {children}
             <Footer />
           </main>

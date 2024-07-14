@@ -28,7 +28,7 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: "cool",
+      variant: "outline",
       size: "default",
     },
   }

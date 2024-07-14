@@ -36,13 +36,17 @@ const Main = () => {
               <CardContent className="m-3 overflow-hidden border border-gray-600 rounded md:mx-10 md:my-5 bg-gray-50">
                 <ScrollArea className="min-h-[200px] min-w-[350px] ">
                   <ScrollBar orientation="horizontal" />
-                  <SyntaxHighlighter style={docco} language={LANGUAGE}>
+                  <SyntaxHighlighter
+                    style={docco}
+                    language={LANGUAGE}
+                    customStyle={{ zIndex: -1 }}
+                  >
                     {item.CodeSnippet || ""}
                   </SyntaxHighlighter>
                 </ScrollArea>
               </CardContent>
               <CardFooter className="flex items-center justify-center w-full">
-                <Button variant={"cool"} asChild>
+                <Button variant={"outline"} asChild>
                   <a href={item.href}>
                     <FaChevronDown className="w-4 h-4" />
                   </a>

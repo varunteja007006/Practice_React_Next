@@ -8,7 +8,10 @@ const experienceData = [
     dateOfJoining: "2023-12-18",
     dateOfResigning: "2023-12-18",
     jobDescription: [
-      "Developing Frontend, integrating with backend using Node JS. Building of complex & efficient UI like dashboards, charts, filters, login etc. using Material UI, Highcharts, etc. Revamping the website with new UI and migrating from class to functional components. SEO optimization by migrating the app to NEXT JS to take advantage of SSR.",
+      "Developing Frontend, integrating with backend Node JS & MS SQL.",
+      "Building of complex & efficient UI like dashboards, charts, filters, login etc. using Material UI, Highcharts, etc..",
+      "SEO optimization by migrating the app to NEXT JS to take advantage of SSR.",
+      "I have been handling B2B portal as a solo Frontend Engineer using various libraries like React Hook Forms, shadcn, Tailwind, Zod, and much more to maintain industry level standards.",
     ],
     toShow: true,
     current: true,

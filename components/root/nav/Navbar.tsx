@@ -19,7 +19,7 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 function Navbar() {
   return (
-    <nav className="flex flex-row items-center justify-between p-3 dark:bg-black bg-white">
+    <nav className="flex flex-row items-center justify-between p-3 dark:bg-black/100 bg-white/70 fixed w-full">
       <div className="ml-3 font-bold">
         <a href="/">{`<Developer />`}</a>
       </div>

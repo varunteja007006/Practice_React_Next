@@ -8,8 +8,8 @@ export default function ContactMe() {
     <section id="contact-me" className="space-y-4">
       <h3 className="text-xl font-semibold">Contact Me</h3>
 
-      <Card>
-        <Table className="my-3">
+      <Card className="p-2">
+        <Table>
           <TableBody>
             {contactData.map((item) => {
               return (
