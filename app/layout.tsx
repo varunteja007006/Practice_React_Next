@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/root/nav/Navbar";
+import Footer from "@/components/root/footer/Footer";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const openSan = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "React Next App",
+  title: "Varun Teja",
   description: "Practice React and Next JS",
 };
 
@@ -16,12 +18,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`min-h-screen w-full min-w-[300px] bg-blue-50 ${inter.className}`}
+        className={`w-full min-w-[300px] dark:bg-black bg-blue-50 ${openSan.className} overflow-hidden`}
       >
-        <Navbar />
-        <main className="p-5">{children}</main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="min-h-[calc(100vh-10rem)] h-screen overflow-auto">
+            <Navbar />
+            {children}
+            <Footer />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

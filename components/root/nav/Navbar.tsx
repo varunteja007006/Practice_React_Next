@@ -14,17 +14,17 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { projects } from "../react-next-projects/data";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 function Navbar() {
   return (
-    <nav className="flex flex-row items-center justify-between p-3 bg-white">
+    <nav className="flex flex-row items-center justify-between p-3 dark:bg-black bg-white">
       <div className="ml-3 font-bold">
         <a href="/">{`<Developer />`}</a>
       </div>
       <NavigationMenu>
-        <NavigationMenuList>
+        <NavigationMenuList className="gap-2">
           <NavigationMenuItem>
             <Link href="/react" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -57,14 +57,12 @@ function Navbar() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
+          <NavigationMenuItem>
+            <ThemeToggle />
+          </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      <div className="mr-3">
-        <Avatar>
-          <AvatarImage src="https://avatars.githubusercontent.com/u/68656749?v=4" />
-          <AvatarFallback>VT</AvatarFallback>
-        </Avatar>
-      </div>
+      <div></div>
     </nav>
   );
 }
