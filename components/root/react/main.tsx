@@ -13,16 +13,17 @@ import { FaChevronDown } from "react-icons/fa";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const LANGUAGE = "jsx";
 
 const Main = () => {
   return (
-    <section className="space-y-8">
+    <div className="mt-5 space-y-8">
       {react_data.map((item, index) => {
         return (
           <section key={index} id={item.id}>
-            <Card>
+            <Card className="w-full mx-auto md:w-2/3">
               <CardHeader>
                 <CardTitle>{item.title}</CardTitle>
                 <CardDescription>{item.explanation}</CardDescription>
@@ -33,16 +34,16 @@ const Main = () => {
                 {item?.Component ?? null}
               </CardContent>
 
-              <CardContent className="m-3 overflow-hidden border border-gray-600 rounded md:mx-10 md:my-5 bg-gray-50">
-                <ScrollArea className="min-h-[200px] min-w-[350px] ">
-                  <ScrollBar orientation="horizontal" />
+              <CardContent className="p-0 m-3 overflow-hidden border border-gray-600 rounded md:mx-10 md:my-5 bg-gray-50">
+                <ScrollArea className="min-h-[200px] min-w-[350px] flex">
                   <SyntaxHighlighter
-                    style={docco}
+                    style={atomDark}
                     language={LANGUAGE}
-                    customStyle={{ zIndex: -1 }}
+                    customStyle={{ margin: 0 }}
                   >
                     {item.CodeSnippet || ""}
                   </SyntaxHighlighter>
+                  <ScrollBar orientation="horizontal" />
                 </ScrollArea>
               </CardContent>
               <CardFooter className="flex items-center justify-center w-full">
@@ -56,7 +57,7 @@ const Main = () => {
           </section>
         );
       })}
-    </section>
+    </div>
   );
 };
 

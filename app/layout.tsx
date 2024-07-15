@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/root/nav/Navbar";
 import Footer from "@/components/root/footer/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 const openSan = Open_Sans({ subsets: ["latin"] });
 
@@ -34,6 +35,7 @@ export default function RootLayout({
             {children}
             <Footer />
           </main>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

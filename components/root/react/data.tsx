@@ -3,6 +3,7 @@ import Child from "./learn-context/Child";
 import LearnMemoDemo from "./learn-memo/learn-memo-demo";
 import LearnSuspenseAPI from "./learn-suspense-api/learn-suspense-api";
 import LearnUseEffectDemo from "./learn-useEffect/learn-useEffect-demo";
+import LearnUseRefDemo from "./learn-useRef/learn-useRef-demo";
 import LearnUseStateDemo from "./learn-useState/learn-useState-demo";
 
 // LearnUseEffectCleanup,
@@ -81,16 +82,18 @@ export const react_data = [
     Component: null,
     CodeSnippet: `
     `,
-    href: "#useEffect",
+    href: "#useRef",
   },
   {
     id: "useRef",
     title: "Learn useRef",
-    explanation: [],
-    Component: null,
+    explanation: [
+      "You can use useRef to get access to the DOM element. You can also use it to store the value of a state between renders.",
+    ],
+    Component: <LearnUseRefDemo />,
     CodeSnippet: `
     `,
-    href: "#useEffect",
+    href: "#useMemo",
   },
   {
     id: "useMemo",

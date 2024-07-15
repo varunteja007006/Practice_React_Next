@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import Link from "next/link";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -19,7 +17,7 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 function Navbar() {
   return (
-    <nav className="flex flex-row items-center justify-between p-3 dark:bg-black/100 bg-white/70 fixed w-full">
+    <nav className="fixed z-10 flex flex-row items-center justify-between w-full p-3 dark:bg-black/100 bg-white/70">
       <div className="ml-3 font-bold">
         <a href="/">{`<Developer />`}</a>
       </div>
