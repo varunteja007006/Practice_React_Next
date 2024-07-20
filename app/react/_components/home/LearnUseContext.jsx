@@ -1,5 +1,5 @@
 import React from "react";
-import { UseLearnContext } from "../../context/LearnContext";
+import { UseLearnContext } from "../../../../context/LearnContext";
 import CodeBlock from "../CodeBlock";
 import YellowBtn from "../subcomponents/YellowBtn";
 
