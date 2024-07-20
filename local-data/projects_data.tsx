@@ -78,7 +78,7 @@ export const projects: { title: string; href: string; description: string }[] =
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
     {
-      title: "Image Drag&Drop",
+      title: "Image Drag & Drop",
       href: `${rootPath}/image-drag-drop`,
       description:
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
