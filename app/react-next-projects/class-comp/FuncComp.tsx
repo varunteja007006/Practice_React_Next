@@ -7,20 +7,20 @@ function FuncComp({
   message,
   handleClick,
   handleClickTwo,
-  useSetStateUtil,
+  handleSetStateUtil,
   directSetState,
-}: {
+}: Readonly<{
   message: string;
   handleClick: () => void;
   directSetState: (obj: object) => void;
   handleClickTwo: (obj: object) => void;
-  useSetStateUtil: (obj: object) => void;
-}) {
+  handleSetStateUtil: (obj: object) => void;
+}>) {
   // function start
   const { toast }: { toast: any } = useToast();
 
-  const handleUseSetStateUtil = () => {
-    useSetStateUtil({
+  const onClickHandleSetStateUtil = () => {
+    handleSetStateUtil({
       message:
         "The message has been updated by functional component & the state is also from functional component!",
     });
@@ -41,15 +41,15 @@ function FuncComp({
   };
 
   return (
-    <Card className="bg-transparent text-white">
+    <Card className="text-white bg-transparent">
       <CardHeader>
         <CardTitle>FuncComp</CardTitle>
       </CardHeader>
       <CardContent>
         <div>
-          Message: <p className="text-green-300 mb-5">{message}</p>
+          Message: <p className="mb-5 text-green-300">{message}</p>
         </div>
-        <div className="flex flex-col gap-4 items-center">
+        <div className="flex flex-col items-center gap-4">
           <Button
             variant={"ghost"}
             className="border border-purple-400"
@@ -72,7 +72,7 @@ function FuncComp({
           <Button
             variant={"ghost"}
             className="border border-purple-400"
-            onClick={handleUseSetStateUtil}
+            onClick={onClickHandleSetStateUtil}
           >
             Update message in functional component & the state is also from
             functional component

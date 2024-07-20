@@ -34,13 +34,13 @@ class MyClassComp extends Component<MyClassCompProps, { message: string }> {
       obj.setState(args);
     };
   };
-  useSetStateUtil = this.setStateUtil();
+  handleSetStateUtil = this.setStateUtil();
 
   render() {
     const { message } = this.state;
     return (
       <div>
-        <h3 className="text-lg mb-3">This is a class component in Next.js</h3>
+        <h3 className="mb-3 text-lg">This is a class component in Next.js</h3>
         <div className="mb-3">
           Message: <p className="text-green-300">{message}</p>
         </div>
@@ -55,12 +55,12 @@ class MyClassComp extends Component<MyClassCompProps, { message: string }> {
         >
           Update in class component
         </Button>
-        <h3 className="text-lg mb-3">Below is a functional component</h3>
+        <h3 className="mb-3 text-lg">Below is a functional component</h3>
         <FuncComp
           message={message}
           handleClick={this.handleClick}
           handleClickTwo={this.handleClickTwo}
-          useSetStateUtil={this.useSetStateUtil}
+          handleSetStateUtil={this.handleSetStateUtil}
           directSetState={this.setState}
         />
       </div>

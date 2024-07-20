@@ -29,8 +29,8 @@ function ZustandPage() {
 
   return (
     <div className="px-6">
-      <h1 className="text-2xl mb-3">Zustand Demo</h1>
-      <Card className="bg-black bg-opacity-40 text-white">
+      <h1 className="mb-3 text-2xl">Zustand Demo</h1>
+      <Card className="text-white bg-black bg-opacity-40">
         <CardHeader>
           <CardTitle>Bears count: {bears}</CardTitle>
           <CardDescription>This is a zustand example</CardDescription>
@@ -44,7 +44,7 @@ function ZustandPage() {
           </Button>
           <div className="grid w-full max-w-sm md:max-w-[50%] items-center gap-3">
             <Label htmlFor="updateByVal">Email</Label>
-            <div className="flex flex-row gap-3 items-center justify-start">
+            <div className="flex flex-row items-center justify-start gap-3">
               <Input
                 type="text"
                 id="updateByVal"
@@ -64,10 +64,10 @@ function ZustandPage() {
           </Button>
         </CardContent>
         <CardFooter>
-          Checkout the documentation for zustand here:
+          Checkout the documentation for zustand here: {/* */}
           <a
             href="https://docs.pmnd.rs/zustand/getting-started/introduction"
-            className="ms-2 text-blue-800 underline"
+            className="text-blue-800 underline ms-2"
           >
             https://docs.pmnd.rs/zustand/getting-started/introduction
           </a>

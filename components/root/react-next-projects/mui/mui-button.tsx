@@ -4,7 +4,7 @@ import React from "react";
 import { Button } from "@mui/base/Button";
 import { useButton } from "@mui/base/useButton";
 
-function MaterialUIPage() {
+function MuiButton() {
   const { getRootProps } = useButton();
 
   return (
@@ -32,4 +32,4 @@ function MaterialUIPage() {
   );
 }
 
-export default MaterialUIPage;
+export default MuiButton;
