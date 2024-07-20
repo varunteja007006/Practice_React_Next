@@ -1,4 +1,4 @@
-import Main from "@/components/root/react-next-problems/main";
+import Main from "@/app/react-next-problems/_components/main";
 import React from "react";
 const Page = () => {
   return <Main />;

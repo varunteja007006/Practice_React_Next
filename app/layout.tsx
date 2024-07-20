@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/root/nav/Navbar";
-import Footer from "@/components/root/footer/Footer";
+import Navbar from "./_components/nav/Navbar";
+import Footer from "./_components/footer/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 

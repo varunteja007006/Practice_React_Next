@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
 const LazyComponent = React.lazy(
-  () => import("@/components/root/react/learn-suspense-api/lazy-component")
+  () => import("@/app/react/_components/learn-suspense-api/lazy-component")
 );
 
 const LearnSuspenseAPI = () => {

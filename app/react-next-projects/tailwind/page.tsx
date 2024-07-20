@@ -1,4 +1,4 @@
-import TailwindPage from "@/components/root/react-next-projects/tailwind/react-slick-tailwind";
+import TailwindPage from "@/app/react-next-projects/_components/tailwind/react-slick-tailwind";
 import React from "react";
 
 export default function page() {

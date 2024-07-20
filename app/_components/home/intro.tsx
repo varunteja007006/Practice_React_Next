@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import ContactIcons from "@/components/root/home/contact-icons";
+import ContactIcons from "./contact-icons";
 import { Button } from "@/components/ui/button";
 import { HiDownload } from "react-icons/hi";
 
@@ -10,7 +10,7 @@ export default function Intro() {
       id="intro"
       className="space-y-4 min-h-[calc(100vh-10rem)] items-center flex flex-col justify-center"
     >
-      <div className="gap-5 grid grid-cols-1 md:grid-cols-3 p-2 md:p-5 items-center">
+      <div className="grid items-center grid-cols-1 gap-5 p-2 md:grid-cols-3 md:p-5">
         <div className="flex flex-col items-center gap-5">
           <Image
             alt="profile"
@@ -29,7 +29,7 @@ export default function Intro() {
             </Button>
           </div>
         </div>
-        <div className="col-span-2 p-2 md:px-10 text-center text-base space-y-4 leading-loose">
+        <div className="col-span-2 p-2 space-y-4 text-base leading-loose text-center md:px-10">
           <div>
             I enjoy working with various tech stacks and have experience in both
             frontend and backend development. My main skills are JavaScript,

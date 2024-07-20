@@ -1,10 +1,10 @@
-import LearnChildrenPropsDemo from "@/components/root/react/learn-children-props/learn-children-demo";
-import Child from "@/components/root/react//learn-context/Child";
-import LearnMemoDemo from "@/components/root/react//learn-memo/learn-memo-demo";
-import LearnSuspenseAPI from "@/components/root/react//learn-suspense-api/learn-suspense-api";
-import LearnUseEffectDemo from "@/components/root/react//learn-useEffect/learn-useEffect-demo";
-import LearnUseRefDemo from "@/components/root/react//learn-useRef/learn-useRef-demo";
-import LearnUseStateDemo from "@/components/root/react//learn-useState/learn-useState-demo";
+import LearnChildrenPropsDemo from "@/app/react/_components/learn-children-props/learn-children-demo";
+import Child from "@/app/react/_components/learn-context/Child";
+import LearnMemoDemo from "@/app/react/_components/learn-memo/learn-memo-demo";
+import LearnSuspenseAPI from "@/app/react/_components/learn-suspense-api/learn-suspense-api";
+import LearnUseEffectDemo from "@/app/react/_components/learn-useEffect/learn-useEffect-demo";
+import LearnUseRefDemo from "@/app/react/_components/learn-useRef/learn-useRef-demo";
+import LearnUseStateDemo from "@/app/react/_components/learn-useState/learn-useState-demo";
 
 // LearnUseEffectCleanup,
 // LearnUseReducer,

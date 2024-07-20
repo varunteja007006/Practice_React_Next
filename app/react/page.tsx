@@ -1,5 +1,5 @@
 "use client";
-import Main from "@/components/root/react/main";
+import Main from "@/app/react/_components/main";
 import React from "react";
 
 const Page = () => {

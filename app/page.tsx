@@ -1,4 +1,4 @@
-import Homepage from "@/components/root/home/homepage";
+import Homepage from "./_components/home/homepage";
 /* 
 TODO create following components:
 * projects
