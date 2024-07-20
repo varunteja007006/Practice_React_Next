@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useEffect } from "react";
+import * as React from "react";
 import {
   Card,
   CardContent,
@@ -10,11 +10,12 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { MdOutlineKeyboardArrowUp } from "react-icons/md";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import {
+  MdOutlineKeyboardArrowUp,
+  MdOutlineKeyboardArrowDown,
+} from "react-icons/md";
 import { cartContext } from "./context/cartContext";
 import { RiDeleteBinLine } from "react-icons/ri";
-import CodeBlock from "@/components/custom/CodeBlock";
 
 function ShoppingCartPage() {
   const {
@@ -24,7 +25,7 @@ function ShoppingCartPage() {
     totalCartValue,
     clearCart,
     toggleAmount,
-  } = useContext(cartContext);
+  } = React.useContext(cartContext);
 
   const handleIncrement = (id: number) => {
     toggleAmount(id, "inc");
@@ -43,9 +44,8 @@ function ShoppingCartPage() {
   }
 
   return (
-    <>
-      <h1 className="mb-2 text-2xl">Shopping Cart</h1>
-      <Card className="bg-black text-white">
+    <div className="p-2 lg:px-10 lg:py-3">
+      <Card className="">
         <CardHeader className="flex flex-row items-center justify-between">
           <div>
             <CardTitle className="mb-2">Shopping Cart</CardTitle>
@@ -59,7 +59,7 @@ function ShoppingCartPage() {
               variant="outline"
               className="text-black hover:bg-black hover:text-white"
             >
-              <RiDeleteBinLine className="h-4 w-4 mr-2" />
+              <RiDeleteBinLine className="w-4 h-4 mr-2" />
               Remove All
             </Button>
           </div>
@@ -69,11 +69,8 @@ function ShoppingCartPage() {
             <>
               {shoppingData?.map((item) => {
                 return (
-                  <Card
-                    key={item.id}
-                    className="mb-2 rounded-sm bg-black text-white"
-                  >
-                    <CardContent className="px-3 py-2 flex flex-row gap-2 justify-between">
+                  <Card key={item.id} className="mb-2 rounded-sm">
+                    <CardContent className="flex flex-row justify-between gap-2 px-3 py-2">
                       <div className="flex flex-row gap-2">
                         <Image
                           src={item.image}
@@ -81,20 +78,20 @@ function ShoppingCartPage() {
                           height={100}
                           alt=""
                         />
-                        <div className="flex flex-col gap-2 items-start justify-center">
-                          <p className=" font-semibold text-lg">{item.model}</p>
+                        <div className="flex flex-col items-start justify-center gap-2">
+                          <p className="text-lg font-semibold ">{item.model}</p>
                           <p>${item.cost}</p>
                         </div>
                       </div>
 
-                      <div className="flex flex-col gap-1 items-center justify-center">
+                      <div className="flex flex-col items-center justify-center gap-1">
                         <Button
                           onClick={() => handleIncrement(item.id)}
                           variant="outline"
                           size="icon"
                           className="text-black hover:bg-black hover:text-white"
                         >
-                          <MdOutlineKeyboardArrowUp className="h-4 w-4 " />
+                          <MdOutlineKeyboardArrowUp className="w-4 h-4 " />
                         </Button>
                         <p>{item.quantity}</p>
                         <Button
@@ -103,41 +100,43 @@ function ShoppingCartPage() {
                           size="icon"
                           className="text-black hover:bg-black hover:text-white"
                         >
-                          <MdOutlineKeyboardArrowDown className="h-4 w-4" />
+                          <MdOutlineKeyboardArrowDown className="w-4 h-4" />
                         </Button>
                       </div>
                     </CardContent>
                   </Card>
                 );
               })}
-              <div className="flex flex-col gap-3 mt-3 items-end justify-end">
+              <div className="flex flex-col items-end justify-end gap-3 mt-3">
                 <div className="grid grid-cols-2 gap-2">
                   <div>Total Cart Items: </div>
-                  <div className="text-lg font-bold inline-flex justify-end">
+                  <div className="inline-flex justify-end text-lg font-bold">
                     {totalCartItemsCount}
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   <div>Total Cart Value: </div>
-                  <div className="text-lg font-bold inline-flex justify-end">
+                  <div className="inline-flex justify-end text-lg font-bold">
                     ${totalCartValue}
                   </div>
                 </div>
               </div>
             </>
           ) : (
-            <>
-              <p>No items</p>
-            </>
+            <p>No items</p>
           )}
         </CardContent>
-        <CardFooter>All Payments accepted.</CardFooter>
-        <CardFooter>
-          Cart empty? Try to running the command{" "}
-          <CodeBlock>`npm run server`</CodeBlock>.
+        <CardFooter className="flex flex-col items-start justify-center gap-2">
+          <p className="block">All Payments accepted.</p>
+          <p className="block">
+            Cart empty? Try running the command{" "}
+            <span className="px-2 py-1 ml-2 text-sm font-bold leading-loose text-green-500 bg-black">
+              `npm run server`
+            </span>
+          </p>
         </CardFooter>
       </Card>
-    </>
+    </div>
   );
 }
 

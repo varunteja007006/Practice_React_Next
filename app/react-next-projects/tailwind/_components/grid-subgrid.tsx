@@ -1,8 +1,9 @@
 import Image from "next/image";
 
-function GridSubgrid() {
+export default function TailwindGridSubgrid() {
   return (
     <div>
+      <h1 className="mb-3 text-2xl">Tailwind Subgrid</h1>
       <div className="grid w-full grid-cols-4 gap-2">
         <div className="grid content-between p-4 space-y-4 bg-red-500">
           <InnerContent
@@ -36,7 +37,6 @@ function GridSubgrid() {
     </div>
   );
 }
-export default GridSubgrid;
 
 const InnerContent = ({ text }: { text?: string }) => {
   return (

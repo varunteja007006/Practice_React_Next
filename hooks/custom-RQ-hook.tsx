@@ -1,12 +1,13 @@
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import customFetch from './utils';
-import { toast } from 'react-toastify';
+import { useQuery, useMutation, useQueryClient } from "react-query";
+import { customFetch } from "@/utils/custom-fetch";
+import { toast } from "@/components/ui/use-toast";
+import { AxiosError } from "axios";
 
 export const useFetchTasks = () => {
-  const { isLoading, data, isError, error } = useQuery({
-    queryKey: ['tasks'],
+  const { isLoading, data, isError } = useQuery({
+    queryKey: ["tasks"],
     queryFn: async () => {
-      const { data } = await customFetch.get('/');
+      const { data } = await customFetch.get("/");
       return data;
     },
   });
@@ -16,13 +17,13 @@ export const useFetchTasks = () => {
 export const useCreateTask = () => {
   const queryClient = useQueryClient();
   const { mutate: createTask, isLoading } = useMutation({
-    mutationFn: (taskTitle) => customFetch.post('/', { title: taskTitle }),
+    mutationFn: (taskTitle) => customFetch.post("/", { title: taskTitle }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['tasks'] });
-      toast.success('task added');
+      queryClient.invalidateQueries({ queryKey: ["tasks"] });
+      toast({ description: "task added", variant: "success" });
     },
-    onError: (error) => {
-      toast.error(error.response.data.msg);
+    onError: (error: AxiosError) => {
+      toast({ description: error.message, variant: "success" });
     },
   });
   return { createTask, isLoading };
@@ -32,15 +33,16 @@ export const useEditTask = () => {
   const queryClient = useQueryClient();
 
   const { mutate: editTask } = useMutation({
-    mutationFn: ({ taskId, isDone }) => {
+    mutationFn: ({ taskId, isDone }: { taskId: number; isDone: boolean }) => {
       return customFetch.patch(`/${taskId}`, { isDone });
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['tasks'] });
+      queryClient.invalidateQueries({ queryKey: ["tasks"] });
     },
   });
   return { editTask };
 };
+
 export const useDeleteTask = () => {
   const queryClient = useQueryClient();
 
@@ -49,7 +51,7 @@ export const useDeleteTask = () => {
       return customFetch.delete(`/${taskId}`);
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['tasks'] });
+      queryClient.invalidateQueries({ queryKey: ["tasks"] });
     },
   });
   return { deleteTask, deleteTaskLoading };

@@ -7,15 +7,14 @@ export const projects: { title: string; href: string; description: string }[] =
     },
     {
       title: "Progress on Scroll",
-      href: "/docs/primitives/tooltip",
+      href: "/react-next-projects/progress-on-scroll",
       description:
-        "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+        "Create a progress bar that shows the progress as user's scroll.",
     },
     {
       title: "Tailwind",
       href: "/react-next-projects/tailwind",
-      description:
-        "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      description: "Some awesome tailwind tricks",
     },
     {
       title: "Unsplash",
@@ -48,37 +47,37 @@ export const projects: { title: string; href: string; description: string }[] =
     },
     {
       title: "Multi-Page Form",
-      href: "/docs/primitives/tooltip",
+      href: "#",
       description:
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
     {
       title: "Image Slider",
-      href: "/docs/primitives/tooltip",
+      href: "#",
       description:
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
     {
       title: "Form Builder",
-      href: "/docs/primitives/tooltip",
+      href: "#",
       description:
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
     {
       title: "Zod + React Hook Form",
-      href: "/docs/primitives/tooltip",
+      href: "#",
       description:
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
     {
       title: "Shopping Cart",
-      href: "/docs/primitives/tooltip",
+      href: "/react-next-projects/shopping-cart",
       description:
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
     {
       title: "Image Drag&Drop",
-      href: "/docs/primitives/tooltip",
+      href: "#",
       description:
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },

@@ -1,10 +1,9 @@
 import React from "react";
-import GridSubgrid from "./GridSubgrid";
 
-function TailwindPage() {
+export default function TailwindProse() {
   return (
-    <div className="px-6 space-y-5">
-      <h1 className="mb-3 text-2xl">Tailwind Demo</h1>
+    <div className="space-y-5">
+      <h1 className="mb-3 text-2xl">Tailwind Prose</h1>
       <div className="red-box"></div>
       <div className="p-3 text-center custom-class">Hello</div>
       <article className="p-3 mt-3 prose bg-white lg:prose-xl">
@@ -21,12 +20,6 @@ function TailwindPage() {
           springing up around the country.
         </p>
       </article>
-
-      <div>
-        <GridSubgrid />
-      </div>
     </div>
   );
 }
-
-export default TailwindPage;

@@ -1,5 +1,5 @@
 import React from "react";
-import MuiButton from "@/app/react-next-projects/_components/mui/mui-button";
+import MuiButton from "./_components/mui-button";
 
 export default function page() {
   return (

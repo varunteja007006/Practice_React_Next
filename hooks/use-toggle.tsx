@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function UseToggle(defaultValue) {
+function useToggle(defaultValue: boolean) {
   const [show, setShow] = useState(defaultValue);
   const toggle = () => {
     setShow(!show);
@@ -8,4 +8,4 @@ function UseToggle(defaultValue) {
   return { show, toggle };
 }
 
-export default UseToggle;
+export default useToggle;

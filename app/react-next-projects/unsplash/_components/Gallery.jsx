@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery } from "react-query";
 import axios from "axios";
 import { UseUnsplashGlobalContext } from "../../context/UnsplashGlobalContext";
 
@@ -19,12 +19,12 @@ function Gallery() {
 
   if (result.isLoading) {
     return (
-      <div className="alert alert-info my-5">
+      <div className="my-5 alert alert-info">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          className="stroke-current shrink-0 w-6 h-6"
+          className="w-6 h-6 stroke-current shrink-0"
         >
           <path
             strokeLinecap="round"
@@ -40,10 +40,10 @@ function Gallery() {
 
   if (result.isError) {
     return (
-      <div className="alert alert-error my-5">
+      <div className="my-5 alert alert-error">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="stroke-current shrink-0 h-6 w-6"
+          className="w-6 h-6 stroke-current shrink-0"
           fill="none"
           viewBox="0 0 24 24"
         >
@@ -62,10 +62,10 @@ function Gallery() {
   const outputData = result.data.data.results;
   if (outputData.length < 1) {
     return (
-      <div className="alert alert-error my-5">
+      <div className="my-5 alert alert-error">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="stroke-current shrink-0 h-6 w-6"
+          className="w-6 h-6 stroke-current shrink-0"
           fill="none"
           viewBox="0 0 24 24"
         >
@@ -90,7 +90,7 @@ function Gallery() {
               src={item?.urls?.regular}
               alt={item?.alt_description}
               key={item?.id}
-              className=" h-40 w-50"
+              className="h-40  w-50"
             />
           );
         })}

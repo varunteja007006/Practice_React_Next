@@ -1,21 +1,15 @@
 "use client";
 
 import React, { ReactNode } from "react";
-// import { CartContextProvider } from "./(root)/react/projects/shopping-cart/context/cartContext";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+import { QueryClient, QueryClientProvider } from "react-query";
 
-function Provider({ children }: { children: ReactNode }) {
+function Provider({ children }: Readonly<{ children: ReactNode }>) {
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
-      {/* <CartContextProvider> */}
       {children}
-      {/* </CartContextProvider> */}
-      <ReactQueryDevtools
-        initialIsOpen={false}
-        buttonPosition={`bottom-right`}
-      />
+      <ReactQueryDevtools initialIsOpen={false} position={`bottom-right`} />
     </QueryClientProvider>
   );
 }

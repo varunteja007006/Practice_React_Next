@@ -19,7 +19,7 @@ function ProgressScroll() {
     <div>
       <div
         id="scroll-progress"
-        className="fixed top-0 left-0 z-50 h-1 bg-yellow-400"
+        className="fixed top-0 left-0 z-50 h-2 bg-red-400"
       ></div>
       <div className="h-[200vh] border border-white"></div>
     </div>
