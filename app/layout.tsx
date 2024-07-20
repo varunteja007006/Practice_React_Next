@@ -31,7 +31,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="min-h-[calc(100vh-10rem)] overflow-auto">
+          <main className="min-h-[calc(100vh-10rem)]">
             <Navbar />
             <div className="h-16"></div>
             <div className="min-h-[calc(100vh-22rem)]">{children}</div>

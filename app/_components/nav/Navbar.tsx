@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { projects } from "../../../local-data/projects_data";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import NavMobile from "./NavMobile";
 
 function Navbar() {
   return (
@@ -21,7 +22,7 @@ function Navbar() {
       <div className="ml-3 font-bold">
         <a href="/">{`<Developer />`}</a>
       </div>
-      <NavigationMenu>
+      <NavigationMenu className="hidden lg:block">
         <NavigationMenuList className="gap-2">
           <NavigationMenuItem>
             <Link href="/react" legacyBehavior passHref>
@@ -60,7 +61,9 @@ function Navbar() {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      <div></div>
+      <div>
+        <NavMobile />
+      </div>
     </nav>
   );
 }
