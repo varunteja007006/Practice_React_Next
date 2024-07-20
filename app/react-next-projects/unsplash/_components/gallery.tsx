@@ -1,13 +1,13 @@
+"use client";
 import React from "react";
 import { useQuery } from "react-query";
 import axios from "axios";
-import { UseUnsplashGlobalContext } from "../../context/UnsplashGlobalContext";
+import { useUnsplashGlobalContext } from "../context/unsplash-context";
 
-function Gallery() {
-  const apiKey = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
+function Gallery({ apiKey }: Readonly<{ apiKey: string | undefined }>) {
   const url = `https://api.unsplash.com/search/photos?client_id=${apiKey}`;
 
-  const { searchTerm } = UseUnsplashGlobalContext();
+  const { searchTerm } = useUnsplashGlobalContext();
 
   const result = useQuery({
     queryKey: ["images", searchTerm],
@@ -59,7 +59,7 @@ function Gallery() {
     );
   }
 
-  const outputData = result.data.data.results;
+  const outputData = result?.data?.data.results;
   if (outputData.length < 1) {
     return (
       <div className="my-5 alert alert-error">
@@ -84,13 +84,13 @@ function Gallery() {
   return (
     <div>
       <div className="flex flex-wrap gap-4 my-5">
-        {outputData.map((item) => {
+        {outputData.map((item: any) => {
           return (
             <img
               src={item?.urls?.regular}
               alt={item?.alt_description}
               key={item?.id}
-              className="h-40  w-50"
+              className="h-40 w-50"
             />
           );
         })}

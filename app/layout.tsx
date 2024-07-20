@@ -5,6 +5,7 @@ import Navbar from "./_components/nav/Navbar";
 import Footer from "./_components/footer/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+import Provider from "./providers";
 
 const openSan = Open_Sans({ subsets: ["latin"] });
 
@@ -25,20 +26,22 @@ export default function RootLayout({
           dark:bg-gradient-to-tl dark:from-purple-950 from-5% dark:via-black dark:via-90% dark:to-purple-950
           `}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <main className="min-h-[calc(100vh-10rem)]">
-            <Navbar />
-            <div className="h-16"></div>
-            <div className="min-h-[calc(100vh-22rem)]">{children}</div>
-            <Footer />
-          </main>
-          <Toaster />
-        </ThemeProvider>
+        <Provider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <main className="min-h-[calc(100vh-10rem)]">
+              <Navbar />
+              <div className="h-16"></div>
+              <div className="min-h-[calc(100vh-22rem)]">{children}</div>
+              <Footer />
+            </main>
+            <Toaster />
+          </ThemeProvider>
+        </Provider>
       </body>
     </html>
   );

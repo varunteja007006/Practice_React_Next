@@ -18,9 +18,9 @@ export const projects: { title: string; href: string; description: string }[] =
     },
     {
       title: "Unsplash",
-      href: "/docs/primitives/alert-dialog",
+      href: "/react-next-projects/unsplash",
       description:
-        "A modal dialog that interrupts the user with important content and expects a response.",
+        "Learn to use context, search, react-query, and unsplash API.",
     },
     {
       title: "CMS",

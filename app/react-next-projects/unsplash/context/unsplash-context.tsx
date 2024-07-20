@@ -5,7 +5,7 @@ type UnsplashGlobalContextType = {
   setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const UnsplashGlobalContext = React.createContext<UnsplashGlobalContextType>({
+const unsplashGlobalContext = React.createContext<UnsplashGlobalContextType>({
   searchTerm: "",
   setSearchTerm: () => {},
 });
@@ -26,16 +26,16 @@ export const UnsplashGlobalContextProvider = ({
   );
 
   return (
-    <UnsplashGlobalContext.Provider value={obj}>
+    <unsplashGlobalContext.Provider value={obj}>
       {children}
-    </UnsplashGlobalContext.Provider>
+    </unsplashGlobalContext.Provider>
   );
 };
 
-export const UseUnsplashGlobalContext = () => {
-  const unsplashGlobalContext = React.useContext(UnsplashGlobalContext);
-  if (!unsplashGlobalContext) {
+export const useUnsplashGlobalContext = () => {
+  const context = React.useContext(unsplashGlobalContext);
+  if (!context) {
     throw Error("Context must be used inside an Context Provider !!");
   }
-  return unsplashGlobalContext;
+  return context;
 };
