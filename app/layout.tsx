@@ -21,7 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`w-full min-w-[300px] dark:bg-black bg-blue-50 ${openSan.className} scroll-smooth`}
+        className={`w-full min-w-[300px]  bg-blue-50 ${openSan.className} scroll-smooth
+          dark:bg-gradient-to-tl dark:from-purple-950 from-5% dark:via-black dark:via-90% dark:to-purple-950
+          `}
       >
         <ThemeProvider
           attribute="class"
@@ -29,10 +31,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="min-h-[calc(100vh-10rem)] h-screen overflow-auto">
+          <main className="min-h-[calc(100vh-10rem)] overflow-auto">
             <Navbar />
             <div className="h-16"></div>
-            {children}
+            <div className="min-h-[calc(100vh-22rem)]">{children}</div>
             <Footer />
           </main>
           <Toaster />

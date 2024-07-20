@@ -10,7 +10,7 @@ import { Card } from "@/components/ui/card";
 
 const Main = () => {
   return (
-    <Card className="px-8 py-3">
+    <Card className="p-4 m-3 lg:px-8 lg:py-3 lg:mx-10">
       <Accordion type="single" collapsible>
         {problems_data.map((item, index) => {
           return (

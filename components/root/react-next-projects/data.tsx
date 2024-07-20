@@ -1,6 +1,23 @@
 export const projects: { title: string; href: string; description: string }[] =
   [
     {
+      title: "React Table",
+      href: "/react-next-projects/react-table",
+      description: "In-line editable react table.",
+    },
+    {
+      title: "Progress on Scroll",
+      href: "/docs/primitives/tooltip",
+      description:
+        "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    },
+    {
+      title: "Tailwind",
+      href: "/react-next-projects/tailwind",
+      description:
+        "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    },
+    {
       title: "Unsplash",
       href: "/docs/primitives/alert-dialog",
       description:
@@ -60,24 +77,7 @@ export const projects: { title: string; href: string; description: string }[] =
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
     {
-      title: "Tailwind",
-      href: "/react-next-projects/tailwind",
-      description:
-        "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-    },
-    {
       title: "Image Drag&Drop",
-      href: "/docs/primitives/tooltip",
-      description:
-        "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-    },
-    {
-      title: "React Table",
-      href: "/react-next-projects/react-table",
-      description: "In-line editable react table.",
-    },
-    {
-      title: "Progress on Scroll",
       href: "/docs/primitives/tooltip",
       description:
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
