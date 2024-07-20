@@ -1,5 +1,5 @@
 import React from "react";
-import certificationData from "@/local-data/certificationData";
+import certificationData from "@/app/_components/home/data/certificationData";
 import {
   Card,
   CardDescription,

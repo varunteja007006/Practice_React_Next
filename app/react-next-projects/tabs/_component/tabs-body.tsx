@@ -2,8 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { TData } from "../page";
 
-function TabBody({ data }: { data: TData[] }) {
+function TabBody({ data }: Readonly<{ data: TData[] }>) {
   const [tabActive, setTabActive] = useState(1);
   const [selectedData, setSelectedData] = useState<TData | undefined>(data[0]);
   const handleSetActiveTab = (order: number) => {
@@ -36,15 +37,16 @@ function TabBody({ data }: { data: TData[] }) {
       </div>
       {selectedData && (
         <div className="p-5">
-          <p className="mb-3 text-lg font-semibold text-white">
-            {" "}
-            {selectedData.title}{" "}
-          </p>
-          <p className="mb-3 text-white"> {selectedData.dates} </p>
+          <p className="mb-3 text-lg font-semibold "> {selectedData.title} </p>
+          <p className="mb-3 "> {selectedData.dates} </p>
 
           <ul className="list-disc ps-5">
-            {selectedData.duties.map((item) => {
-              return <li className="mb-3">{item}</li>;
+            {selectedData.duties.map((item, index) => {
+              return (
+                <li key={index} className="mb-3">
+                  {item}
+                </li>
+              );
             })}
           </ul>
         </div>

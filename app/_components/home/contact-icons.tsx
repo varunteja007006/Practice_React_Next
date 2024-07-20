@@ -1,5 +1,5 @@
 import React from "react";
-import contactData from "@/local-data/contactData";
+import contactData from "@/app/_components/home/data/contactData";
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,

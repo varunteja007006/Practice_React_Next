@@ -1,5 +1,5 @@
 import * as React from "react";
-import contactData from "@/local-data/contactData";
+import contactData from "@/app/_components/home/data/contactData";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
 

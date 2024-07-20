@@ -1,14 +1,14 @@
-import { DataType } from "../../../pages/project pages/Tabs";
+import { TData } from "../page";
 
 function BtnContainer({
   data,
   currentData,
   setCurrentData,
-}: {
-  data: DataType;
+}: Readonly<{
+  data: TData[];
   currentData: number;
   setCurrentData: React.Dispatch<React.SetStateAction<number>>;
-}) {
+}>) {
   return (
     <div className="flex flex-row flex-wrap gap-3">
       {data?.map((item, index) => {

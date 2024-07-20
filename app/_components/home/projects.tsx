@@ -2,7 +2,7 @@ import * as React from "react";
 import Image from "next/image";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
-import projectData from "../../../local-data/projectData";
+import projectData from "./data/projectData";
 import {
   Card,
   CardContent,

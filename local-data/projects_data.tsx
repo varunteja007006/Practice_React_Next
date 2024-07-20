@@ -1,83 +1,91 @@
+const rootPath = "/react-next-projects";
+
 export const projects: { title: string; href: string; description: string }[] =
   [
     {
       title: "React Table",
-      href: "/react-next-projects/react-table",
+      href: `${rootPath}/react-table`,
       description: "In-line editable react table.",
     },
     {
       title: "Progress on Scroll",
-      href: "/react-next-projects/progress-on-scroll",
+      href: `${rootPath}/progress-on-scroll`,
       description:
         "Create a progress bar that shows the progress as user's scroll.",
     },
     {
       title: "Tailwind",
-      href: "/react-next-projects/tailwind",
+      href: `${rootPath}/tailwind`,
       description: "Some awesome tailwind tricks",
     },
     {
       title: "Unsplash",
-      href: "/react-next-projects/unsplash",
+      href: `${rootPath}/unsplash`,
       description:
         "Learn to use context, search, react-query, and unsplash API.",
     },
     {
       title: "CMS",
-      href: "/docs/primitives/hover-card",
+      href: `${rootPath}/cms`,
       description:
         "For sighted users to preview content available behind a link.",
     },
     {
       title: "Menu",
-      href: "/docs/primitives/progress",
+      href: `${rootPath}/menu`,
       description:
         "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
     },
     {
       title: "Tabs",
-      href: "/docs/primitives/scroll-area",
+      href: `${rootPath}/tabs`,
       description: "Visually or semantically separates content.",
     },
     {
       title: "MUI",
-      href: "/docs/primitives/tabs",
+      href: `${rootPath}/mui`,
       description:
         "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
     },
     {
       title: "Multi-Page Form",
-      href: "#",
+      href: `${rootPath}/multi-page-form`,
       description:
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
     {
       title: "Image Slider",
-      href: "#",
+      href: `${rootPath}/image-slider`,
       description:
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
     {
       title: "Form Builder",
-      href: "#",
+      href: `${rootPath}/form-builder`,
       description:
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
     {
       title: "Zod + React Hook Form",
-      href: "#",
+      href: `${rootPath}/zod-hook-forms`,
       description:
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
     {
       title: "Shopping Cart",
-      href: "/react-next-projects/shopping-cart",
+      href: `${rootPath}/shopping-cart`,
       description:
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
     {
       title: "Image Drag&Drop",
-      href: "#",
+      href: `${rootPath}/image-drag-drop`,
+      description:
+        "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    },
+    {
+      title: "Class component",
+      href: `${rootPath}/class-component`,
       description:
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
