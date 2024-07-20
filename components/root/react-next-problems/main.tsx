@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { problems_data } from "./data";
+import { problems_data } from "../../../local-data/problems_data";
 import { Card } from "@/components/ui/card";
 
 const Main = () => {

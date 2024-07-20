@@ -12,7 +12,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { projects } from "../react-next-projects/data";
+import { projects } from "../../../local-data/projects_data";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 function Navbar() {

@@ -1,5 +1,5 @@
 import React from "react";
-import { react_data } from "./data";
+import { react_data } from "@/local-data/react_data";
 import {
   Card,
   CardContent,
@@ -12,7 +12,6 @@ import { Button } from "@/components/ui/button";
 import { FaChevronDown } from "react-icons/fa";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const LANGUAGE = "jsx";

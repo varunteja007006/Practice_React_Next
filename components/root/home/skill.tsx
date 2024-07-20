@@ -1,7 +1,7 @@
 import { Card, CardTitle } from "@/components/ui/card";
 import * as React from "react";
-import industrySkillsData from "@/components/root/local-data/industrySkillsData";
-import technicalSkillsData from "@/components/root/local-data/technicalSkillsData";
+import industrySkillsData from "@/local-data/industrySkillsData";
+import technicalSkillsData from "@/local-data/technicalSkillsData";
 
 export default function Skills() {
   const technicalSkillTypes = React.useMemo(() => {

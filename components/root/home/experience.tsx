@@ -1,5 +1,5 @@
 import React from "react";
-import experienceData from "@/components/root/local-data/experienceData";
+import experienceData from "@/local-data/experienceData";
 import {
   Card,
   CardDescription,
