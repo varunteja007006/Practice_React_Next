@@ -1,3 +1,4 @@
+"use client";
 import { useForm, SubmitHandler } from "react-hook-form";
 // import { z } from "zod";
 // import { zodResolver } from "@hookform/resolvers/zod";
@@ -64,7 +65,9 @@ function Main() {
       >
         <label className="form-control">
           <div className="label">
-            <span className="label-text text-black dark:text-white">Username</span>
+            <span className="label-text text-black dark:text-white">
+              Username
+            </span>
           </div>
           <input
             className="input text-white"
@@ -79,7 +82,9 @@ function Main() {
 
         <label className="form-control">
           <div className="label">
-            <span className="label-text text-black dark:text-white">Password</span>
+            <span className="label-text text-black dark:text-white">
+              Password
+            </span>
           </div>
           <input
             className="input text-white"

@@ -1,9 +1,10 @@
-import { React, useState } from "react";
+"use client";
+
+import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import CodeBlock from "../../main/CodeBlock";
 
 function Card() {
-  const [flipcard, setFlipcard] = useState(false);
+  const [flipcard, setFlipcard] = React.useState(false);
   return (
     <div className="flex flex-row gap-5 my-10">
       <AnimatePresence>
