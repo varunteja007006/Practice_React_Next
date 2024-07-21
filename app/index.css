@@ -18,3 +18,7 @@
 .rdp-caption_dropdowns {
   @apply flex flex-row gap-3;
 }
+
+.charts .hightcharts-container {
+  @apply max-h-[30rem];
+}

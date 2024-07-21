@@ -132,4 +132,11 @@ export const projects: {
     isNew: false,
     inProgress: false,
   },
+  {
+    title: "Shad CN",
+    href: `${rootPath}/shadcn`,
+    description: "Checking out few shadcn components",
+    isNew: false,
+    inProgress: false,
+  },
 ];
