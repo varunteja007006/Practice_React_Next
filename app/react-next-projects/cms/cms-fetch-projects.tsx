@@ -1,39 +1,40 @@
+"use client";
 import { createClient } from "contentful";
 import { useEffect, useState } from "react";
 
-// setup the contentful client
-const SPACEID = "xxxxxxxxxxxxxxx";
-const ACCESS_KEY = "xxxxxxxxxxxxxxx";
-
-/*
-setup these keys in .env file. Place file along with index.html
-const SPACEID = import.meta.env.VITE_CONTENTFUL_SPACEID ;
-const ACCESS_KEY = import.meta.env.VITE_CONTENTFUL_ACCESS_KEY ;
-*/
-
-const client = createClient({
-  space: SPACEID,
-  environment: "master",
-  accessToken: ACCESS_KEY,
-});
-
-export const FetchProjects = () => {
+export const FetchProjects = ({     
+  SPACE_ID,
+  ACCESS_KEY,
+}: {
+  SPACE_ID: string;
+  ACCESS_KEY: string;
+}) => {
   const [loading, setLoading] = useState(true);
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<any>([]);
   const [error, setError] = useState(null);
+
+  const client = createClient({
+    space: SPACE_ID,
+    environment: "master",
+    accessToken: ACCESS_KEY,
+  });
 
   const getData = async () => {
     try {
       const response = await client.getEntries({ content_type: "projects" });
-      const projects = response.items.map((item) => {
-        const { title, url, image } = item.fields;
+      const projects = response.items.map((item: any) => {
+        const {
+          title,
+          url,
+          image,
+        }: { title: string; url: string; image: any } = item.fields;
         const id = item.sys.id;
         const img = image?.fields?.file?.url;
         return { title, url, id, img };
       });
       setProjects(projects);
       setLoading(false);
-    } catch (error) {
+    } catch (error: any) {
       const { message } = { ...error };
       const errorMessage = JSON.parse(message).message;
       setError(errorMessage);
