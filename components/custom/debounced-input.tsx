@@ -26,11 +26,14 @@ function DebouncedInput({
   onChange,
   debounce = 500,
   ...props
-}: Readonly<{
-  value: string;
-  onChange: (value: string) => void;
-  debounce?: number;
-}>) {
+}: Readonly<
+  | {
+      value: string;
+      onChange: (value: string) => void;
+      debounce?: number;
+    }
+  | any
+>) {
   const [value, setValue] = useState(initialValue); // local value state to track input
 
   React.useEffect(() => {
