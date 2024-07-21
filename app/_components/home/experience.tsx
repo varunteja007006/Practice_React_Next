@@ -1,15 +1,22 @@
 import React from "react";
 import experienceData from "@/app/_components/home/data/experienceData";
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { differenceInMonths, parse } from "date-fns";
+import { differenceInMonths, format, parse } from "date-fns";
 import _ from "lodash";
+
+function calcExp(date1: string, date2: string) {
+  return _.round(
+    _.divide(
+      differenceInMonths(
+        new Date(parse(date1, "yyyy-MM-dd", new Date())),
+        new Date(parse(date2, "yyyy-MM-dd", new Date()))
+      ),
+      12
+    ),
+    1
+  );
+}
 
 export default function Experience() {
   return (
@@ -30,35 +37,16 @@ export default function Experience() {
                   {item.current ? (
                     <Badge variant="outline">
                       Exp:{" "}
-                      {_.divide(
-                        differenceInMonths(
-                          new Date(),
-                          new Date(
-                            parse(item.dateOfJoining, "yyyy-MM-dd", new Date())
-                          )
-                        ),
-                        12
+                      {calcExp(
+                        format(new Date(), "yyyy-mm-dd"),
+                        item.dateOfJoining
                       )}{" "}
                       yrs
                     </Badge>
                   ) : (
                     <Badge variant="outline">
-                      Exp:{" "}
-                      {_.divide(
-                        differenceInMonths(
-                          new Date(
-                            parse(
-                              item.dateOfResigning,
-                              "yyyy-MM-dd",
-                              new Date()
-                            )
-                          ),
-                          new Date(
-                            parse(item.dateOfJoining, "yyyy-MM-dd", new Date())
-                          )
-                        ),
-                        12
-                      )}{" "}
+                      Exp: {calcExp(item.dateOfResigning, item.dateOfJoining)}
+                      {"  "}
                       yrs
                     </Badge>
                   )}
