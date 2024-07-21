@@ -18,12 +18,19 @@ export const ErrorMessage = ({ children, className }) => {
   );
 };
 
-export const CustomSeparator = ({ className }) => {
-  return (
-    <div className={cn("w-full h-[1px]  bg-gray-300 my-4", className)}></div>
-  );
-};
-
 export const Required = ({ children }) => {
   return <span className="text-xs text-red-500"> {children} </span>;
 };
+
+export function LoadingSpinner({ message = "", textClassName = "" }) {
+  return (
+    <Skeleton
+      className={`w-full h-full flex-1 p-4 flex flex-col items-center justify-center bg-inherit`}
+    >
+      <div className={cn("flex flex-row gap-4 items-center", textClassName)}>
+        <FaSpinner className="w-6 h-6 animate-spin" />
+        {message || `Loading....`}
+      </div>
+    </Skeleton>
+  );
+}

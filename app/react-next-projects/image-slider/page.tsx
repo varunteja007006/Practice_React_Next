@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+"use client";
+import * as React from "react";
 
 const imageURLs = [
   "https://images.unsplash.com/photo-1619293195798-07fc2dec8323?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -9,9 +10,9 @@ const imageURLs = [
 ];
 
 function ImageSlider() {
-  const [image, setImage] = useState(0);
+  const [image, setImage] = React.useState(0);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setTimeout(() => {
       image === imageURLs.length - 1 ? setImage(0) : setImage(image + 1);
     }, 5000);

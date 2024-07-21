@@ -10,3 +10,11 @@
 .custom-class {
   @apply bg-blue-400 text-lg text-white font-semibold font-mono;
 }
+
+.rdp-vhidden {
+  @apply hidden;
+}
+
+.rdp-caption_dropdowns {
+  @apply flex flex-row gap-3;
+}

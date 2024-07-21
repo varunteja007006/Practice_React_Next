@@ -15,6 +15,7 @@ import {
 import { projects } from "../../../local-data/projects_data";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import NavMobile from "./NavMobile";
+import { Badge } from "@/components/ui/badge";
 
 function Navbar() {
   return (
@@ -43,6 +44,12 @@ function Navbar() {
                       href={project.href}
                     >
                       {project.description}
+                      <span className="flex items-center mt-2">
+                        {project.isNew && <Badge variant="success">New</Badge>}
+                        {project.inProgress && (
+                          <Badge variant="warning">In Progress</Badge>
+                        )}
+                      </span>
                     </ListItem>
                   ))}
                 </ul>
@@ -80,7 +87,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground h-full",
             className
           )}
           {...props}
