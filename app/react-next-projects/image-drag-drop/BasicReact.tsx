@@ -13,14 +13,14 @@ function BasicReact() {
     if (files.length === 0) {
       return;
     }
-    for (let i = 0; i < files.length; i++) {
-      if (!images.some((item: any) => item.name === files[i].name)) {
+    for (const element of files) {
+      if (!images.some((item: any) => item.name === element.name)) {
         setImages((oldState: any) => {
           const newState = [
             ...oldState,
             {
-              name: files[i].name,
-              url: URL.createObjectURL(files[i]),
+              name: element.name,
+              url: URL.createObjectURL(element),
             },
           ];
           return newState;

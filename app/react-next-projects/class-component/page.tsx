@@ -42,7 +42,7 @@ class MyClassComp extends Component<MyClassCompProps, { message: string }> {
       <div>
         <h3 className="mb-3 text-lg">This is a class component in Next.js</h3>
         <div className="mb-3">
-          Message: <p className="text-green-300">{message}</p>
+          Message: <p className="">{message}</p>
         </div>
         <p>
           You can use class components in Next.js pages, but functional

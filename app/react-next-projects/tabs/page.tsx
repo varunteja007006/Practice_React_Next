@@ -29,7 +29,7 @@ export default async function page() {
   }
 
   return (
-    <div className="p-2 lg:px-10 lg:py-5">
+    <div className="">
       <TabBody data={data} />
     </div>
   );

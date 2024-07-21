@@ -41,13 +41,13 @@ function FuncComp({
   };
 
   return (
-    <Card className="text-white bg-transparent">
+    <Card className=" bg-transparent">
       <CardHeader>
         <CardTitle>FuncComp</CardTitle>
       </CardHeader>
       <CardContent>
         <div>
-          Message: <p className="mb-5 text-green-300">{message}</p>
+          Message: <p className="mb-5">{message}</p>
         </div>
         <div className="flex flex-col items-center gap-4">
           <Button

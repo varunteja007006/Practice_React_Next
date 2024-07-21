@@ -89,4 +89,9 @@ export const projects: { title: string; href: string; description: string }[] =
       description:
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
+    {
+      title: "Zustand Demo",
+      href: `${rootPath}/zustand`,
+      description: "A simple implementation of zustand",
+    },
   ];

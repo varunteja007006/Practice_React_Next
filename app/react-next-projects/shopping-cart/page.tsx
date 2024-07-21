@@ -44,7 +44,7 @@ function ShoppingCartPage() {
   }
 
   return (
-    <div className="p-2 lg:px-10 lg:py-3">
+    <div className="">
       <Card className="">
         <CardHeader className="flex flex-row items-center justify-between">
           <div>

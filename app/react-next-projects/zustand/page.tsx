@@ -28,16 +28,16 @@ function ZustandPage() {
   };
 
   return (
-    <div className="px-6">
+    <div>
       <h1 className="mb-3 text-2xl">Zustand Demo</h1>
-      <Card className="text-white bg-black bg-opacity-40">
+      <Card className="">
         <CardHeader>
           <CardTitle>Bears count: {bears}</CardTitle>
           <CardDescription>This is a zustand example</CardDescription>
         </CardHeader>
         <CardContent className="space-y-5">
           <Button
-            className="bg-purple-700 hover:bg-purple-700/[0.8]"
+            className="bg-purple-300 dark:bg-purple-700 hover:bg-purple-400/[0.8]"
             onClick={increasePopulation}
           >
             Increase Population by 1 😁
@@ -52,7 +52,7 @@ function ZustandPage() {
                 onChange={(e) => setUpdateByVal(e.target.value)}
               />
               <Button
-                className="bg-purple-700 hover:bg-purple-700/[0.8] w-fit"
+                className="bg-purple-300 dark:bg-purple-700 hover:bg-purple-400/[0.8] w-fit"
                 onClick={handleUpdateBears}
               >
                 Update 😉

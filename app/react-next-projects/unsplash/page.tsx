@@ -5,7 +5,7 @@ import Gallery from "./_components/gallery";
 export default function page() {
   const apiKey = process.env.UNSPLASH_ACCESS_KEY;
   return (
-    <div className="p-2 space-y-4 lg:px-10">
+    <div className="space-y-4">
       <h1 className="text-2xl font-bold">Unsplash Project</h1>
       <p>
         {

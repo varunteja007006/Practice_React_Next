@@ -23,7 +23,7 @@ export default function page() {
   };
 
   return (
-    <div className="p-2 space-y-4 lg:px-10 lg:py-5">
+    <div className="space-y-4">
       <div className="flex flex-wrap mt-4">
         {categories.map((item) => {
           return (
