@@ -1,5 +1,5 @@
 import React from "react";
-import { react_data } from "@/local-data/react_data";
+import { react_data } from "./react_data";
 import {
   Card,
   CardContent,
