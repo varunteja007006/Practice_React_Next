@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { projects } from "@/local-data/projects_data";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export default function NavMobile() {
   return (
@@ -25,8 +26,8 @@ export default function NavMobile() {
           <SheetTitle>Menu</SheetTitle>
         </SheetHeader>
         <div className="flex flex-col items-start gap-2">
-          <ScrollArea className="h-[calc(100vh-8rem)] w-full">
-            <ul className="grid w-[400px] gap-3 pl-0 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+          <ScrollArea className="h-[calc(100vh-10rem)] w-full mb-2">
+            <ul className="grid gap-3 pl-0 p-3 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               <ListItem
                 key={"React"}
                 title={"React"}
@@ -48,6 +49,9 @@ export default function NavMobile() {
               ))}
             </ul>
           </ScrollArea>
+          <div className="flex justify-end w-full">
+            <ThemeToggle />
+          </div>
         </div>
       </SheetContent>
     </Sheet>

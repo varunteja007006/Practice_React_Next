@@ -2,20 +2,30 @@ import React from "react";
 import experienceData from "@/app/_components/home/data/experienceData";
 import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { differenceInMonths, format, parse } from "date-fns";
+import {
+  addYears,
+  differenceInMonths,
+  differenceInYears,
+  format,
+  parse,
+} from "date-fns";
 import _ from "lodash";
 
 function calcExp(date1: string, date2: string) {
-  return _.round(
-    _.divide(
-      differenceInMonths(
-        new Date(parse(date1, "yyyy-MM-dd", new Date())),
-        new Date(parse(date2, "yyyy-MM-dd", new Date()))
-      ),
-      12
-    ),
-    1
-  );
+  const resigningDate = new Date(parse(date1, "yyyy-MM-dd", new Date()));
+  const joiningDate = new Date(parse(date2, "yyyy-MM-dd", new Date()));
+
+  // Calculate the difference in years
+  let years = differenceInYears(resigningDate, joiningDate);
+  // Calculate the remaining months after accounting for the years
+  let months = differenceInMonths(resigningDate, addYears(joiningDate, years));
+
+  // Handle the case where months are negative
+  if (months < 0) {
+    years -= 1;
+    months += 12;
+  }
+  return `${years}.${months}`;
 }
 
 export default function Experience() {
