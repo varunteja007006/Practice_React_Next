@@ -26,6 +26,8 @@ import {
   SiJenkins,
   SiSonarqube,
   SiGooglecloud,
+  SiNextdotjs,
+  SiMui,
 } from "react-icons/si";
 import { BsFiletypeScss } from "react-icons/bs";
 import { GiTortoise } from "react-icons/gi";
@@ -35,18 +37,20 @@ const technicalSkillsData = {
   ProgrammingLanguages: {
     label: "Programming Languages / Technologies",
     skillList: [
+      { name: "Next JS", icon: SiNextdotjs, toShow: true },
       { name: "React JS", icon: FaReact, toShow: true },
       { name: "Node JS", icon: FaNodeJs, toShow: true },
-      { name: "Python", icon: FaPython, toShow: true },
       { name: "JavaScript", icon: SiJavascript, toShow: true },
-      { name: "MongoDB", icon: SiMongodb, toShow: true },
       { name: "MySQL", icon: SiMysql, toShow: true },
+      { name: "MongoDB", icon: SiMongodb, toShow: true },
+      { name: "Python", icon: FaPython, toShow: true },
       { name: "HTML", icon: FaHtml5, toShow: true },
       { name: "CSS", icon: SiCss3, toShow: true },
       { name: "Tailwind CSS", icon: SiTailwindcss, toShow: true },
+      { name: "MUI", icon: SiMui, toShow: true },
       { name: "Bootstrap CSS", icon: FaBootstrap, toShow: true },
-      { name: "SCSS", icon: BsFiletypeScss, toShow: true },
-      { name: "PHP", icon: FaPhp, toShow: true },
+      { name: "SCSS", icon: BsFiletypeScss, toShow: false },
+      { name: "PHP", icon: FaPhp, toShow: false },
     ],
   },
   frameworks: {

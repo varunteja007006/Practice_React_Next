@@ -22,49 +22,49 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-export default function Projects() {
-  const ProjectLink = ({
-    URL,
-    type,
-  }: {
-    URL: string;
-    type: "github" | "website";
-  }) => {
-    if (type === "website") {
-      return (
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button size={"icon"} variant={"outline"} asChild>
-              <a href={URL}>
-                <GrDeploy className="w-4 h-4" />
-              </a>
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Go to deployed website</p>
-          </TooltipContent>
-        </Tooltip>
-      );
-    }
-    if (type === "github") {
-      return (
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button size={"icon"} variant={"outline"} asChild>
-              <a href={URL}>
-                <FaGithub className="w-4 h-4" />
-              </a>
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Go to github repository</p>
-          </TooltipContent>
-        </Tooltip>
-      );
-    }
-    return null;
-  };
+const ProjectLink = ({
+  URL,
+  type,
+}: {
+  URL: string;
+  type: "github" | "website";
+}) => {
+  if (type === "website") {
+    return (
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button size={"icon"} variant={"outline"} asChild>
+            <a href={URL}>
+              <GrDeploy className="w-4 h-4" />
+            </a>
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Go to deployed website</p>
+        </TooltipContent>
+      </Tooltip>
+    );
+  }
+  if (type === "github") {
+    return (
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button size={"icon"} variant={"outline"} asChild>
+            <a href={URL}>
+              <FaGithub className="w-4 h-4" />
+            </a>
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Go to github repository</p>
+        </TooltipContent>
+      </Tooltip>
+    );
+  }
+  return null;
+};
 
+export default function Projects() {
   return (
     <section id="certifications" className="space-y-4">
       <h3 className="text-xl font-semibold">Projects</h3>
@@ -77,20 +77,26 @@ export default function Projects() {
             <Card key={item.id}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="col-span-2">
-                  <CardHeader>
+                  <CardHeader className="pb-3">
                     <CardTitle>{item.project_title}</CardTitle>
-                    <CardDescription>{item.project_subtitle}</CardDescription>
-                    <div className="flex flex-wrap gap-5 items-center justify-start">
+                    <CardDescription className="py-2">
+                      {item.project_subtitle}
+                    </CardDescription>
+                    <div className="flex flex-wrap gap-2 items-center justify-start">
                       {item.project_badges.map((item) => {
                         return (
-                          <Badge variant={"outline"} key={item}>
+                          <Badge
+                            variant={"outline"}
+                            key={item}
+                            className=" ring-1 ring-blue-400 dark:ring-purple-600"
+                          >
                             {item}
                           </Badge>
                         );
                       })}
                     </div>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className=" leading-loose">
                     {item.project_description.map((item, index) => {
                       return <p key={index}>{item}</p>;
                     })}

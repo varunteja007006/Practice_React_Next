@@ -32,6 +32,6 @@ export const problems_data = [
        Problem Statement: Problem statement: Create a timer. Add functionality to start, stop & reset the timer.
       `,
     ],
-    url: `${PROBLEMS_ROUTE}/react-timer`,
+    url: `${PROBLEMS_ROUTE}/timer-problem`,
   },
 ];
