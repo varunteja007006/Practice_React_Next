@@ -19,7 +19,7 @@ export default function ContactIcons() {
                 <Button
                   size={"icon"}
                   variant={"outline"}
-                  className="rounded-full"
+                  className="rounded-full ring-1 dark:ring-purple-300 shadow"
                   asChild
                 >
                   <a href={`${item.contact_href}`}>

@@ -22,7 +22,11 @@ export default function Intro() {
             priority={true}
           />
           <div>
-            <Button variant={"outline"} asChild>
+            <Button
+              variant={"outline"}
+              className="ring-1 dark:ring-purple-300"
+              asChild
+            >
               <a download href="/resume_varun.pdf">
                 Download my resume <HiDownload className="w-4 h-4 ml-2" />
               </a>
