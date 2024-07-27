@@ -1,6 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Practice React Next
 
-## Getting Started
+This repo is my portfolio 😁 as well as a place to experiment 🥸 with different React libraries.
+
+Check it out here : https://varunteja007006.netlify.app/
+
+### Getting Started
 
 First, run the development server:
 
@@ -16,33 +20,7 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-### How to add new Projects
-
-1. Create a page in src > pages > project pages dir.
-2. Create a folder in components > projects dir
-3. Create a route in App.tsx add the page created in `Step 1`.
-4. Add the path created in `Step 3` to navlinksMenu in Navbar.tsx component.
-
-### List of helpful Packages
+## List of helpful Packages
 
 1. React Slick
 2. Scroll - lock
@@ -51,18 +29,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 5. React Remotion - For making programmatic videos
 6. Anime js - Animations
 
-### Practice projects to be added:
-
-- 🔳 Dynamic Navbar
-- 🔳 Multi-page form
-
-### Some Good Blogs
+## Some Good Blogs
 
 - [React Custom Hooks](https://dev.to/arafat4693/15-useful-react-custom-hooks-that-you-can-use-in-any-project-2ll8)
 
-## JSON SERVER Documentation
-
-https://github.com/typicode/json-server/tree/v0
+<br>
 
 ###
 
@@ -288,41 +259,7 @@ export default Main;
 
  <br />
 
----
-
-### Server Side data fetching in Next JS
-
-With JWT Token in Headers
-
-```js
-export async function getServerSideProps(context) {
-  // Get the token from cookies or context.req.headers
-  const token = context.req.cookies.token || context.req.headers.authorization;
-
-  // Use the token in the fetch request to your API
-  const res = await fetch("https://your-api.com/data", {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  const data = await res.json();
-
-  return { props: { data } };
-}
-```
-
-Without JWT Token in Headers
-
-```js
-export async function getServerSideProps(context) {
-  // Cookies are automatically sent with the request
-  const res = await fetch("https://your-api.com/data");
-  const data = await res.json();
-
-  // No need to manually handle the token
-  return { props: { data } };
-}
-```
+###
 
 header in next js
 
@@ -372,9 +309,7 @@ export default function Page() {
 }
 ```
 
-###
-
----
+<br>
 
 ###
 
