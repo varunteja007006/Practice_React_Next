@@ -5,6 +5,7 @@ import PieChartHCR from "@/components/custom/pie-chart-HCR";
 import { DateRangePicker } from "@/components/custom/date-range-picker";
 import SimpleDataTable from "@/components/custom/simple-data-table";
 import { columns, payments } from "./_components/sample-table-data";
+import Experimental from "./_components/experimental";
 
 const sampleData = [
   {
@@ -53,6 +54,10 @@ export default function page() {
 
       <div>
         <SimpleDataTable columns={columns} data={payments} />
+      </div>
+
+      <div>
+        <Experimental />
       </div>
     </div>
   );
