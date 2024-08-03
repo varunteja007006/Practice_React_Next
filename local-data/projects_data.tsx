@@ -139,4 +139,11 @@ export const projects: {
     isNew: false,
     inProgress: false,
   },
+  {
+    title: "Basic",
+    href: `${rootPath}/basic`,
+    description: "Basic stuff to get you started",
+    isNew: false,
+    inProgress: false,
+  },
 ];

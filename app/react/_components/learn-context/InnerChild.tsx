@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { useLearnContext } from "./learn-context-api";
 import { Button } from "@/components/ui/button";

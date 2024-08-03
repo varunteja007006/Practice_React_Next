@@ -1,4 +1,3 @@
-"use client";
 import Main from "./_components/main";
 import React from "react";
 

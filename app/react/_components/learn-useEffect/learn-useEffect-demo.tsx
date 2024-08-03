@@ -1,3 +1,5 @@
+"use client";
+
 import { fakeAPI } from "@/constants/api";
 import React from "react";
 

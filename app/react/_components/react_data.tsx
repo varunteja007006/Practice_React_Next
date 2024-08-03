@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import LearnChildrenPropsDemo from "./learn-children-props/learn-children-demo";
 import Child from "./learn-context/Child";
 import LearnCustomHookDemo from "./learn-custom-hook/learn-custom-hook-demo";
@@ -7,11 +8,22 @@ import LearnUseEffectDemo from "./learn-useEffect/learn-useEffect-demo";
 import LearnUseReducerDemo from "./learn-useReducer/learn-useReducer-demo";
 import LearnUseRefDemo from "./learn-useRef/learn-useRef-demo";
 import LearnUseStateDemo from "./learn-useState/learn-useState-demo";
+import LearnUseTransitionDemo from "./learn-useTransition/learn-useTransition-demo";
+
+const LearnUseMemoDemo = dynamic(
+  () => import("./learn-useMemo/learn-useMemo-demo"),
+  {
+    ssr: false,
+  }
+);
+const LearnUseCallbackHook = dynamic(
+  () => import("./learn-useCallback/learn-useCallback-demo"),
+  {
+    ssr: false,
+  }
+);
 
 // LearnUseEffectCleanup,
-// LearnUseReducer,
-// LearnUseRef,
-// LearnUseMemo,
 // LearnUseTransition,
 // LearnCallback,
 
@@ -185,28 +197,184 @@ export const react_data = [
     id: "useMemo",
     title: "Learn useMemo",
     explanation: [],
-    Component: null,
+    Component: <LearnUseMemoDemo />,
     CodeSnippet: `
+    import { Button } from "@/components/ui/button";
+    import React from "react";
+
+    function slowFunction() {
+      return (
+        (Math.random() * Math.random()) ^
+        Math.random() ^
+        (Math.random() * 9999999999)
+      );
+    }
+
+    export default function LearnUseMemoDemo() {
+      const [count, setCount] = React.useState(0);
+
+      // This value will change on every render
+      const valueSlow = slowFunction();
+
+      // This value will not change on every render
+      const valueFast = React.useMemo(() => slowFunction(), []);
+
+      return (
+        <div className="space-y-4">
+          <div>Count: {count}</div>
+          <Button onClick={() => setCount(count + 1)}>Click me</Button>
+          <div></div>
+          <div>
+            Value not wrapped in useMemo: {valueSlow} (This value will change on
+            every button click)
+          </div>
+          <div>Value wrapped in useMemo: {valueFast}</div>
+        </div>
+      );
+    }
     `,
-    href: "#useEffect",
+    href: "#useCallback",
   },
   {
     id: "useCallback",
     title: "Learn useCallback",
-    explanation: [],
-    Component: null,
+    explanation: [
+      `It returns a memoized callback function. 
+      Think of memoization as caching a value so that it does not need to be recalculated. 
+      This allows us to isolate resource intensive functions so that they will not automatically run on every render. 
+      The useCallback Hook only runs when one of its dependencies update. 
+      This can improve performance.`,
+    ],
+    Component: <LearnUseCallbackHook />,
     CodeSnippet: `
+    import { Button } from "@/components/ui/button";
+    import React from "react";
+
+    export default function LearnUseCallbackHook() {
+      const [count, setCount] = React.useState(0);
+
+      const optimizedFunc = React.useCallback((value?: number) => {
+        if (!value) {
+          return 0;
+        }
+        return value * 100;
+      }, []);
+
+      return (
+        <div className="flex gap-5 items-center">
+          <div>Count: {count}</div>
+          <Button onClick={() => setCount(count + 1)}>Click Me</Button>
+          <div className="border p-3 rounded">
+            Optimized Function:
+            <div>{optimizedFunc(count)}</div>
+          </div>
+        </div>
+      );
+    }
     `,
-    href: "#useEffect",
+    href: "#useTransition",
   },
   {
     id: "useTransition",
     title: "Learn useTransition",
-    explanation: [],
-    Component: null,
+    explanation: [
+      `Lets you update the state without blocking the UI. useTransition will make it 
+      possible to load the required data lazily`,
+    ],
+    Component: <LearnUseTransitionDemo />,
     CodeSnippet: `
+    import { Button } from "@/components/ui/button";
+    import { Input } from "@/components/ui/input";
+    import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+    import Image from "next/image";
+    import React, { ReactElement } from "react";
+
+    const NO_OF_IMAGES = 1500;
+
+    export default function LearnUseTransitionDemo() {
+      const [text, setText] = React.useState("");
+      const [images, setImages] = React.useState<ReactElement[]>([]);
+      const [show, setShow] = React.useState(false);
+      const [isLoading, startTransition] = React.useTransition();
+
+      const [slowShow, setSlowShow] = React.useState(false);
+      const [slowImages, setSlowImages] = React.useState<ReactElement[]>([]);
+
+      React.useEffect(() => {
+        if (show) {
+          startTransition(() => {
+            const newImages = Array.from({ length: NO_OF_IMAGES }, (_, index) => {
+              return (
+                <Image
+                  key={index}
+                  className=" h-40 w-50"
+                  src="/other/crystal_blue_cube.jpg"
+                  alt="crystal blue cube"
+                  width={100}
+                  height={100}
+                  unoptimized={true}
+                />
+              );
+            });
+            setImages(newImages);
+          });
+        }
+      }, [show]);
+
+      React.useEffect(() => {
+        if (slowShow) {
+          const newImages = Array.from({ length: NO_OF_IMAGES }, (_, index) => {
+            return (
+              <Image
+                key={index}
+                className=" h-40 w-50"
+                src="/other/crystal_blue_cube.jpg"
+                alt="crystal blue cube"
+                width={100}
+                height={100}
+                unoptimized={true}
+              />
+            );
+          });
+          setSlowImages(newImages);
+        }
+      }, [slowShow]);
+
+      return (
+        <div className="space-y-4">
+          <Input
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            placeholder="Type something"
+          />
+          <div className="flex items-center gap-4">
+            <Button onClick={() => setShow(!show)}>Show Optimized Gallery</Button>
+            <Button onClick={() => setSlowShow(!slowShow)}>
+              Show Un-optimized Gallery
+            </Button>
+          </div>
+          <ScrollArea className="h-[180px] max-width-[500px] px-4 py-2">
+            <p>Optimized Gallery</p>
+            {show &&
+              (isLoading ? (
+                <p>Loading...</p>
+              ) : (
+                <div className="flex items-center gap-4">{images}</div>
+              ))}
+            <ScrollBar orientation="horizontal" />
+          </ScrollArea>
+          <ScrollArea className="h-[180px] max-width-[500px] px-4 py-2">
+            <p>Un-optimized Gallery</p>
+            {slowShow && (
+              <div className="flex items-center gap-4">{slowImages}</div>
+            )}
+            <ScrollBar orientation="horizontal" />
+          </ScrollArea>
+        </div>
+      );
+    }    
     `,
-    href: "#useEffect",
+    href: "#useContext",
   },
   {
     id: "useContext",
@@ -294,7 +462,7 @@ export const react_data = [
 
     // Now finally make sure to render component (Child) with the context provider 
     `,
-    href: "#useEffect",
+    href: "#suspense",
   },
   {
     id: "suspense",
