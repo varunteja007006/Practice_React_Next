@@ -25,7 +25,11 @@ const Main = () => {
             <Card className="w-full mx-auto md:w-2/3">
               <CardHeader>
                 <CardTitle>{item.title}</CardTitle>
-                <CardDescription>{item.explanation}</CardDescription>
+                <ul>
+                  {item.explanation?.map((point) => (
+                    <CardDescription key={point}>{point}</CardDescription>
+                  ))}
+                </ul>
               </CardHeader>
               <CardContent className="p-2 m-3 border rounded-md md:mx-10 md:my-5">
                 <p className="py-1 font-semibold">Code Demo:</p>

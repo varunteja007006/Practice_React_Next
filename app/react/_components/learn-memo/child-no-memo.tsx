@@ -5,7 +5,7 @@ const dummyArray = Array.from({ length: 50 }, (_, index) => {
   return index;
 });
 
-const Child = (props: { value: number }) => {
+const ChildNoMemo = (props: { value: number }) => {
   const countRef = React.useRef(0);
 
   React.useEffect(() => {
@@ -14,10 +14,10 @@ const Child = (props: { value: number }) => {
 
   return (
     <div className="space-y-2">
-      <p>Child Wrapped in Memo: {props?.value}</p>
+      <p>Child Not wrapped in Memo: {props?.value}</p>
       <div className="flex items-center gap-2">
-        Re-rendered: {countRef.current} ( I should only be re-rendered when you
-        click <Badge>update child value</Badge>)
+        Re-rendered: {countRef.current} ( I re-render when you click
+        <Badge>update child value</Badge> or <Badge>update parent value</Badge>)
       </div>
       <div className="flex flex-wrap items-center gap-2">
         {dummyArray.map((item, index) => {
@@ -35,4 +35,4 @@ const Child = (props: { value: number }) => {
   );
 };
 
-export default React.memo(Child);
+export default ChildNoMemo;

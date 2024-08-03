@@ -43,7 +43,7 @@ function ZustandPage() {
             Increase Population by 1 😁
           </Button>
           <div className="grid w-full max-w-sm md:max-w-[50%] items-center gap-3">
-            <Label htmlFor="updateByVal">Email</Label>
+            <Label htmlFor="updateByVal">Enter a random number</Label>
             <div className="flex flex-row items-center justify-start gap-3">
               <Input
                 type="text"

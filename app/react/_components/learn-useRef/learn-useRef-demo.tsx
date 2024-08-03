@@ -4,13 +4,7 @@ import { toast } from "@/components/ui/use-toast";
 import React from "react";
 
 export default function LearnUseRefDemo() {
-  const apiRef = React.useRef<string | null>(null);
   const inputRef = React.useRef<HTMLInputElement>(null);
-
-  React.useEffect(() => {
-    apiRef.current = "Hello from ref";
-    window.alert(apiRef.current);
-  }, []);
 
   function submit() {
     toast({

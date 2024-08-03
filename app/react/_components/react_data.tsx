@@ -1,8 +1,10 @@
 import LearnChildrenPropsDemo from "./learn-children-props/learn-children-demo";
 import Child from "./learn-context/Child";
+import LearnCustomHookDemo from "./learn-custom-hook/learn-custom-hook-demo";
 import LearnMemoDemo from "./learn-memo/learn-memo-demo";
 import LearnSuspenseAPI from "./learn-suspense-api/learn-suspense-api";
 import LearnUseEffectDemo from "./learn-useEffect/learn-useEffect-demo";
+import LearnUseReducerDemo from "./learn-useReducer/learn-useReducer-demo";
 import LearnUseRefDemo from "./learn-useRef/learn-useRef-demo";
 import LearnUseStateDemo from "./learn-useState/learn-useState-demo";
 
@@ -45,9 +47,13 @@ export const react_data = [
     id: "useEffect",
     title: "Learn useEffect",
     explanation: [
-      `Some effects require cleanup to reduce memory leaks.`,
-      `Timeouts, subscriptions, event listeners, and other effects that are no longer needed should be disposed.`,
-      `We do this by including a return function at the end of the useEffect Hook.`,
+      `useEffect hook is invoked on the initial page render, if dependency array is empty. If 
+      dependency array is not empty, it will be invoked on every state change.`,
+      `Also some effects require cleanup to reduce memory leaks such as
+      Timeouts, subscriptions, event listeners, and other effects that are no longer needed should 
+      be disposed.`,
+      `We do this by including a return function at the end of the useEffect Hook, which basically 
+      acts like onUnMount.`,
     ],
     Component: <LearnUseEffectDemo />,
     CodeSnippet: `
@@ -82,9 +88,50 @@ export const react_data = [
   {
     id: "useReducer",
     title: "Learn useReducer",
-    explanation: [],
-    Component: null,
+    explanation: [
+      `useReducer is useState on steroids. It can help in handling states much better than
+      useState`,
+      `A must use for handling states because it can make life easier for a lot of cases.`,
+    ],
+    Component: <LearnUseReducerDemo />,
     CodeSnippet: `
+    import { Button } from "@/components/ui/button";
+    import React from "react";
+
+    export default function LearnUseReducerDemo() {
+      function handleClick(count: number, action: { type: string }) {
+        switch (action.type) {
+          case "increment":
+            return count + 1;
+          case "decrement":
+            return count - 1;
+          default:
+            return count;
+        }
+      }
+
+      function handleIncrement() {
+        dispatch({ type: "increment" });
+      }
+
+      function handleDecrement() {
+        dispatch({ type: "decrement" });
+      }
+
+      const [count, dispatch] = React.useReducer(handleClick, 0);
+
+      return (
+        <div className="flex flex-col md:flex-row gap-5 items-center">
+          <Button variant={"outline"} onClick={handleIncrement}>
+            Increment
+          </Button>
+          <div> Count - {count} </div>
+          <Button variant={"outline"} onClick={handleDecrement}>
+            Decrement
+          </Button>
+        </div>
+      );
+    }
     `,
     href: "#useRef",
   },
@@ -92,10 +139,45 @@ export const react_data = [
     id: "useRef",
     title: "Learn useRef",
     explanation: [
-      "You can use useRef to get access to the DOM element. You can also use it to store the value of a state between renders.",
+      `Use useRef to get access to the DOM element.`,
+      `Can also be used to persist the value of a state between re-renders.`,
     ],
     Component: <LearnUseRefDemo />,
     CodeSnippet: `
+    import { Button } from "@/components/ui/button";
+    import { Input } from "@/components/ui/input";
+    import { toast } from "@/components/ui/use-toast";
+    import React from "react";
+
+    export default function LearnUseRefDemo() {
+      const inputRef = React.useRef<HTMLInputElement>(null);
+
+      function submit() {
+        toast({
+          title: "InputRef",
+          description: \`The message has been updated by InputRef! \${inputRef.current?.value}\`,
+          duration: 3000,
+        });
+        if (inputRef.current?.value) {
+          inputRef.current.value = "";
+        }
+      }
+
+      return (
+        <div className="space-y-4">
+          <p>Enter text below and click submit.</p>
+          <Input
+            ref={inputRef}
+            name="IamAInputRef"
+            placeholder="I am a InputRef and uncontrolled but being tracked by react ref hook"
+            className="w-2/3"
+          />
+          <Button variant={"secondary"} onClick={submit}>
+            Submit
+          </Button>
+        </div>
+      );
+    }
     `,
     href: "#useMemo",
   },
@@ -217,7 +299,12 @@ export const react_data = [
   {
     id: "suspense",
     title: "Learn suspense",
-    explanation: [],
+    explanation: [
+      `Allows you to manage the loading state of components. It suspends rendering of a component 
+      until some data required by the component is fetched. An alternative fallback UI is displayed 
+      in meantime. Makes it easy to handle asynchronous data loading and provide smooth user 
+      experience in React application.`,
+    ],
     Component: <LearnSuspenseAPI />,
     CodeSnippet: `
     import React from "react";
@@ -269,21 +356,27 @@ export const react_data = [
   {
     id: "children-props",
     title: "Learn children Props",
-    explanation: [],
+    explanation: [
+      `Children props is a special prop from React, when some content (text or other component)
+      is enclosed between a component (Parent), then the parent has access to that content via children props.`,
+    ],
     Component: <LearnChildrenPropsDemo />,
     CodeSnippet: `
     import React from "react";
 
+    // Parent component
     const LearnChildrenPropsDemo = () => {
       return (
         <div>
-          <Child>
+        {/* Child component wraps around the text here */}
+          <Child> 
             <p>This will render inside a child component.</p>
           </Child>
         </div>
       );
     };
 
+    // Child component
     const Child = ({ children }: { children: React.ReactNode }) => {
       return (
         <div>
@@ -307,32 +400,63 @@ export const react_data = [
     import { Button } from "@/components/ui/button";
     import React from "react";
     import Child from "./child";
+    import ChildNoMemo from "./child-no-memo";
+    import { Separator } from "@/components/ui/separator";
+
     const LearnMemoDemo = () => {
       const [value, setValue] = React.useState(0);
+      const [valueParent, setValueParent] = React.useState(0);
       return (
         <div className="space-y-4">
-          <Button onClick={() => setValue(value + 1)}>Click me</Button>
-          <div>
+          <div className="flex gap-3 items-center">
+            <Button onClick={() => setValue(value + 1)}>update child value</Button>
+            <Button onClick={() => setValueParent(valueParent + 1)}>
+              update parent value
+            </Button>
+          </div>
+          <div className="space-y-5">
+            <div className="font-semibold text-lg">Parent Value: {valueParent}</div>
             <Child value={value} />
+            <Separator />
+            <ChildNoMemo value={value} />
           </div>
         </div>
       );
     };
+
     export default LearnMemoDemo;
 
-    //child component
+    // ------------------------------------------------------------------------------
+    //child component with memo
+
+    import { Badge } from "@/components/ui/badge";
     import React from "react";
+
     const dummyArray = Array.from({ length: 50 }, (_, index) => {
       return index;
     });
+
     const Child = (props: { value: number }) => {
+      const countRef = React.useRef(0);
+
+      React.useEffect(() => {
+        countRef.current += 1;
+      });
+
       return (
-        <div>
-          <p>Value: {props?.value}</p>
+        <div className="space-y-2">
+          <p>Child Wrapped in Memo: {props?.value}</p>
+          <div className="flex items-center gap-2">
+            Re-rendered: {countRef.current} ( I should only be re-rendered when you
+            click <Badge>update child value</Badge>)
+          </div>
           <div className="flex flex-wrap items-center gap-2">
             {dummyArray.map((item, index) => {
               return (
-                <div key={index} className="p-1 bg-blue-100 border border-blue-500">
+                <div
+                  key={index}
+                  className="inline-flex items-center justify-center p-1 dark:bg-blue-900 bg-blue-100 border border-blue-500 size-10"
+                >
                   {item + 1}
                 </div>
               );
@@ -341,16 +465,107 @@ export const react_data = [
         </div>
       );
     };
+    
     export default React.memo(Child);
+    
+    // ------------------------------------------------------------------------------
+    // child component without memo
+
+    import { Badge } from "@/components/ui/badge";
+    import React from "react";
+
+    const dummyArray = Array.from({ length: 50 }, (_, index) => {
+      return index;
+    });
+
+    const ChildNoMemo = (props: { value: number }) => {
+      const countRef = React.useRef(0);
+
+      React.useEffect(() => {
+        countRef.current += 1;
+      });
+
+      return (
+        <div className="space-y-2">
+          <p>Child Not wrapped in Memo: {props?.value}</p>
+          <div className="flex items-center gap-2">
+            Re-rendered: {countRef.current} ( I re-render when you click
+            <Badge>update child value</Badge> or <Badge>update parent value</Badge>)
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {dummyArray.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className="inline-flex items-center justify-center p-1 dark:bg-blue-900 bg-blue-100 border border-blue-500 size-10"
+                >
+                  {item + 1}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      );
+    };
+
+    export default ChildNoMemo;
+
     `,
     href: "#custom-hooks",
   },
   {
     id: "custom-hooks",
     title: "Learn custom hooks",
-    explanation: [],
-    Component: null,
+    explanation: [
+      `Custom Hooks are a great way to write re-usable code. It can be used for data-fetching
+    or any other kind of logic that needs to be re-used multiple times.`,
+      `Creating and using of custom hooks can be seen in the following example:`,
+    ],
+    Component: <LearnCustomHookDemo />,
     CodeSnippet: `
+    // custom Hook
+    import React from "react";
+
+    export default function useToggleShow(defaultValue?: boolean) {
+      const [show, setShow] = React.useState(defaultValue || false);
+
+      const toggle = () => setShow(!show);
+
+      return { show, toggle };
+    }
+
+    // ---------------------
+    // Hook Consumer
+
+    import { Button } from "@/components/ui/button";
+    import React from "react";
+    import useToggleShow from "./useToggleShow";
+    import { Separator } from "@/components/ui/separator";
+
+    export default function LearnCustomHookDemo() {
+      const { show, toggle } = useToggleShow();
+      const { show: showTwo, toggle: toggleTwo } = useToggleShow(true);
+
+      return (
+        <div className="space-y-4">
+          <div className="flex flex-col gap-4">
+            <p>This is a custom hook (no default value)</p>
+            <Button onClick={toggle} className="w-fit">
+              Click me
+            </Button>
+            {show && <div> You clicked the button to see me!!!!!!</div>}
+          </div>
+          <Separator />
+          <div className="flex flex-col gap-4">
+            <p>This is a custom hook (with default value as true)</p>
+            <Button onClick={toggleTwo} className="w-fit">
+              Click me
+            </Button>
+            {showTwo && <div> You can see me already !!!!</div>}
+          </div>
+        </div>
+      );
+    }
     `,
     href: "#useEffect",
   },
