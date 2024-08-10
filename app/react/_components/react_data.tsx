@@ -196,7 +196,17 @@ export const react_data = [
   {
     id: "useMemo",
     title: "Learn useMemo",
-    explanation: [],
+    explanation: [
+      `React is reactive, which means it re-renders when its state changes. Hence it is important to 
+      optimize it.`,
+      `
+      useMemo hook is one such optimization that you use when you want to cache expensive values.`,
+      `As an example if you
+      have to calculate a value that can be cumbersome for every re-render then you have to wrap it 
+      with useMemo and pass in some dependency values(if any). These dependency values ensure that 
+      the value is calculated whenever they change, usually these dependency values are the once 
+      involved in calculation.`,
+    ],
     Component: <LearnUseMemoDemo />,
     CodeSnippet: `
     import { Button } from "@/components/ui/button";
@@ -280,6 +290,13 @@ export const react_data = [
     explanation: [
       `Lets you update the state without blocking the UI. useTransition will make it 
       possible to load the required data lazily`,
+      `Try typing something in the input field and click on show optimized gallery button and resume 
+      typing in the input field`,
+      `Now do the same typing and click on the Show un-optimized gallery button and resume typing in
+       the input field`,
+      `You might have noticed the difference in the responsiveness of the UI for the optimized and 
+      un-optimized gallery.`,
+      `If do not see difference probably because of next js optimizations.`,
     ],
     Component: <LearnUseTransitionDemo />,
     CodeSnippet: `
@@ -561,7 +578,13 @@ export const react_data = [
   {
     id: "memo",
     title: "Learn memo",
-    explanation: [],
+    explanation: [
+      `React memo is different from the hook useMemo. Here you have to wrap the component(usually child component) with memo.`,
+      `
+      When you wrap with memo the component will only re-render when its props or state changes.`,
+      `In the below example if you click the button 
+      'UPDATE CHILD VALUE' the child components re-render but when you click 'UPDATE PARENT VALUE' the child components will not re-render if wrapped with memo.`,
+    ],
     Component: <LearnMemoDemo />,
     CodeSnippet: `
     // Parent component

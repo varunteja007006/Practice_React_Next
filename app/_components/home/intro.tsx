@@ -56,7 +56,7 @@ export default function Intro() {
           </div>
           <div className="font-semibold">- Varun Teja</div>
           <div>
-            <ContactIcons />
+            <ContactIcons className="" />
           </div>
         </div>
       </div>

@@ -25,9 +25,11 @@ const Main = () => {
             <Card className="w-full mx-auto md:w-2/3">
               <CardHeader>
                 <CardTitle>{item.title}</CardTitle>
-                <ul>
+                <ul className="space-y-1">
                   {item.explanation?.map((point) => (
-                    <CardDescription key={point}>{point}</CardDescription>
+                    <li key={point}>
+                      <CardDescription>{point}</CardDescription>
+                    </li>
                   ))}
                 </ul>
               </CardHeader>

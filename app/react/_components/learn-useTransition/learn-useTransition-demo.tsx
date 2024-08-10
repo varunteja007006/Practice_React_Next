@@ -6,7 +6,7 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import Image from "next/image";
 import React, { ReactElement } from "react";
 
-const NO_OF_IMAGES = 2000;
+const NO_OF_IMAGES = 5000;
 
 export default function LearnUseTransitionDemo() {
   const [text, setText] = React.useState("");

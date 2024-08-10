@@ -19,7 +19,11 @@ const Child = (props: { value: number }) => {
       <p>Child Wrapped in Memo: {props?.value}</p>
       <div className="flex items-center gap-2">
         Re-rendered: {countRef.current} ( I should only be re-rendered when you
-        click <Badge>update child value</Badge>)
+        click{" "}
+        <span className="border-b dark:border-white border-black px-2">
+          update child value
+        </span>
+        )
       </div>
       <div className="flex flex-wrap items-center gap-2">
         {dummyArray.map((item, index) => {

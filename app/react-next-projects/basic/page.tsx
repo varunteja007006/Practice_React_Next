@@ -12,15 +12,21 @@ const urls = [
 export default function page() {
   return (
     <div className="space-y-4">
-      <p className="text-lg">Basic</p>
-      <ul className="space-y-2 flex flex-wrap">
+      <h2 className="text-lg font-semibold">Basic</h2>
+      <p className="text-sm">A list of few basic projects are here</p>
+      <ul className="space-y-2 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
         {urls.map((url) => (
-          <li key={url.url} className="border p-2 pl-3 w-fit rounded-md">
-            <Link href={url.url}>{url.title}</Link>
+          <li
+            key={url.url}
+            className="border p-2 pl-3 rounded-md border-gray-500 flex font-semibold flex-col gap-3"
+          >
+            {url.title}
             <span className="text-gray-600 dark:text-gray-400 text-sm">
-              {" "}
-              - {url.description}
+              {url.description}
             </span>
+            <Link href={url.url} className="text-sm">
+              Click here
+            </Link>
           </li>
         ))}
       </ul>

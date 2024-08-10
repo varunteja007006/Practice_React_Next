@@ -12,9 +12,9 @@ const LearnMemoDemo = () => {
   return (
     <div className="space-y-4">
       <div className="flex gap-3 items-center">
-        <Button onClick={() => setValue(value + 1)}>update child value</Button>
+        <Button onClick={() => setValue(value + 1)}>UPDATE CHILD VALUE</Button>
         <Button onClick={() => setValueParent(valueParent + 1)}>
-          update parent value
+          UPDATE PARENT VALUE
         </Button>
       </div>
       <div className="space-y-5">

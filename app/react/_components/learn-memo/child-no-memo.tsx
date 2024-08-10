@@ -19,7 +19,14 @@ const ChildNoMemo = (props: { value: number }) => {
       <p>Child Not wrapped in Memo: {props?.value}</p>
       <div className="flex items-center gap-2">
         Re-rendered: {countRef.current} ( I re-render when you click
-        <Badge>update child value</Badge> or <Badge>update parent value</Badge>)
+        <span className="border-b dark:border-white border-black px-2">
+          update child value
+        </span>{" "}
+        or{" "}
+        <span className="border-b dark:border-white border-black px-2">
+          update parent value
+        </span>
+        )
       </div>
       <div className="flex flex-wrap items-center gap-2">
         {dummyArray.map((item, index) => {

@@ -38,7 +38,7 @@ function Navbar() {
               <ScrollArea className="h-[300px]">
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                   {projects.map((project) => (
-                    <ListItem
+                    <ListItemLink
                       key={project.title}
                       title={project.title}
                       href={project.href}
@@ -50,7 +50,7 @@ function Navbar() {
                           <Badge variant="warning">In Progress</Badge>
                         )}
                       </span>
-                    </ListItem>
+                    </ListItemLink>
                   ))}
                 </ul>
               </ScrollArea>
@@ -102,3 +102,35 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem";
+
+const ListItemLink = ({
+  className,
+  title,
+  children,
+  href,
+}: {
+  className?: string;
+  title: string;
+  children: React.ReactNode;
+  href: string;
+}) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <Link
+          href={href}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground h-full",
+            className
+          )}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="text-sm leading-snug line-clamp-2 text-muted-foreground">
+            {children}
+          </p>
+        </Link>
+      </NavigationMenuLink>
+    </li>
+  );
+};
+ListItemLink.displayName = "ListItemLink";
