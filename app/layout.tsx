@@ -6,6 +6,7 @@ import Footer from "./_components/footer/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import Provider from "./providers";
+import ProgressScroll from "./react-next-projects/progress-on-scroll/page";
 
 const openSan = Open_Sans({ subsets: ["latin"] });
 
@@ -34,6 +35,10 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <main className="min-h-[calc(100vh-10rem)]">
+              <ProgressScroll
+                divStyles="hidden"
+                progressStyles="dark:bg-purple-800 bg-blue-300 h-1.5"
+              />
               <Navbar />
               <div className="h-16"></div>
               <div className="min-h-[calc(100vh-22rem)]">{children}</div>

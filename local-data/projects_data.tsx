@@ -147,3 +147,7 @@ export const projects: {
     inProgress: false,
   },
 ];
+
+export const PROJECTS_GITHUB_LINKS = {
+  PROGRESS_ON_SCROLL: `https://github.com/varunteja007006/Practice_React_Next/tree/main/app/react-next-projects/progress-on-scroll`,
+};

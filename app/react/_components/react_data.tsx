@@ -23,10 +23,6 @@ const LearnUseCallbackHook = dynamic(
   }
 );
 
-// LearnUseEffectCleanup,
-// LearnUseTransition,
-// LearnCallback,
-
 export const react_data = [
   {
     id: "useState",
@@ -54,6 +50,8 @@ export const react_data = [
         );
     };`,
     href: "#useEffect",
+    githubLink:
+      "https://github.com/varunteja007006/Practice_React_Next/tree/main/app/react/_components/learn-useState",
   },
   {
     id: "useEffect",
@@ -96,6 +94,7 @@ export const react_data = [
     };
     `,
     href: "#useReducer",
+    githubLink: `https://github.com/varunteja007006/Practice_React_Next/tree/main/app/react/_components/learn-useEffect`,
   },
   {
     id: "useReducer",
@@ -146,6 +145,7 @@ export const react_data = [
     }
     `,
     href: "#useRef",
+    githubLink: `https://github.com/varunteja007006/Practice_React_Next/tree/main/app/react/_components/learn-useReducer`,
   },
   {
     id: "useRef",
@@ -192,6 +192,7 @@ export const react_data = [
     }
     `,
     href: "#useMemo",
+    githubLink: `https://github.com/varunteja007006/Practice_React_Next/tree/main/app/react/_components/learn-useRef`,
   },
   {
     id: "useMemo",
@@ -244,6 +245,7 @@ export const react_data = [
     }
     `,
     href: "#useCallback",
+    githubLink: `https://github.com/varunteja007006/Practice_React_Next/tree/main/app/react/_components/learn-memo`,
   },
   {
     id: "useCallback",
@@ -283,6 +285,7 @@ export const react_data = [
     }
     `,
     href: "#useTransition",
+    githubLink: `https://github.com/varunteja007006/Practice_React_Next/tree/main/app/react/_components/learn-useCallback`,
   },
   {
     id: "useTransition",
@@ -392,6 +395,7 @@ export const react_data = [
     }    
     `,
     href: "#useContext",
+    githubLink: `https://github.com/varunteja007006/Practice_React_Next/tree/main/app/react/_components/learn-useTransition`,
   },
   {
     id: "useContext",
@@ -480,6 +484,7 @@ export const react_data = [
     // Now finally make sure to render component (Child) with the context provider 
     `,
     href: "#suspense",
+    githubLink: `https://github.com/varunteja007006/Practice_React_Next/tree/main/app/react/_components/learn-context`,
   },
   {
     id: "suspense",
@@ -537,6 +542,7 @@ export const react_data = [
 
     `,
     href: "#children-props",
+    githubLink: `https://github.com/varunteja007006/Practice_React_Next/tree/main/app/react/_components/learn-suspense-api`,
   },
   {
     id: "children-props",
@@ -574,6 +580,7 @@ export const react_data = [
     export default LearnChildrenPropsDemo;
     `,
     href: "#memo",
+    githubLink: `https://github.com/varunteja007006/Practice_React_Next/tree/main/app/react/_components/learn-children-props`,
   },
   {
     id: "memo",
@@ -703,6 +710,7 @@ export const react_data = [
 
     `,
     href: "#custom-hooks",
+    githubLink: `https://github.com/varunteja007006/Practice_React_Next/tree/main/app/react/_components/learn-memo`,
   },
   {
     id: "custom-hooks",
@@ -759,5 +767,6 @@ export const react_data = [
     }
     `,
     href: "#useEffect",
+    githubLink: `https://github.com/varunteja007006/Practice_React_Next/tree/main/app/react/_components/learn-custom-hook`,
   },
 ];

@@ -10,9 +10,7 @@ const LearnUseStateDemo = () => {
       <Button onClick={() => setValue(value + 1)} className="w-40">
         Click me
       </Button>
-      <p className="w-40 p-2 text-center border-b-2 border-blue-800 hover:bg-slate-50">
-        {value}
-      </p>
+      <p className="w-40 p-2 text-center border-b-2 border-blue-800">{value}</p>
     </div>
   );
 };

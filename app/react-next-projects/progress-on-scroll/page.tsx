@@ -1,6 +1,16 @@
 "use client";
 
-function ProgressScroll() {
+import { cn } from "@/lib/utils";
+import GithubLink from "../_components/github-link";
+import { PROJECTS_GITHUB_LINKS } from "@/local-data/projects_data";
+
+function ProgressScroll({
+  progressStyles,
+  divStyles,
+}: Readonly<{
+  progressStyles?: string;
+  divStyles?: string;
+}>) {
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", function () {
       const scrollableHeight =
@@ -19,9 +29,14 @@ function ProgressScroll() {
     <div>
       <div
         id="scroll-progress"
-        className="fixed top-0 left-0 z-50 h-2 bg-red-400"
+        className={cn("fixed top-0 left-0 z-50 h-2 bg-red-400", progressStyles)}
       ></div>
-      <div className="h-[200vh] border border-white"></div>
+      <div className={cn("h-[200vh]", divStyles)}>
+        <h1 className="sticky top-24">Scroll down to see the progress</h1>
+        <div className="sticky top-36">
+          <GithubLink href={PROJECTS_GITHUB_LINKS.PROGRESS_ON_SCROLL} />
+        </div>
+      </div>
     </div>
   );
 }

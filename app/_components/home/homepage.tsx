@@ -11,7 +11,6 @@ export default function Homepage() {
   return (
     <div className="p-2 space-y-20 md:py-3 md:px-10 lg:py-5 lg:px-24">
       {/* sections */}
-
       <Intro />
       <Skills />
       <Experience />
