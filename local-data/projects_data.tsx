@@ -146,6 +146,13 @@ export const projects: {
     isNew: false,
     inProgress: false,
   },
+  {
+    title: "Redux",
+    href: `${rootPath}/redux`,
+    description: "Basic redux setup",
+    isNew: false,
+    inProgress: true,
+  },
 ];
 
 export const PROJECTS_GITHUB_LINKS = {
