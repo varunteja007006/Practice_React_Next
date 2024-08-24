@@ -83,7 +83,14 @@ export const projects: {
   },
   {
     title: "Zod + React Hook Form",
-    href: `${rootPath}/form/zod-hook-forms`,
+    href: `${rootPath}/forms/zod-hook-forms`,
+    description: "Implementation of Zod with React hook forms, using ShadCN",
+    isNew: false,
+    inProgress: true,
+  },
+  {
+    title: "React Hook Form",
+    href: `${rootPath}/forms/hook-form`,
     description: "Implementation of Zod with React hook forms, using ShadCN",
     isNew: false,
     inProgress: true,
