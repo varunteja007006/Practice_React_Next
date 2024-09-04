@@ -160,6 +160,13 @@ export const projects: {
     isNew: false,
     inProgress: true,
   },
+  {
+    title: "JavaScript",
+    href: `${rootPath}/js`,
+    description: "Basic javascript related code snippets",
+    isNew: true,
+    inProgress: false,
+  },
 ];
 
 export const PROJECTS_GITHUB_LINKS = {
