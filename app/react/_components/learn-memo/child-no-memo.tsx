@@ -1,6 +1,7 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import React from "react";
 
 const dummyArray = Array.from({ length: 50 }, (_, index) => {
@@ -16,30 +17,28 @@ const ChildNoMemo = (props: { value: number }) => {
 
   return (
     <div className="space-y-2">
-      <p>Child Not wrapped in Memo: {props?.value}</p>
+      <p className="font-semibold">Child Not wrapped in Memo: {props?.value}</p>
       <div className="flex items-start flex-col md:items-center md:flex-row flex-wrap gap-2">
-        Re-rendered: {countRef.current} ( I re-render when you click
-        <span className="border-b dark:border-white border-black px-2">
-          update child value
-        </span>{" "}
-        or{" "}
-        <span className="border-b dark:border-white border-black px-2">
-          update parent value
-        </span>
-        )
+        Times re-rendered: {countRef.current}
       </div>
-      <div className="flex flex-wrap items-center gap-2">
-        {dummyArray.map((item, index) => {
-          return (
-            <div
-              key={index}
-              className="inline-flex items-center justify-center p-1 dark:bg-blue-900 bg-blue-100 border border-blue-500 size-10"
-            >
-              {item + 1}
-            </div>
-          );
-        })}
+      <div className="text-xs font-semibold mt-2">
+        I cause re-render when you click on both UPDATE CHILD VALUE and UPDATE
+        PARENT VALUE
       </div>
+      <ScrollArea className="h-[7rem] p-2">
+        <div className="flex flex-wrap items-center gap-2 ">
+          {dummyArray.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className="rounded inline-flex items-center justify-center p-1 dark:bg-blue-900 bg-blue-100 border border-blue-500 size-10"
+              >
+                {item + 1}
+              </div>
+            );
+          })}
+        </div>
+      </ScrollArea>
     </div>
   );
 };
