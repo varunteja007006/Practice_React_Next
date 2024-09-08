@@ -25,7 +25,7 @@ const Main = () => {
           return (
             <section key={index} id={item.id}>
               <Card className="w-full mx-auto md:w-2/3">
-                <CardHeader className="pb-1 px-10">
+                <CardHeader className="md:pb-1 md:px-10">
                   <CardTitle className="flex items-center gap-2">
                     {item.title}
                     <a href={item.githubLink}>

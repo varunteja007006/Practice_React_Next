@@ -11,7 +11,7 @@ const LearnMemoDemo = () => {
   const [valueParent, setValueParent] = React.useState(0);
   return (
     <div className="space-y-4">
-      <div className="flex gap-3 items-center">
+      <div className="flex gap-3 items-center flex-wrap">
         <Button onClick={() => setValue(value + 1)}>UPDATE CHILD VALUE</Button>
         <Button onClick={() => setValueParent(valueParent + 1)}>
           UPDATE PARENT VALUE

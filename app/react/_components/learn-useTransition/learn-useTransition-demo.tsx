@@ -64,7 +64,7 @@ export default function LearnUseTransitionDemo() {
         onChange={(e) => setText(e.target.value)}
         placeholder="Type something"
       />
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 flex-wrap">
         <Button onClick={() => setShow(!show)}>Show Optimized Gallery</Button>
         <Button onClick={() => setSlowShow(!slowShow)}>
           Show Un-optimized Gallery

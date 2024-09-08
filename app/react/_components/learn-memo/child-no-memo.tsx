@@ -17,7 +17,7 @@ const ChildNoMemo = (props: { value: number }) => {
   return (
     <div className="space-y-2">
       <p>Child Not wrapped in Memo: {props?.value}</p>
-      <div className="flex items-center gap-2">
+      <div className="flex items-start flex-col md:items-center md:flex-row flex-wrap gap-2">
         Re-rendered: {countRef.current} ( I re-render when you click
         <span className="border-b dark:border-white border-black px-2">
           update child value
