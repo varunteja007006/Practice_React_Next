@@ -64,7 +64,7 @@ type PropType = {
 
 export default function SimpleDataTable({
   columns,
-  data, // ! DATA SHOULD NOT HAVE NULL VALUES THIS WILL CORRUPT GLOBAL FILTERING FUNCTIONALITY
+  data,
   prevText = "",
   nextText = "",
   showPagination = true,

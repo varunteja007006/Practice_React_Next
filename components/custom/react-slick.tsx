@@ -1,14 +1,3 @@
-/*
- * Use this component for react slick since this component imports
- * the required css and other items
- *
- * Props
- *
- * 1. optional settings = the usual ones we pass for react slick
- *
- * 2. children = N number of cards or images
- */
-
 "use client";
 
 import "slick-carousel/slick/slick.css";
