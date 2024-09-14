@@ -27,6 +27,7 @@ export type ComboBoxProps = {
   field: any;
   value: string;
   label: string;
+  defaultValue?: string | number;
   cbFunc?: any;
   required?: boolean;
   disabled?: boolean;
@@ -80,7 +81,7 @@ function ComboBox(props: Readonly<ComboBoxProps>) {
     } else {
       // if required is false then set the value and let user to un-select
       props?.form?.getValues(props?.field.name) === item[props?.value]
-        ? props?.form?.setValue(props?.field.name, "")
+        ? props?.form?.setValue(props?.field.name, props?.defaultValue)
         : props?.form?.setValue(props?.field.name, item[props?.value]);
     }
 
