@@ -19,7 +19,7 @@ export default function DelayedChild() {
   return (
     <div className="flex flex-col justify-center items-center min-h-[50vh]">
       <Card className="space-y-3 max-w-md p-5 border-purple-900 text-lg">
-        <p className="underline">Delayed Child</p>
+        <p className="underline">Delayed Input</p>
         <p>Actual value: {value}</p>
         <p>Debounced value: {debouncedValue}</p>
         <Input

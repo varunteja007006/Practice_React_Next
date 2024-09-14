@@ -2,15 +2,13 @@ const PROBLEMS_ROUTE = `/react-next-problems`;
 
 export const problems_data = [
   {
-    title: "Delayed Child",
+    title: "Delayed Input",
     statement: [
       `    
-        Problem Statement: From parent component we need to enter a statement (ex. How are you?). 
-        When you click on this button, we need to pass the entered
-        statement to child component.
+        Problem Statement: When user inputs text it should register it slow.
       `,
     ],
-    url: `${PROBLEMS_ROUTE}/delayed-child`,
+    url: `${PROBLEMS_ROUTE}/delayed-input`,
   },
   {
     title: "Fetch Data Again, Again & Again...",

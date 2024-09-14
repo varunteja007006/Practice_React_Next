@@ -5,13 +5,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { problems_data } from "../../../local-data/problems_data";
+import { problems_data } from "../problems_data";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Main = () => {
   return (
-    <Card className="p-5">
+    <Card className="p-5 pt-2">
       <Accordion type="single" collapsible>
         {problems_data.map((item, index) => {
           return (
@@ -20,7 +22,9 @@ const Main = () => {
               value={`item-${index}`}
               className="border-b-2"
             >
-              <AccordionTrigger>{item.title}</AccordionTrigger>
+              <AccordionTrigger className="text-xl font-semibold">
+                {item.title}
+              </AccordionTrigger>
               <AccordionContent>
                 {item.statement.map((statement, index) => {
                   return (
@@ -29,7 +33,16 @@ const Main = () => {
                     </p>
                   );
                 })}
-                <Link href={item.url}> Click here</Link>
+                <Button
+                  size={"icon"}
+                  variant={"outline"}
+                  asChild={true}
+                  className="mt-5"
+                >
+                  <Link href={item.url}>
+                    <ArrowUpRight />
+                  </Link>
+                </Button>
               </AccordionContent>
             </AccordionItem>
           );
