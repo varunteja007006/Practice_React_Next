@@ -22,10 +22,9 @@ import { LoaderCircle } from "lucide-react";
  */
 
 export type ComboBoxProps = {
-  selectedValue: string;
   options: any[];
   form: any;
-  formID: string;
+  field: any;
   value: string;
   label: string;
   cbFunc?: any;
@@ -54,22 +53,22 @@ function ComboBox(props: Readonly<ComboBoxProps>) {
 
   // check if selectedValue is present or not and return true or false
   const checkSelectedValue = () => {
-    if (!props?.selectedValue) {
+    if (!props?.field.value) {
       return true;
     }
     return !props?.options?.find(
-      (item) => item[props?.value] === props?.selectedValue
+      (item) => item[props?.value] === props?.field.value
     )?.[props?.label];
   };
 
   // get select value based on selectedValue & also reset the value of this dropdown
   // if selectedValue is not present
   const getSelectedValue = () => {
-    if (!props?.selectedValue) {
+    if (!props?.field.value) {
       return "Select";
     }
     const label = props?.options?.find(
-      (item) => item[props?.value] === props?.selectedValue
+      (item) => item[props?.value] === props?.field.value
     )?.[props?.label];
     return label || "Select";
   };
@@ -77,12 +76,12 @@ function ComboBox(props: Readonly<ComboBoxProps>) {
   const handleOnSelect = (item: any) => {
     if (props.required) {
       // if required is true then set the value and do not let user to un-select
-      props?.form?.setValue(props?.formID, item[props?.value]);
+      props?.form?.setValue(props?.field.name, item[props?.value]);
     } else {
       // if required is false then set the value and let user to un-select
-      props?.form?.getValues(props?.formID) === item[props?.value]
-        ? props?.form?.setValue(props?.formID, "")
-        : props?.form?.setValue(props?.formID, item[props?.value]); 
+      props?.form?.getValues(props?.field.name) === item[props?.value]
+        ? props?.form?.setValue(props?.field.name, "")
+        : props?.form?.setValue(props?.field.name, item[props?.value]);
     }
 
     // if cbFunc is present then call it
@@ -91,7 +90,7 @@ function ComboBox(props: Readonly<ComboBoxProps>) {
     }
 
     // clear the errors whenever the user selects an option
-    props?.form?.clearErrors(props?.formID);
+    props?.form?.clearErrors(props?.field.name);
 
     // close the popover
     setOpen(false);
@@ -103,14 +102,14 @@ function ComboBox(props: Readonly<ComboBoxProps>) {
         <FormControl>
           <Button
             variant="outline"
-            role="combobox"
+            role="menu"
             className={cn(
               "w-full justify-between disabled:hover:bg-white/[0.7] !pointer-events-auto disabled:cursor-not-allowed",
               checkSelectedValue() && "text-muted-foreground"
             )}
             ref={popupRef}
             disabled={props?.disabled}
-            id={props?.formID}
+            id={props?.field.name}
           >
             <span className="overflow-hidden text-ellipsis">
               {getSelectedValue()}
@@ -139,7 +138,7 @@ function ComboBox(props: Readonly<ComboBoxProps>) {
                       <CommandItem
                         className={cn(
                           ``,
-                          props?.form?.getValues(props?.formID) ===
+                          props?.form?.getValues(props?.field.name) ===
                             item[props?.value] && "bg-slate-200"
                         )}
                         value={`${item[props?.label] + item[props?.value]}`}

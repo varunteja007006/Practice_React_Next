@@ -25,9 +25,8 @@ type MultiSelectProps = React.ComponentPropsWithoutRef<"div"> & {
   value: string;
   onChange: (selected: string[]) => void;
   className?: string;
-  sizeRefValue?: React.RefObject<HTMLDivElement>;
   sizeOffset?: number;
-  id: string;
+  field: any;
 };
 
 const MultiSelect = React.forwardRef(function MultiSelect(
@@ -38,9 +37,8 @@ const MultiSelect = React.forwardRef(function MultiSelect(
     value,
     onChange,
     className,
-    sizeRefValue,
     sizeOffset,
-    id,
+    field,
     ...props
   }: MultiSelectProps,
   ref
@@ -70,14 +68,14 @@ const MultiSelect = React.forwardRef(function MultiSelect(
       <PopoverTrigger asChild>
         <Button
           variant="outline"
-          role="combobox"
+          role=""
           aria-expanded={open}
           className={`w-full justify-between ${
             selected?.length > 1 ? "h-fit min-h-10 py-0.5" : "h-10"
           }`}
           onClick={() => setOpen(!open)}
           ref={popupRef}
-          id={id}
+          id={field.name}
         >
           <div className="flex flex-wrap gap-1">
             {selected.map((item) => {
