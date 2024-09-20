@@ -56,7 +56,7 @@ function ShoppingCartPage() {
           <div>
             <Button
               onClick={handleRemoveAll}
-              variant="outline"
+              // variant="success"
               className="text-black hover:bg-black hover:text-white"
             >
               <RiDeleteBinLine className="w-4 h-4 mr-2" />
