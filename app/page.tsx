@@ -13,12 +13,6 @@ TODO create following components:
 
 /*
 TODO create following paths:
-* projects/unsplash
-* projects/cms
-* projects/menu
-* projects/tabs
-
-TODO create following paths:
 * problems
 * one
 * two
