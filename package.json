@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"next dev\" \"json-server ./local-data/db.json --port 3030\"",
-    "build": "next build",
+    "build": "concurrently \"next build\" \"json-server ./local-data/db.json --port 3030\"",
     "start": "next start",
     "lint": "next lint",
     "server": "json-server ./local-data/db.json --port 3030"

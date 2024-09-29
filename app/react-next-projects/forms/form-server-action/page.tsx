@@ -13,9 +13,17 @@ export type TTodo = {
 };
 
 async function fetchData() {
-  const res = await fetch("http://localhost:3030/todo");
-  const data = await res.json();
-  return data;
+  try {
+    const res = await fetch("http://localhost:3030/todo");
+
+    if (!res.ok) {
+      throw new Error("Something went wrong");
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 export default async function Page() {
