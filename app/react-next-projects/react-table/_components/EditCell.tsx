@@ -17,16 +17,31 @@ const EditCell = ({ row, table }: { row: any; table: any }) => {
   };
   return meta?.editedRows[row.id] ? (
     <>
-      <Button onClick={setEditedRows} name="cancel" size={"icon"}>
+      <Button
+        variant="danger"
+        onClick={setEditedRows}
+        name="cancel"
+        size={"icon"}
+      >
         <LuX className="w-4 h-4" />
       </Button>{" "}
-      <Button onClick={setEditedRows} name="done" size={"icon"}>
+      <Button
+        variant="success"
+        onClick={setEditedRows}
+        name="done"
+        size={"icon"}
+      >
         <LuCheck className="w-4 h-4" />
       </Button>
     </>
   ) : (
     <>
-      <Button onClick={setEditedRows} name="edit" size={"icon"}>
+      <Button
+        variant={"outline"}
+        onClick={setEditedRows}
+        name="edit"
+        size={"icon"}
+      >
         <LuPencil className="w-4 h-4" />
       </Button>
       <Button
@@ -36,7 +51,7 @@ const EditCell = ({ row, table }: { row: any; table: any }) => {
       >
         <span className="size-4"></span>
       </Button>
-    </> 
+    </>
   );
 };
 

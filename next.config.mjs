@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
   images: {
     remotePatterns: [
       {
@@ -25,11 +24,6 @@ const nextConfig = {
     // your project has type errors.
     // !! WARN !!
     ignoreBuildErrors: true,
-  },
-  webpack: (config) => {
-    config.resolve.alias.canvas = false;
-
-    return config;
   },
 };
 
