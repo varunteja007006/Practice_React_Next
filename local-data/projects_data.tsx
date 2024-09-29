@@ -81,13 +81,13 @@ export const projects: {
     isNew: false,
     inProgress: true,
   },
-  {
-    title: "Server Action Form",
-    href: `${rootPath}/forms/form-server-action`,
-    description: "How to create a form and use server actions",
-    isNew: true,
-    inProgress: false,
-  },
+  // {
+  //   title: "Server Action Form",
+  //   href: `${rootPath}/forms/form-server-action`,
+  //   description: "How to create a form and use server actions",
+  //   isNew: true,
+  //   inProgress: false,
+  // },
   {
     title: "Zod + React Hook Form",
     href: `${rootPath}/forms/zod-hook-forms`,

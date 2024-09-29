@@ -1,5 +1,4 @@
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 
 export const postTodo = async (formData: FormData) => {
   "use server";

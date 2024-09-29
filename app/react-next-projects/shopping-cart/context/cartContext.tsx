@@ -1,15 +1,7 @@
-import {
-  createContext,
-  Dispatch,
-  DispatchWithoutAction,
-  ReactNode,
-  SetStateAction,
-  useEffect,
-  useReducer,
-} from "react";
-import useGetShoppingData, {
-  TShoppingDataStruct,
-} from "../hooks/useGetShoppingData";
+"use client";
+
+import { createContext, ReactNode, useEffect, useReducer } from "react";
+import { TShoppingDataStruct } from "../hooks/useGetShoppingData";
 import cartReducer from "../actions/cartReducer";
 
 export interface TCartState {

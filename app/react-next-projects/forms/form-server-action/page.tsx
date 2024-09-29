@@ -14,7 +14,7 @@ export type TTodo = {
 
 async function fetchData() {
   try {
-    const res = await fetch("http://localhost:3030/todo");
+    const res = await fetch("https://jsonplaceholder.typicode.com/todos");
 
     if (!res.ok) {
       throw new Error("Something went wrong");
