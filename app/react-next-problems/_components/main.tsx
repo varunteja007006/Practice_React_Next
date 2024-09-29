@@ -1,15 +1,22 @@
 import React from "react";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { problems_data } from "../problems_data";
-import { Card } from "@/components/ui/card";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
+
+import { Card } from "@/components/ui/card";
+
+import { problems_data } from "../problems_data";
+import Link from "next/link";
+
+import { ArrowUpRight } from "lucide-react";
+import { FaGithub } from "react-icons/fa6";
+import MyTooltip from "@/components/custom/MyTooltip";
 
 const Main = () => {
   return (
@@ -33,16 +40,33 @@ const Main = () => {
                     </p>
                   );
                 })}
-                <Button
-                  size={"icon"}
-                  variant={"outline"}
-                  asChild={true}
-                  className="mt-5"
-                >
-                  <Link href={item.url}>
-                    <ArrowUpRight />
-                  </Link>
-                </Button>
+                <div className="flex gap-2 items-center justify-start">
+                  <MyTooltip text="Check functionality">
+                    <Button
+                      size={"icon"}
+                      variant={"outline"}
+                      asChild={true}
+                      className="mt-5"
+                    >
+                      <Link href={item.url || ""}>
+                        <ArrowUpRight className="size-6" />
+                      </Link>
+                    </Button>
+                  </MyTooltip>
+
+                  <MyTooltip text="View on GitHub">
+                    <Button
+                      size={"icon"}
+                      variant={"outline"}
+                      asChild={true}
+                      className="mt-5"
+                    >
+                      <a href={item.githubURL || ""}>
+                        <FaGithub className="size-6" />
+                      </a>
+                    </Button>
+                  </MyTooltip>
+                </div>
               </AccordionContent>
             </AccordionItem>
           );

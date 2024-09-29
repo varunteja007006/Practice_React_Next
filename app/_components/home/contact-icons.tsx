@@ -3,17 +3,15 @@
 import React from "react";
 import contactData from "@/app/_components/home/data/contactData";
 import { Button } from "@/components/ui/button";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+
 import { cn } from "@/lib/utils";
 import { useCopyToClipboard } from "usehooks-ts";
 import { toast } from "@/components/ui/use-toast";
+import MyTooltip from "@/components/custom/MyTooltip";
 
-export default function ContactIcons({ className }: { className?: string }) {
+export default function ContactIcons({
+  className,
+}: Readonly<{ className?: string }>) {
   const [copiedText, copy] = useCopyToClipboard();
 
   function handleCopy(text: string) {
@@ -25,34 +23,24 @@ export default function ContactIcons({ className }: { className?: string }) {
   }
 
   return (
-    <TooltipProvider>
-      <div className="flex justify-center items-center gap-4">
-        {contactData.map((item) => {
-          return (
-            <Tooltip key={item.id}>
-              <TooltipTrigger asChild>
-                <Button
-                  size={"icon"}
-                  variant={"outline"}
-                  className={cn(
-                    "rounded-full ring-1 dark:ring-purple-300 shadow",
-                    className
-                  )}
-                  onClick={() => handleCopy(item.contact_value)}
-                  asChild
-                >
-                  <a href={`${item.contact_href}`}>
-                    <item.contact_icon />
-                  </a>
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{item.contact_value}</p>
-              </TooltipContent>
-            </Tooltip>
-          );
-        })}
-      </div>
-    </TooltipProvider>
+    <div className="flex justify-center items-center gap-4">
+      {contactData.map((item) => {
+        return (
+          <MyTooltip key={item.id} text={item.contact_value}>
+            <Button
+              size={"icon"}
+              variant={"outline"}
+              className={cn(
+                "rounded-full ring-1 dark:ring-purple-300 shadow",
+                className
+              )}
+              onClick={() => handleCopy(item.contact_value)}
+            >
+              <item.contact_icon className="size-5" />
+            </Button>
+          </MyTooltip>
+        );
+      })}
+    </div>
   );
 }

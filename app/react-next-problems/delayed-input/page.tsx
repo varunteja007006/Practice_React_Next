@@ -1,6 +1,12 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import React from "react";
 
@@ -18,15 +24,26 @@ export default function DelayedChild() {
 
   return (
     <div className="flex flex-col justify-center items-center min-h-[50vh]">
-      <Card className="space-y-3 max-w-md p-5 border-purple-900 text-lg">
-        <p className="underline">Delayed Input</p>
-        <p>Actual value: {value}</p>
-        <p>Debounced value: {debouncedValue}</p>
-        <Input
-          placeholder="Enter something"
-          value={value}
-          onChange={(e) => setValue(e.target.value || "")}
-        />
+      <Card className="space-y-3 min-w-[300px] border-purple-900 text-lg">
+        <CardHeader className="pb-2">
+          <CardTitle>Delayed Input</CardTitle>
+          <CardDescription>A basic debounced input field.</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div>
+            <p>Actual value:</p>
+            <p className="font-semibold text-sm">{value}</p>
+          </div>
+          <div>
+            <p>Debounced value: </p>
+            <p className="font-semibold text-sm">{debouncedValue}</p>
+          </div>
+          <Input
+            placeholder="Enter something here..."
+            value={value}
+            onChange={(e) => setValue(e.target.value || "")}
+          />
+        </CardContent>
       </Card>
     </div>
   );

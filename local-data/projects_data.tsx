@@ -170,5 +170,5 @@ export const projects: {
 ];
 
 export const PROJECTS_GITHUB_LINKS = {
-  PROGRESS_ON_SCROLL: `https://github.com/varunteja007006/Practice_React_Next/tree/main/app/react-next-projects/progress-on-scroll`,
+  PROGRESS_ON_SCROLL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/tree/main/app/react-next-projects/progress-on-scroll`,
 };

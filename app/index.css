@@ -19,6 +19,6 @@
   @apply flex flex-row gap-3;
 }
 
-.charts .hightcharts-container {
-  @apply max-h-[30rem];
+.number-field {
+  @apply [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none;
 }

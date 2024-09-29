@@ -40,6 +40,7 @@ import {
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import DebouncedInput from "./debounced-input";
 import { cn } from "@/lib/utils";
+import MyTooltip from "./MyTooltip";
 
 type PropType = {
   columns: any;
@@ -109,10 +110,6 @@ export default function SimpleDataTable({
     [data]
   );
 
-  if (!columns) {
-    return <>NO COLUMNS</>;
-  }
-
   const table = useReactTable({
     data: sanitizedData, // table data to be rendered
     columns, // columns
@@ -180,6 +177,10 @@ export default function SimpleDataTable({
       </>
     );
   }, [table.getState().pagination.pageIndex]);
+
+  if (!columns) {
+    return <>NO COLUMNS</>;
+  }
 
   return (
     <div>
@@ -304,74 +305,59 @@ export default function SimpleDataTable({
           )}
           {showPagination && (
             <div className="flex flex-row items-center justify-center gap-4">
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size={"icon"}
-                      onClick={() => handlePageIndex(0)}
-                      disabled={!table.getCanPreviousPage()}
-                    >
-                      <MdOutlineKeyboardDoubleArrowLeft />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Go to First Page</p>
-                  </TooltipContent>
-                </Tooltip>
+              <MyTooltip text="Go to First Page">
+                <Button
+                  variant="outline"
+                  size={"icon"}
+                  onClick={() => handlePageIndex(0)}
+                  disabled={!table.getCanPreviousPage()}
+                >
+                  <MdOutlineKeyboardDoubleArrowLeft />
+                </Button>
+              </MyTooltip>
 
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size={showText ? "sm" : "icon"}
-                      onClick={() => table.previousPage()}
-                      disabled={!table.getCanPreviousPage()}
-                    >
-                      {showText ? (
-                        prevText || "Previous"
-                      ) : (
-                        <MdOutlineKeyboardArrowLeft />
-                      )}
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Go to Previous Page</p>
-                  </TooltipContent>
-                </Tooltip>
-                {paginationIndexView && PaginationPageIndexView}
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size={showText ? "sm" : "icon"}
-                      onClick={() => table.nextPage()}
-                      disabled={!table.getCanNextPage()}
-                    >
-                      {showText ? (
-                        nextText || "Next"
-                      ) : (
-                        <MdOutlineKeyboardArrowRight />
-                      )}
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Go to Next Page</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size={"icon"}
-                      onClick={() => handlePageIndex(table.getPageCount() - 1)}
-                      disabled={!table.getCanNextPage()}
-                    >
-                      <MdOutlineKeyboardDoubleArrowRight />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Go to Last Page</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+              <MyTooltip text="Go to Previous Page">
+                <Button
+                  variant="outline"
+                  size={showText ? "sm" : "icon"}
+                  onClick={() => table.previousPage()}
+                  disabled={!table.getCanPreviousPage()}
+                >
+                  {showText ? (
+                    prevText || "Previous"
+                  ) : (
+                    <MdOutlineKeyboardArrowLeft />
+                  )}
+                </Button>
+              </MyTooltip>
+
+              {paginationIndexView && PaginationPageIndexView}
+
+              <MyTooltip text="Go to Next Page">
+                <Button
+                  variant="outline"
+                  size={showText ? "sm" : "icon"}
+                  onClick={() => table.nextPage()}
+                  disabled={!table.getCanNextPage()}
+                >
+                  {showText ? (
+                    nextText || "Next"
+                  ) : (
+                    <MdOutlineKeyboardArrowRight />
+                  )}
+                </Button>
+              </MyTooltip>
+
+              <MyTooltip text="Go to Last Page">
+                <Button
+                  variant="outline"
+                  size={"icon"}
+                  onClick={() => handlePageIndex(table.getPageCount() - 1)}
+                  disabled={!table.getCanNextPage()}
+                >
+                  <MdOutlineKeyboardDoubleArrowRight />
+                </Button>
+              </MyTooltip>
             </div>
           )}
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const useFetchAgainHook = (url: string) => {
+const useFetchAgainHook = (url: string, timer = 2000) => {
   const [data, setData] = React.useState(null);
   const [isLoading, setIsLoading] = React.useState(true);
   const [error, setError] = React.useState<unknown>(null);
@@ -21,7 +21,11 @@ const useFetchAgainHook = (url: string) => {
 
   React.useEffect(() => {
     fetchData();
-  }, [url]); // Add url to dependency array for re-fetching on URL change
+    const interval = setInterval(() => {
+      fetchData();
+    }, timer);
+    return () => clearInterval(interval);
+  }, [url, timer]); // Add url to dependency array for re-fetching on URL change
 
   return { data, isLoading, error };
 };

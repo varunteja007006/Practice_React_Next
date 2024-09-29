@@ -9,6 +9,7 @@ export const problems_data = [
       `,
     ],
     url: `${PROBLEMS_ROUTE}/delayed-input`,
+    githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-next-problems/delayed-input/page.tsx`,
   },
   {
     title: "Fetch Data Again, Again & Again...",
@@ -22,6 +23,7 @@ export const problems_data = [
       `,
     ],
     url: `${PROBLEMS_ROUTE}/fetch-again`,
+    githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-next-problems/fetch-again/page.tsx`,
   },
   {
     title: "Timer",
@@ -31,5 +33,6 @@ export const problems_data = [
       `,
     ],
     url: `${PROBLEMS_ROUTE}/timer-problem`,
+    githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-next-problems/timer-problem/page.tsx`,
   },
 ];

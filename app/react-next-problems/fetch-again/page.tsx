@@ -17,23 +17,27 @@ export default function FetchAgain() {
     isLoading,
     error,
   }: { data: Data[] | null; isLoading: boolean; error: unknown } =
-    useFetchAgainHook(url);
+    useFetchAgainHook(url, 5000);
 
   if (error) {
-    return <>Oops something went wrong!!!</>;
+    return (
+      <div className=" min-h-[calc(100vh-20rem)]">
+        Oops something went wrong!!!
+      </div>
+    );
   }
 
   if (isLoading) {
-    return <>Loading...</>;
+    return <div className=" min-h-[calc(100vh-20rem)]">Loading...</div>;
   }
 
   if (_.isEmpty(data)) {
-    return <>No data</>;
+    return <div className=" min-h-[calc(100vh-20rem)]">No data</div>;
   }
 
   return (
     <div>
-      FetchAgain
+      ------------- FetchAgain ----------------
       <div>
         {data ? (data as Data[]).map((item: Data) => item.title) : null}
       </div>

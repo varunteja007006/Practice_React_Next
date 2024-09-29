@@ -1,6 +1,4 @@
 import * as React from "react";
-import Image from "next/image";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 import projectData from "./data/projectData";
 import {
@@ -13,14 +11,11 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+
 import { FaGithub } from "react-icons/fa6";
 import { GrDeploy } from "react-icons/gr";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+
+import MyTooltip from "@/components/custom/MyTooltip";
 
 const ProjectLink = ({
   URL,
@@ -31,34 +26,25 @@ const ProjectLink = ({
 }) => {
   if (type === "website") {
     return (
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Button size={"icon"} variant={"outline"} asChild>
-            <a href={URL}>
-              <GrDeploy className="w-4 h-4" />
-            </a>
-          </Button>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>Go to deployed website</p>
-        </TooltipContent>
-      </Tooltip>
+      <MyTooltip text="Go to deployed website">
+        <Button size={"icon"} variant={"outline"} asChild>
+          <a href={URL}>
+            <GrDeploy className="w-4 h-4" />
+          </a>
+        </Button>
+      </MyTooltip>
     );
   }
+
   if (type === "github") {
     return (
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Button size={"icon"} variant={"outline"} asChild>
-            <a href={URL}>
-              <FaGithub className="w-4 h-4" />
-            </a>
-          </Button>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>Go to github repository</p>
-        </TooltipContent>
-      </Tooltip>
+      <MyTooltip text="Go to github repository">
+        <Button size={"icon"} variant={"outline"} asChild>
+          <a href={URL}>
+            <FaGithub className="w-4 h-4" />
+          </a>
+        </Button>
+      </MyTooltip>
     );
   }
   return null;
@@ -102,14 +88,12 @@ export default function Projects() {
                     })}
                   </CardContent>
                   <CardFooter className="gap-5">
-                    <TooltipProvider>
-                      {item.project_github && (
-                        <ProjectLink type="github" URL={item.project_github} />
-                      )}
-                      {item.project_link && (
-                        <ProjectLink type="website" URL={item.project_link} />
-                      )}
-                    </TooltipProvider>
+                    {item.project_github && (
+                      <ProjectLink type="github" URL={item.project_github} />
+                    )}
+                    {item.project_link && (
+                      <ProjectLink type="website" URL={item.project_link} />
+                    )}
                   </CardFooter>
                 </div>
               </div>
