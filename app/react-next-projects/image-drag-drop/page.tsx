@@ -6,6 +6,10 @@ import { Separator } from "@/components/ui/separator";
 function ImageDragDrop() {
   return (
     <div className="space-y-3">
+      <p className=" uppercase font-semibold text-gray-500">
+        Note: Drag and drop is not supported on Mozilla Firefox (Zen Browser) as
+        of now. 😢
+      </p>
       <div className="space-y-3">
         <p className="text-lg font-semibold">
           Basic Example from React Dropzone
