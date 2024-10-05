@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import { FaGithub } from "react-icons/fa6";
 import { GrDeploy } from "react-icons/gr";
 
-import MyTooltip from "@/components/custom/MyTooltip";
+import MyTooltip from "@/components/ui/custom/MyTooltip";
 
 const ProjectLink = ({
   URL,

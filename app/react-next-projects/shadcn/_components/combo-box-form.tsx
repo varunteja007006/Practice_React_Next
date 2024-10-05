@@ -3,7 +3,7 @@
  */
 
 "use client";
-import ComboBox from "@/components/custom/combo-box";
+import ComboBox from "@/components/ui/custom/combo-box";
 import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -26,7 +26,7 @@ const FormSchema = z.object({
     message: "Please select an option ",
   }),
 });
-export default function DesignComponents() {
+export default function ComboBoxForm() {
   const userData = useQuery("userData", async () => {
     return fetch("https://jsonplaceholder.typicode.com/users").then((res) =>
       res.json()

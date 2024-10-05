@@ -7,11 +7,6 @@ const urls = [
     title: "Form Data",
     description: "Basic form data",
   },
-  {
-    url: "/react-next-projects/basic/design-components",
-    title: "Design ShadCN Components",
-    description: "Creating components using ShadCN",
-  },
 ];
 
 export default function Page() {
