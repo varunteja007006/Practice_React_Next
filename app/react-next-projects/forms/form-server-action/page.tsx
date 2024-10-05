@@ -40,7 +40,7 @@ export default async function Page() {
           {todoList.map((todo: TTodo) => {
             return (
               <div key={todo.id}>
-                {todo.title} - {todo.description}
+                {todo.title} - {todo?.description ?? ""}
               </div>
             );
           })}
