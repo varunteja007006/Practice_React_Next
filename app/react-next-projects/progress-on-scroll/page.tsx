@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import GithubLink from "../_components/github-link";
-import { PROJECTS_GITHUB_LINKS } from "@/local-data/projects_data";
+import { PROJECTS_GITHUB_LINKS } from "@/app/react-next-projects/projects_data";
 
 function ProgressScroll({
   progressStyles,

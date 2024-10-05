@@ -9,7 +9,7 @@ import {
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { projects } from "@/local-data/projects_data";
+import { projects } from "@/app/react-next-projects/projects_data";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 

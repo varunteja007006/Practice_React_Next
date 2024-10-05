@@ -12,7 +12,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { projects } from "../../../local-data/projects_data";
+import { projects } from "../../react-next-projects/projects_data";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import NavMobile from "./NavMobile";
 import { Badge } from "@/components/ui/badge";

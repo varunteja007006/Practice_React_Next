@@ -6,6 +6,7 @@ export const projects: {
   description: string;
   isNew: boolean;
   inProgress: boolean;
+  github_URL: string;
 }[] = [
   {
     title: "React Table",
@@ -13,6 +14,7 @@ export const projects: {
     description: "In-line editable react table.",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "Shopping Cart",
@@ -21,6 +23,7 @@ export const projects: {
       "Shopping cart built using React useReducer hook, json server.",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "Image Drag & Drop",
@@ -29,6 +32,7 @@ export const projects: {
       "Create a component to drag and drop files, using react dropzone or plain html5 drag and drop.",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "Unsplash",
@@ -36,6 +40,7 @@ export const projects: {
     description: "Learn to use context, search, react-query, and unsplash API.",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "CMS",
@@ -43,6 +48,7 @@ export const projects: {
     description: "Learn to integrate CMS(Content Management System)",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "Multi-Page Form",
@@ -50,6 +56,7 @@ export const projects: {
     description: "Create a multi-page form with React and React Hook Form",
     isNew: false,
     inProgress: true,
+    github_URL: ``,
   },
   {
     title: "Form Builder",
@@ -57,6 +64,7 @@ export const projects: {
     description: "Drag and drop input fields to create forms",
     isNew: false,
     inProgress: true,
+    github_URL: ``,
   },
   {
     title: "Server Action Form",
@@ -64,6 +72,7 @@ export const projects: {
     description: "How to create a form and use server actions",
     isNew: true,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "React Hook Form: Basic",
@@ -71,6 +80,7 @@ export const projects: {
     description: "Implementation of React hook forms, using normal inputs",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "React Hook Form: Zod Integration",
@@ -78,6 +88,7 @@ export const projects: {
     description: "Implementation of Zod with React hook forms, using ShadCN",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "Menu",
@@ -86,6 +97,7 @@ export const projects: {
       "Learn to filter the data when clicking on filters of the menu to show filtered items",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "Tabs",
@@ -93,6 +105,7 @@ export const projects: {
     description: "Create your own tabs to display different content",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "Zustand Demo",
@@ -100,6 +113,7 @@ export const projects: {
     description: "A simple implementation of zustand",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "Framer Motion",
@@ -107,6 +121,7 @@ export const projects: {
     description: "A simple implementation of framer motion library",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "Progress on Scroll",
@@ -115,6 +130,7 @@ export const projects: {
       "Create a progress bar that shows the progress as user's scroll.",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "Tailwind",
@@ -122,6 +138,7 @@ export const projects: {
     description: "Some awesome tailwind tricks",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "MUI",
@@ -130,6 +147,7 @@ export const projects: {
       "Playing around with MUI base components and styling them with Tailwind CSS",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "Image Slider",
@@ -137,6 +155,7 @@ export const projects: {
     description: "Create your own image slider with React and Tailwind CSS",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "Shad CN",
@@ -144,6 +163,7 @@ export const projects: {
     description: "Checking out few shadcn components",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "Class component",
@@ -152,6 +172,7 @@ export const projects: {
       "Playing around with class and functional components (See how things can work between them)",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "Basic",
@@ -159,6 +180,7 @@ export const projects: {
     description: "Basic stuff to get you started",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "Redux",
@@ -166,6 +188,7 @@ export const projects: {
     description: "Basic redux setup",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
   {
     title: "JavaScript",
@@ -173,6 +196,7 @@ export const projects: {
     description: "Basic javascript related code snippets",
     isNew: false,
     inProgress: false,
+    github_URL: ``,
   },
 ];
 

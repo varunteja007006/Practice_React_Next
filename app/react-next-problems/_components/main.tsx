@@ -61,7 +61,7 @@ const Main = () => {
                       asChild={true}
                       className="mt-5"
                     >
-                      <a href={item.githubURL || ""}>
+                      <a href={item.githubURL || ""} target="_blank">
                         <FaGithub className="size-6" />
                       </a>
                     </Button>
