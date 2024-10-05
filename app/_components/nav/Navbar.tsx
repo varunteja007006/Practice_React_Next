@@ -19,59 +19,64 @@ import { Badge } from "@/components/ui/badge";
 
 function Navbar() {
   return (
-    <nav className="fixed z-10 flex flex-row items-center justify-between w-full p-3 dark:bg-black/100 bg-white/70">
-      <div className="ml-3 font-bold">
-        <a href="/">{`<Developer />`}</a>
-      </div>
-      <NavigationMenu className="hidden lg:block">
-        <NavigationMenuList className="gap-2">
-          <NavigationMenuItem>
-            <Link href="/react" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                React
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ScrollArea className="h-[300px]">
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                  {projects.map((project) => (
-                    <ListItemLink
-                      key={project.title}
-                      title={project.title}
-                      href={project.href}
-                    >
-                      {project.description}
-                      <span className="flex items-center mt-2">
-                        {project.isNew && <Badge variant="success">New</Badge>}
-                        {project.inProgress && (
-                          <Badge variant="warning">In Progress</Badge>
-                        )}
-                      </span>
-                    </ListItemLink>
-                  ))}
-                </ul>
-              </ScrollArea>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/react-next-problems" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Problems
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <ThemeToggle />
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-      <div>
-        <NavMobile />
-      </div>
-    </nav>
+    <>
+      <nav className="fixed z-[2] flex flex-row items-center justify-between w-full p-3 dark:bg-black/100 bg-white/70">
+        <div className="ml-3 font-bold">
+          <a href="/">{`<Developer />`}</a>
+        </div>
+        <NavigationMenu className="hidden lg:block">
+          <NavigationMenuList className="gap-2">
+            <NavigationMenuItem>
+              <Link href="/react" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  React
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ScrollArea className="h-[300px]">
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                    {projects.map((project) => (
+                      <ListItemLink
+                        key={project.title}
+                        title={project.title}
+                        href={project.href}
+                      >
+                        {project.description}
+                        <span className="flex items-center mt-2">
+                          {project.isNew && (
+                            <Badge variant="success">New</Badge>
+                          )}
+                          {project.inProgress && (
+                            <Badge variant="warning">In Progress</Badge>
+                          )}
+                        </span>
+                      </ListItemLink>
+                    ))}
+                  </ul>
+                </ScrollArea>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/react-next-problems" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Problems
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <ThemeToggle />
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+        <div>
+          <NavMobile />
+        </div>
+      </nav>
+      <div className="h-16"></div>
+    </>
   );
 }
 

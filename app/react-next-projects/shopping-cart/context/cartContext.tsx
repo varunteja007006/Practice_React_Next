@@ -1,8 +1,10 @@
 "use client";
+import * as React from "react";
 
 import { createContext, ReactNode, useEffect, useReducer } from "react";
 import { TShoppingDataStruct } from "../hooks/useGetShoppingData";
 import cartReducer from "../actions/cartReducer";
+import { getCartData } from "@/api/user.api";
 
 export interface TCartState {
   isLoading: boolean;
@@ -10,7 +12,9 @@ export interface TCartState {
   totalCartValue: number;
   totalCartItemsCount: number;
 }
+
 type toggleAmountType = "inc" | "dec";
+
 export interface TCartContext extends TCartState {
   clearCart: () => void;
   remove: (id: number) => void;
@@ -18,9 +22,6 @@ export interface TCartContext extends TCartState {
   decrease: (id: number) => void;
   toggleAmount: (id: number, type: toggleAmountType) => void;
 }
-// export interface TCartContext
-
-const url = `http://localhost:3030/shoppingCart`;
 
 const initialState: TCartState = {
   isLoading: true,
@@ -70,8 +71,7 @@ export const CartContextProvider = ({ children }: { children: ReactNode }) => {
   const fetchData = async () => {
     dispatch({ type: "LOADING" });
     try {
-      const res = await fetch(url);
-      const data = await res.json();
+      const data = await getCartData();
       dispatch({ type: "DISPLAY_ITEMS", payload: data });
     } catch (error) {
       dispatch({ type: "DISPLAY_ITEMS", payload: null });
@@ -92,18 +92,17 @@ export const CartContextProvider = ({ children }: { children: ReactNode }) => {
     dispatch({ type: "GET_TOTALS" });
   }, [state.shoppingData]);
 
-  return (
-    <cartContext.Provider
-      value={{
-        ...state,
-        clearCart,
-        remove,
-        increase,
-        decrease,
-        toggleAmount,
-      }}
-    >
-      {children}
-    </cartContext.Provider>
+  const obj = React.useMemo(
+    () => ({
+      ...state,
+      clearCart,
+      remove,
+      increase,
+      decrease,
+      toggleAmount,
+    }),
+    [state]
   );
+
+  return <cartContext.Provider value={obj}>{children}</cartContext.Provider>;
 };

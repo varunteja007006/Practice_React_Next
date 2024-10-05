@@ -1,11 +1,14 @@
+import * as React from "react";
+
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
+import Provider from "./providers";
+import { ThemeProvider } from "@/components/theme-provider";
+
 import Navbar from "./_components/nav/Navbar";
 import Footer from "./_components/footer/Footer";
-import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
-import Provider from "./providers";
 import ProgressScroll from "./react-next-projects/progress-on-scroll/page";
 
 const openSan = Open_Sans({ subsets: ["latin"] });
@@ -34,19 +37,18 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <main className="min-h-[calc(100vh-10rem)]">
+            <React.Fragment>
               <ProgressScroll
                 divStyles="hidden"
                 progressStyles="dark:bg-purple-800 bg-blue-300 h-1.5"
               />
               <Navbar />
-              <div className="h-16"></div>
-              <div className="min-h-[calc(100vh-22rem)]">{children}</div>
+              <div className="min-h-[calc(100vh-20rem)]">{children}</div>
               <Footer />
-            </main>
-            <Toaster />
+            </React.Fragment>
           </ThemeProvider>
         </Provider>
+        <Toaster />
       </body>
     </html>
   );

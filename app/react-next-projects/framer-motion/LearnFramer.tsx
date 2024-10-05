@@ -16,7 +16,7 @@ function LearnFramer() {
         className="p-2 border-2 border-pink-600 rounded-full w-fit bg-fuchsia-400"
         onClick={() => (modalOpen ? close() : open())}
       >
-        Hello 😁
+        Hello 😁 I am a Modal
       </motion.button>
       <AnimatePresence initial={false} mode="wait" onExitComplete={() => null}>
         {modalOpen && <Modal onClick={close} text={"Hello There!!!"} />}

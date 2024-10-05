@@ -1,11 +1,13 @@
+import * as React from "react";
+
 import { FcNext } from "react-icons/fc";
 
-function Duties({ duties }: { duties: string[] | null }) {
+function Duties({ duties }: Readonly<{ duties: string[] | null }>) {
   return (
-    <>
-      {duties?.map((item, index) => {
+    <React.Fragment>
+      {duties?.map((item, index: number) => {
         return (
-          <div key={index} className="flex flex-row p-2">
+          <div key={index + 1} className="flex flex-row p-2">
             <span className="mt-1">
               <FcNext />
             </span>
@@ -13,7 +15,7 @@ function Duties({ duties }: { duties: string[] | null }) {
           </div>
         );
       })}
-    </>
+    </React.Fragment>
   );
 }
 

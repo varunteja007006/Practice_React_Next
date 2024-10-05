@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 import React from "react";
 import { postTodo } from "./actions";
+import { localAPI } from "@/constants/api.constants";
 
 export type TTodo = {
   id: number;
@@ -14,7 +15,7 @@ export type TTodo = {
 
 async function fetchData() {
   try {
-    const res = await fetch("https://jsonplaceholder.typicode.com/todos"); // replace with http://localhost:3030/todo when working on dev
+    const res = await fetch(`${localAPI}/todos`);
 
     if (!res.ok) {
       throw new Error("Something went wrong");

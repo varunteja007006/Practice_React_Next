@@ -1,6 +1,6 @@
 import React from "react";
 import TabBody from "./_component/tabs-body";
-const url = "https://course-api.com/react-tabs-project";
+import { getTabData } from "@/api/user.api";
 
 export interface TData {
   id: string;
@@ -13,15 +13,14 @@ export interface TData {
 
 async function getData() {
   try {
-    const res = await fetch(url);
-    const data = await res.json();
+    const data = await getTabData();
     return data;
   } catch (error) {
     console.error(error);
   }
 }
 
-export default async function page() {
+export default async function Page() {
   const data = await getData();
 
   if (!data || data.length === 0) {

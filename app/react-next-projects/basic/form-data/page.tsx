@@ -1,11 +1,17 @@
+/*
+ * This code is used to extract the form info using the form data api
+ */
+
 "use client";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { toast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import React from "react";
 
-export default function page() {
+export default function Page() {
+  const { toast } = useToast();
+
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 

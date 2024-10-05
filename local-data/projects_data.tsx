@@ -8,17 +8,17 @@ export const projects: {
   inProgress: boolean;
 }[] = [
   {
+    title: "React Table",
+    href: `${rootPath}/react-table`,
+    description: "In-line editable react table.",
+    isNew: false,
+    inProgress: false,
+  },
+  {
     title: "Shopping Cart",
     href: `${rootPath}/shopping-cart`,
     description:
       "Shopping cart built using React useReducer hook, json server.",
-    isNew: true,
-    inProgress: false,
-  },
-  {
-    title: "React Table",
-    href: `${rootPath}/react-table`,
-    description: "In-line editable react table.",
     isNew: false,
     inProgress: false,
   },
@@ -27,21 +27,6 @@ export const projects: {
     href: `${rootPath}/image-drag-drop`,
     description:
       "Create a component to drag and drop files, using react dropzone or plain html5 drag and drop.",
-    isNew: true,
-    inProgress: false,
-  },
-  {
-    title: "Progress on Scroll",
-    href: `${rootPath}/progress-on-scroll`,
-    description:
-      "Create a progress bar that shows the progress as user's scroll.",
-    isNew: false,
-    inProgress: false,
-  },
-  {
-    title: "Tailwind",
-    href: `${rootPath}/tailwind`,
-    description: "Some awesome tailwind tricks",
     isNew: false,
     inProgress: false,
   },
@@ -60,14 +45,6 @@ export const projects: {
     inProgress: false,
   },
   {
-    title: "MUI",
-    href: `${rootPath}/mui`,
-    description:
-      "Playing around with MUI base components and styling them with Tailwind CSS",
-    isNew: false,
-    inProgress: true,
-  },
-  {
     title: "Multi-Page Form",
     href: `${rootPath}/forms/multi-page-forms`,
     description: "Create a multi-page form with React and React Hook Form",
@@ -81,26 +58,26 @@ export const projects: {
     isNew: false,
     inProgress: true,
   },
-  // {
-  //   title: "Server Action Form",
-  //   href: `${rootPath}/forms/form-server-action`,
-  //   description: "How to create a form and use server actions",
-  //   isNew: true,
-  //   inProgress: false,
-  // },
   {
-    title: "Zod + React Hook Form",
-    href: `${rootPath}/forms/zod-hook-forms`,
-    description: "Implementation of Zod with React hook forms, using ShadCN",
-    isNew: false,
-    inProgress: true,
+    title: "Server Action Form",
+    href: `${rootPath}/forms/form-server-action`,
+    description: "How to create a form and use server actions",
+    isNew: true,
+    inProgress: false,
   },
   {
-    title: "React Hook Form",
+    title: "React Hook Form: Basic",
+    href: `${rootPath}/forms/react-hook-form`,
+    description: "Implementation of React hook forms, using normal inputs",
+    isNew: false,
+    inProgress: false,
+  },
+  {
+    title: "React Hook Form: Zod Integration",
     href: `${rootPath}/forms/hook-form`,
     description: "Implementation of Zod with React hook forms, using ShadCN",
     isNew: false,
-    inProgress: true,
+    inProgress: false,
   },
   {
     title: "Menu",
@@ -114,21 +91,6 @@ export const projects: {
     title: "Tabs",
     href: `${rootPath}/tabs`,
     description: "Create your own tabs to display different content",
-    isNew: false,
-    inProgress: false,
-  },
-  {
-    title: "Image Slider",
-    href: `${rootPath}/image-slider`,
-    description: "Create your own image slider with React and Tailwind CSS",
-    isNew: false,
-    inProgress: false,
-  },
-  {
-    title: "Class component",
-    href: `${rootPath}/class-component`,
-    description:
-      "Playing around with class and functional components (See how things can work between them)",
     isNew: false,
     inProgress: false,
   },
@@ -147,9 +109,47 @@ export const projects: {
     inProgress: false,
   },
   {
+    title: "Progress on Scroll",
+    href: `${rootPath}/progress-on-scroll`,
+    description:
+      "Create a progress bar that shows the progress as user's scroll.",
+    isNew: false,
+    inProgress: false,
+  },
+  {
+    title: "Tailwind",
+    href: `${rootPath}/tailwind`,
+    description: "Some awesome tailwind tricks",
+    isNew: false,
+    inProgress: false,
+  },
+  {
+    title: "MUI",
+    href: `${rootPath}/mui`,
+    description:
+      "Playing around with MUI base components and styling them with Tailwind CSS",
+    isNew: false,
+    inProgress: false,
+  },
+  {
+    title: "Image Slider",
+    href: `${rootPath}/image-slider`,
+    description: "Create your own image slider with React and Tailwind CSS",
+    isNew: false,
+    inProgress: false,
+  },
+  {
     title: "Shad CN",
     href: `${rootPath}/shadcn`,
     description: "Checking out few shadcn components",
+    isNew: false,
+    inProgress: false,
+  },
+  {
+    title: "Class component",
+    href: `${rootPath}/class-component`,
+    description:
+      "Playing around with class and functional components (See how things can work between them)",
     isNew: false,
     inProgress: false,
   },
@@ -165,13 +165,13 @@ export const projects: {
     href: `${rootPath}/redux`,
     description: "Basic redux setup",
     isNew: false,
-    inProgress: true,
+    inProgress: false,
   },
   {
     title: "JavaScript",
     href: `${rootPath}/js`,
     description: "Basic javascript related code snippets",
-    isNew: true,
+    isNew: false,
     inProgress: false,
   },
 ];

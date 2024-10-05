@@ -6,13 +6,15 @@ import { Button } from "@/components/ui/button";
 
 import { cn } from "@/lib/utils";
 import { useCopyToClipboard } from "usehooks-ts";
-import { toast } from "@/components/ui/use-toast";
 import MyTooltip from "@/components/custom/MyTooltip";
+import { useToast } from "@/hooks/use-toast";
 
 export default function ContactIcons({
   className,
 }: Readonly<{ className?: string }>) {
   const [copiedText, copy] = useCopyToClipboard();
+
+  const { toast } = useToast();
 
   function handleCopy(text: string) {
     copy(text);

@@ -6,7 +6,7 @@ import SimpleDataTable from "@/components/custom/simple-data-table";
 import { columns, payments } from "./_components/sample-table-data";
 import Experimental from "./_components/experimental";
 
-export default function page() {
+export default function Page() {
   return (
     <div className="space-y-5">
       <SampleDatePicker />

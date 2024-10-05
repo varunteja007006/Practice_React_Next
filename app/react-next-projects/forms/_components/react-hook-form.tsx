@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
-import { toast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 
 const items = [
   {
@@ -51,6 +51,8 @@ const formSchema = z.object({
   }),
 });
 function MyForm() {
+  const { toast } = useToast();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -58,6 +60,7 @@ function MyForm() {
       items: ["1", "2"],
     },
   });
+
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     toast({
@@ -69,6 +72,7 @@ function MyForm() {
       ),
     });
   }
+
   useEffect(() => {
     console.log(form.getValues("username"));
   }, [form.watch("username")]);

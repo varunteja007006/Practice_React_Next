@@ -14,7 +14,7 @@ const urls = [
   },
 ];
 
-export default function page() {
+export default function Page() {
   return (
     <div className="space-y-4">
       <h2 className="text-lg font-semibold">Basic</h2>

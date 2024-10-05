@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import React, { ReactNode } from "react";
-import { useToast } from "@/components/ui/use-toast";
+import React from "react";
+import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 function FuncComp({
@@ -17,7 +17,7 @@ function FuncComp({
   handleSetStateUtil: (obj: object) => void;
 }>) {
   // function start
-  const { toast }: { toast: any } = useToast();
+  const { toast } = useToast();
 
   const onClickHandleSetStateUtil = () => {
     handleSetStateUtil({

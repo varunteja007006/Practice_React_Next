@@ -4,7 +4,7 @@ import TailwindProse from "./_components/tailwind-text";
 import TailwindGridSubgrid from "./_components/grid-subgrid";
 import TailwindNumberInput from "./_components/tailwind-number-input";
 
-export default function page() {
+export default function Page() {
   return (
     <div className="">
       <section className="space-y-4">

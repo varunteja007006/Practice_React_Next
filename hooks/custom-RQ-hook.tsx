@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import { customFetch } from "@/utils/custom-fetch";
-import { toast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { AxiosError } from "axios";
 
 export const useFetchTasks = () => {
@@ -16,6 +16,9 @@ export const useFetchTasks = () => {
 
 export const useCreateTask = () => {
   const queryClient = useQueryClient();
+
+  const { toast } = useToast();
+
   const { mutate: createTask, isLoading } = useMutation({
     mutationFn: (taskTitle) => customFetch.post("/", { title: taskTitle }),
     onSuccess: () => {

@@ -1,3 +1,4 @@
+import { localAPI } from "@/constants/api.constants";
 import { revalidatePath } from "next/cache";
 
 export const postTodo = async (formData: FormData) => {
@@ -5,7 +6,7 @@ export const postTodo = async (formData: FormData) => {
   const title = formData.get("title");
   const description = formData.get("description");
 
-  const res = await fetch("http://localhost:3030/todo", {
+  const res = await fetch(`${localAPI}/todos`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

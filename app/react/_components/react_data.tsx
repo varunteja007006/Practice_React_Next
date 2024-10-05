@@ -158,11 +158,12 @@ export const react_data = [
     CodeSnippet: `
     import { Button } from "@/components/ui/button";
     import { Input } from "@/components/ui/input";
-    import { toast } from "@/components/ui/use-toast";
+    import { useToast } from "@/hooks/use-toast";
     import React from "react";
 
     export default function LearnUseRefDemo() {
       const inputRef = React.useRef<HTMLInputElement>(null);
+      const { toast } = useToast();
 
       function submit() {
         toast({

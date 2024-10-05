@@ -17,7 +17,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { toast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import {
   Card,
   CardContent,
@@ -25,6 +25,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { localAPI } from "@/constants/api.constants";
 
 const FormSchema = z.object({
   Company: z.string().min(2, {
@@ -53,6 +54,8 @@ const initialValues = {
 export default function ReactHookFormArray({
   id,
 }: Readonly<{ id: string | null }>) {
+  const { toast } = useToast();
+
   const [edit, setEdit] = React.useState(false);
 
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -66,7 +69,7 @@ export default function ReactHookFormArray({
   });
 
   async function getData() {
-    const res = await fetch(`http://localhost:3030/company/${id}`);
+    const res = await fetch(`${localAPI}/company/${id}`);
     const data = await res.json();
     form.reset(data);
   }
@@ -88,7 +91,7 @@ export default function ReactHookFormArray({
       ),
     });
 
-    const res = await fetch(`http://localhost:3030/company/${edit ? id : ""}`, {
+    const res = await fetch(`${localAPI}/company/${edit ? id : ""}`, {
       method: edit ? "PUT" : "POST",
       headers: {
         "Content-Type": "application/json",

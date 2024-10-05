@@ -1,3 +1,7 @@
+/*
+ * This code is used to help understand few shadcn components and their integration with react-hook-form
+ */
+
 "use client";
 import ComboBox from "@/components/custom/combo-box";
 import React from "react";
@@ -5,7 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useQuery } from "react-query";
-import { toast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -35,6 +39,8 @@ export default function DesignComponents() {
       username: 0,
     },
   });
+
+  const { toast } = useToast();
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     toast({

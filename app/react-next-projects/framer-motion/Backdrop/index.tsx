@@ -12,7 +12,7 @@ function Backdrop({
 }>) {
   return (
     <motion.div
-      className=" absolute top-0 left-0 h-full w-full bg-black/20 flex items-center  justify-center cursor-pointer"
+      className=" absolute top-0 left-0 h-screen w-screen bg-black/20 flex items-center  justify-center cursor-pointer"
       onClick={onClick}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

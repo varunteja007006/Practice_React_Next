@@ -9,7 +9,7 @@ const allCategories = [
   ...Array.from(new Set(menuData.map((item) => item.category))),
 ];
 
-export default function page() {
+export default function Page() {
   const [menuItems, setMenuItems] = React.useState(menuData);
   const [categories, setCategories] = React.useState(allCategories);
 

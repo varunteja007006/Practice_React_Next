@@ -1,6 +1,6 @@
 "use client";
 
-import { fakeAPI } from "@/constants/api";
+import { fakeAPI } from "@/constants/api.constants";
 import React from "react";
 
 type Posts = {

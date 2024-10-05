@@ -1,3 +1,8 @@
+/*
+ * This code is for understanding the class based components and functional components
+ * Mixing of functional and class based components
+ */
+
 "use client";
 
 import React, { Component } from "react";

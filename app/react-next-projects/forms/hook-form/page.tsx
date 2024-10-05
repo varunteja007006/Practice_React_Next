@@ -4,10 +4,11 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { localAPI } from "@/constants/api.constants";
 
 async function getData() {
   try {
-    const res = await fetch("http://localhost:3030/company", {
+    const res = await fetch(`${localAPI}/company`, {
       next: { revalidate: 10 },
     });
     if (!res.ok) {
@@ -28,7 +29,7 @@ export type dataType = {
   }[];
 };
 
-export default async function page() {
+export default async function Page() {
   const data = await getData();
 
   return (
