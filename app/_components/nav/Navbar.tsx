@@ -20,7 +20,7 @@ import { Badge } from "@/components/ui/badge";
 function Navbar() {
   return (
     <>
-      <nav className="fixed z-[2] flex flex-row items-center justify-between w-full p-3 dark:bg-black/100 bg-white/70">
+      <nav className="fixed z-[2] flex flex-row items-center justify-between min-w-[100vw] p-3 dark:bg-black/100 bg-white/70">
         <div className="ml-3 font-bold">
           <a href="/">{`<Developer />`}</a>
         </div>

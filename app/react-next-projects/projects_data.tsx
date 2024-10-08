@@ -198,6 +198,14 @@ export const projects: {
     inProgress: false,
     github_URL: ``,
   },
+  {
+    title: "React Data Sheet Grid",
+    href: `${rootPath}/react-datasheet-grid`,
+    description: "React Datasheet Grid library",
+    isNew: false,
+    inProgress: false,
+    github_URL: ``,
+  },
 ];
 
 export const PROJECTS_GITHUB_LINKS = {

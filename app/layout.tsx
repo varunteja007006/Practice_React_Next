@@ -26,9 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`w-full min-w-[300px]  bg-blue-50 ${openSan.className} scroll-smooth
-          dark:bg-gradient-to-tl dark:from-purple-950 from-5% dark:via-black dark:via-90% dark:to-purple-950
-          `}
+        className={`!md:min-w-[99vw] min-w-[300px]  bg-blue-50 ${openSan.className} scroll-smooth
+        dark:bg-gradient-to-tl dark:from-purple-950 from-5% dark:via-black dark:via-90% dark:to-purple-950
+        `}
       >
         <Provider>
           <ThemeProvider
@@ -43,7 +43,9 @@ export default function RootLayout({
                 progressStyles="dark:bg-purple-800 bg-blue-300 h-1.5"
               />
               <Navbar />
-              <div className="min-h-[calc(100vh-20rem)]">{children}</div>
+              <main className="min-h-[calc(100vh-20rem)] w-full">
+                {children}
+              </main>
               <Footer />
             </React.Fragment>
           </ThemeProvider>
