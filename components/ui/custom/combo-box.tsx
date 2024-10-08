@@ -1,8 +1,12 @@
 "use client";
 import * as React from "react";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { FormControl } from "../ui/form";
-import { Button } from "../ui/button";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { FormControl } from "@/components/ui/form";
+import { Button } from "@/components/ui/button";
 import { HiOutlineChevronDown } from "react-icons/hi";
 import {
   Command,
@@ -10,9 +14,9 @@ import {
   CommandGroup,
   CommandInput,
   CommandItem,
-} from "../ui/command";
+} from "@/components/ui/command";
 import { CommandList, CommandLoading } from "cmdk";
-import { ScrollArea, ScrollBar } from "../ui/scroll-area";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import { LoaderCircle } from "lucide-react";
 

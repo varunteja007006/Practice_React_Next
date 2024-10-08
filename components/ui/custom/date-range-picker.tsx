@@ -2,18 +2,18 @@
 "use client";
 
 import React, { type FC, useState, useEffect, useRef } from "react";
-import { Button } from "../ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { Calendar } from "../ui/calendar";
+import { Button } from "@/components/ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Calendar } from "@/components/ui/calendar";
 import { DateInput } from "./date-input";
-import { Label } from "../ui/label";
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
+} from "@/components/ui/select";
 
 import {
   ChevronUpIcon,
@@ -21,7 +21,7 @@ import {
   CheckIcon,
 } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
-import { Switch } from "../ui/switch";
+import { Switch } from "@/components/ui/switch";
 
 export interface DateRangePickerProps {
   /** Click handler for applying the updates from DateRangePicker. */
