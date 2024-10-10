@@ -72,7 +72,7 @@ export default function ReactDataSheetGrid() {
     },
   ];
 
-  React.useEffect(() => console.log(data), [data]);
+  React.useEffect(() => console.log("On data change:\n", data), [data]);
 
   return (
     <div className="space-y-3">

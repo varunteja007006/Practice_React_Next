@@ -2,7 +2,7 @@ import { User } from "@/types/user";
 import axios from "axios";
 
 export async function getUser() {
-  const response = await axios.get<User>(
+  const response = await axios.get<User[]>(
     "https://jsonplaceholder.typicode.com/users"
   );
 

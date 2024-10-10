@@ -206,6 +206,15 @@ export const projects: {
     inProgress: false,
     github_URL: ``,
   },
+  {
+    title: "Render Component via Fetch",
+    href: `${rootPath}/fetch-component`,
+    description:
+      "Fetching a component via fetch and render it, use server actions",
+    isNew: false,
+    inProgress: false,
+    github_URL: ``,
+  },
 ];
 
 export const PROJECTS_GITHUB_LINKS = {
