@@ -3,7 +3,7 @@
  */
 
 "use client";
-import ComboBox from "@/components/ui/custom/combo-box";
+import ComboBox from "@/components/custom/combo-box";
 import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";

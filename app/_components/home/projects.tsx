@@ -15,8 +15,8 @@ import { Button } from "@/components/ui/button";
 import { FaGithub } from "react-icons/fa6";
 import { GrDeploy } from "react-icons/gr";
 
-import MyTooltip from "@/components/ui/custom/MyTooltip";
-import { BorderBeam } from "@/components/ui/custom/border-beam-card";
+import MyTooltip from "@/components/custom/MyTooltip";
+import { BorderBeam } from "@/components/custom/border-beam-card";
 
 const ProjectLink = ({
   URL,

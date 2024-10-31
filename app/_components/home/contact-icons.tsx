@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 import { cn } from "@/lib/utils";
 import { useCopyToClipboard } from "usehooks-ts";
-import MyTooltip from "@/components/ui/custom/MyTooltip";
+import MyTooltip from "@/components/custom/MyTooltip";
 import { useToast } from "@/hooks/use-toast";
 
 export default function ContactIcons({

@@ -16,7 +16,7 @@ import Link from "next/link";
 
 import { ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
-import MyTooltip from "@/components/ui/custom/MyTooltip";
+import MyTooltip from "@/components/custom/MyTooltip";
 
 const Main = () => {
   return (

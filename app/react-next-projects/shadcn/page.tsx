@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { SampleDatePicker } from "./_components/sample-datepicker";
-import { DateRangePicker } from "@/components/ui/custom/date-range-picker";
-import SimpleDataTable from "@/components/ui/custom/simple-data-table";
+import { DateRangePicker } from "@/components/custom/date-range-picker";
+import SimpleDataTable from "@/components/custom/simple-data-table";
 import { columns, payments } from "./_components/sample-table-data";
 import Experimental from "./_components/experimental";
 import ComboBoxForm from "./_components/combo-box-form";
