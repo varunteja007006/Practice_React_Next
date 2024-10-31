@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       
         <body
-          className={`!md:min-w-[99vw] min-w-[300px]  bg-blue-50 ${comicNeue.className} scroll-smooth
+          className={`min-w-[300px]  bg-blue-50 ${comicNeue.className} scroll-smooth
         dark:bg-gradient-to-tl dark:from-purple-950 from-5% dark:via-black dark:via-90% dark:to-purple-950
         transition-colors delay-100 duration-100
         `}
