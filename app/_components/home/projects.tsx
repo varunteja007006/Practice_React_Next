@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import projectData from "./data/projectData";
+import projectData, { COMPLETED } from "./data/projectData";
 import {
   Card,
   CardContent,
@@ -16,6 +16,7 @@ import { FaGithub } from "react-icons/fa6";
 import { GrDeploy } from "react-icons/gr";
 
 import MyTooltip from "@/components/ui/custom/MyTooltip";
+import { BorderBeam } from "@/components/ui/custom/border-beam-card";
 
 const ProjectLink = ({
   URL,
@@ -54,17 +55,31 @@ export default function Projects() {
   return (
     <section id="certifications" className="space-y-4">
       <h3 className="text-xl font-semibold">Projects</h3>
+
       <div className="grid grid-cols-1 gap-5">
-        {projectData.map((item) => {
+        {projectData.map((item, index) => {
           if (!item.toShow) {
             return null;
           }
           return (
-            <Card key={item.id}>
+            <Card key={item.id} className="relative">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="col-span-2">
                   <CardHeader className="pb-3">
-                    <CardTitle>{item.project_title}</CardTitle>
+                    <CardTitle>
+                      <span className="w-full flex flex-wrap gap-2 items-center justify-between">
+                        {item.project_title}
+                        <Badge
+                          variant={
+                            item.projectStatus === COMPLETED
+                              ? "success"
+                              : "warning"
+                          }
+                        >
+                          {item.projectStatus}
+                        </Badge>
+                      </span>
+                    </CardTitle>
                     <CardDescription className="py-2">
                       {item.project_subtitle}
                     </CardDescription>
@@ -97,6 +112,12 @@ export default function Projects() {
                   </CardFooter>
                 </div>
               </div>
+              <BorderBeam
+                borderWidth={2}
+                anchor={100}
+                duration={10}
+                delay={index * 0.25}
+              />
             </Card>
           );
         })}

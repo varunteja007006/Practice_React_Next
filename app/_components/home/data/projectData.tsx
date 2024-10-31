@@ -1,6 +1,8 @@
-import { jobtoday, jobtoday1, jobtoday2, jobtoday3 } from "@/public";
-import { fit, fit1, fit2 } from "@/public";
 import {
+  jobtoday,
+  jobtoday1,
+  jobtoday2,
+  jobtoday3,
   sentiment,
   sentiment1,
   sentiment2,
@@ -8,8 +10,9 @@ import {
   sentiment4,
   sentiment5,
   sentiment6,
-} from "@/public";
-import {
+  fit,
+  fit1,
+  fit2,
   sportsmanagement,
   sportsmanagement1,
   sportsmanagement2,
@@ -20,25 +23,87 @@ import {
   sportsmanagement7,
   sportsmanagement8,
   sportsmanagement9,
+  collabs,
+  collabs1,
+  collabs2,
+  collabs3,
+  collabs4,
+  budget,
+  budget1,
+  budget2,
+  budget3,
+  budget4,
 } from "@/public";
-import { collabs, collabs1, collabs2, collabs3, collabs4 } from "@/public";
 
-import { budget, budget1, budget2, budget3, budget4 } from "@/public";
+export const COMPLETED = "Completed";
+export const INPROGRESS = "In Progress";
 
 const projectData = [
+  {
+    id: 10,
+    project_title: `Portfolio Website`,
+    project_subtitle: `Not just my portfolio but my beautiful React 💙 playground`,
+    project_badges: [
+      "Next JS",
+      "React JS",
+      "ShadCN",
+      "Zustand",
+      "Tailwind CSS",
+      "Redux",
+      "Typescript",
+      "React Hook Forms",
+      "Zod",
+    ],
+    project_description: [
+      `This project is to show case not only my skills but also my passion for React and learning more about it.`,
+      `I have built it using Next JS and used various react libraries to demonstrate their usages and features.`,
+      `There are many more micro projects that are built to get the understanding of various libraries like React Hook Form, Zustand, Zod, React Table (Tanstack Table), React Query (Tanstack Query, etc...)`,
+    ],
+    project_github: "https://github.com/varunteja007006/JobToday-ReactJS",
+    project_link: "https://varunteja007006.netlify.app/",
+    toShow: true,
+    projectStatus: COMPLETED,
+  },
+  {
+    id: 10,
+    project_title: `Template_Next JS_Django`,
+    project_subtitle: `My experimental project to dive deep into the next js and django frameworks`,
+    project_badges: [
+      "Next JS",
+      "Django",
+      "Django Social Auth",
+      "Django Rest Framework",
+      "React Hook Form",
+      "ShadCN - Tailwind CSS",
+    ],
+    project_description: [
+      `Experimenting and learning django authorization and authentication`,
+      `Implemented Social Authentication - Via Google, Also Refresh and Access Token implementation.`,
+      `On the Frontend part next js and using middleware, server actions, etc....`,
+    ],
+    project_github: "https://github.com/varunteja007006/template_nextjs_django",
+    project_link: "",
+    toShow: true,
+    projectStatus: INPROGRESS,
+  },
   {
     id: 1,
     project_title: `JobToday`,
     project_subtitle: `An awesome Job manager`,
     project_badges: ["Axios", "React JS", "Redux", "Recharts", "Tailwind CSS"],
     project_description: [
-      "Applying Jobs can be tiring. You want to know what is more tiring? Keeping track of those jobs. JobToday ⚡ - The Pro Job Application Manager App will help you keep track of your job applications.",
+      `Applying Jobs can be tiring. You want to know what is more tiring? Keeping track of those 
+      jobs. JobToday ⚡ - The Pro Job Application Manager App will help you keep track of your job 
+      applications.`,
+      `This application is built on the MERN Stack Framework, with JWT-based authentication for 
+      enhanced security.`,
     ],
-    project_github: "https://github.com/varunteja007006/JobToday-ReactJS",
+    project_github: "https://github.com/varunteja007006/Practice_React_Next",
     project_link: "https://jobtoday.netlify.app/",
     // project_images: [jobtoday, jobtoday1, jobtoday2, jobtoday3],
     project_images: [jobtoday, jobtoday1],
     toShow: true,
+    projectStatus: COMPLETED,
   },
   {
     id: 2,
@@ -53,12 +118,18 @@ const projectData = [
       "SASS",
     ],
     project_description: [
-      "This application is built on the MERN Stack Framework, with JWT-based authentication for enhanced security. React useReducer hook is used for efficient state updates, while the useContext hook provides seamless user experience. These features work together to create a professional and high-quality application, delivering exceptional performance and functionality.",
+      `This application is built on the MERN Stack Framework, with JWT-based authentication for 
+      enhanced security. React useReducer hook is used for efficient state updates, 
+      while the useContext hook provides seamless user experience. 
+      These features work together to create a professional and high-quality application, 
+      delivering exceptional performance and functionality.`,
+      `It is a very basic app that thought me a lot about React and Node.`,
     ],
     project_github: "https://github.com/varunteja007006/FitApp-ReactJS",
     project_link: "",
     project_images: [fit, fit1, fit2],
     toShow: true,
+    projectStatus: COMPLETED,
   },
   {
     id: 3,
@@ -77,7 +148,11 @@ const projectData = [
       "Pandas",
     ],
     project_description: [
-      "The app performs Sentiment Analysis on tweets retrieved through the Twitter API, utilizing Django - a powerful Python-based Web Framework - to power its functionality. The classification of tweets is performed using the Naive Bayes algorithm, allowing for accurate and effective sentiment analysis. Together, these features enable the app to deliver reliable and informative insights into the sentiment of the tweets analyzed.",
+      `The app performs Sentiment Analysis on tweets retrieved through the Twitter API, utilizing 
+      Django - a powerful Python-based Web Framework - to power its functionality. 
+      The classification of tweets is performed using the Naive Bayes algorithm, allowing for 
+      accurate and effective sentiment analysis. Together, these features enable the app to deliver 
+      reliable and informative insights into the sentiment of the tweets analyzed.`,
     ],
     project_github:
       "https://github.com/varunteja007006/Twitter-Sentiment-analysis-on-politicians-using-Django",
@@ -90,6 +165,7 @@ const projectData = [
       // sentiment4,
     ],
     toShow: true,
+    projectStatus: COMPLETED,
   },
   {
     id: 4,
@@ -97,7 +173,13 @@ const projectData = [
     project_subtitle: ``,
     project_badges: ["PHP", "HTML", "CSS", "JavaScript", "MySQL"],
     project_description: [
-      "This project is designed to keep track of sports events and is based on the LAMP stack. The website is built from scratch, making use of PHP and MySQL to power the backend, and plain HTML and CSS for the frontend. Additionally, Bootstrap was later implemented to enhance the design consistency. Despite being my first project, the website is effective in its goal of maintaining records and delivering an efficient user experience.",
+      `This project is designed to keep track of sports events happening in the college and is based 
+      on the LAMP (Linux, Apache, MySQL, and PHP) stack. 
+      The website is built from scratch, making use of PHP and MySQL to power the backend, and plain
+       HTML and CSS for the frontend. 
+      Additionally, Bootstrap was later implemented to keep the design consistent. 
+      Despite being my first project, the website is effective in its goal of maintaining records 
+      and delivering an efficient user experience.`,
     ],
     project_github:
       "https://github.com/varunteja007006/Sportz-Management-Website-Bootstrap",
@@ -127,6 +209,7 @@ const projectData = [
     //   sportsmanagement9,
     // ],
     toShow: true,
+    projectStatus: COMPLETED,
   },
   {
     id: 5,
@@ -147,6 +230,7 @@ const projectData = [
     project_link: "#",
     project_images: [collabs, collabs1, collabs2, collabs3, collabs4],
     toShow: false,
+    projectStatus: COMPLETED,
   },
   {
     id: 6,
@@ -169,6 +253,7 @@ const projectData = [
     project_link: "#",
     project_images: [budget, budget1, budget2, budget3, budget4],
     toShow: false,
+    projectStatus: COMPLETED,
   },
 ];
 
