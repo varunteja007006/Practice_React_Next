@@ -25,18 +25,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
+      
         <body
           className={`!md:min-w-[99vw] min-w-[300px]  bg-blue-50 ${comicNeue.className} scroll-smooth
         dark:bg-gradient-to-tl dark:from-purple-950 from-5% dark:via-black dark:via-90% dark:to-purple-950
         transition-colors delay-100 duration-100
         `}
-        >
+        ><ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
           <Provider>
             <React.Fragment>
               <ProgressScroll
@@ -51,8 +51,9 @@ export default function RootLayout({
             </React.Fragment>
           </Provider>
           <Toaster />
+ </ThemeProvider>
         </body>
-      </ThemeProvider>
+     
     </html>
   );
 }
