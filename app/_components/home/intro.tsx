@@ -34,9 +34,9 @@ export default function Intro() {
             </Button>
           </div>
         </div>
-        <div className="col-span-2 p-2 space-y-4 text-[1.05rem] leading-loose text-center md:px-10">
+        <div className="col-span-2 p-2 space-y-4 text-base leading-loose text-center md:px-10">
           <div>
-            Hi 👋, I am a Software Engineer 🤓 at Invest4Edu, an Ed-Fintech (as
+            Hi 👋, I am a Software Engineer at Invest4Edu, an Ed-Fintech (as
             in both Education as well as Finance based) startup where I build
             web apps using <strong>Next.js, React, Node.js, and MSSQL.</strong>
           </div>
