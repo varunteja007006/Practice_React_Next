@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
+import { Comic_Neue } from "next/font/google";
 import "./globals.css";
 import Provider from "./providers";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -11,7 +11,7 @@ import Footer from "./_components/footer/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import ProgressScroll from "./react-next-projects/progress-on-scroll/page";
 
-const openSan = Open_Sans({ subsets: ["latin"] });
+const comicNeue = Comic_Neue({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Varun Teja",
@@ -32,7 +32,7 @@ export default function RootLayout({
         disableTransitionOnChange
       >
         <body
-          className={`!md:min-w-[99vw] min-w-[300px]  bg-blue-50 ${openSan.className} scroll-smooth
+          className={`!md:min-w-[99vw] min-w-[300px]  bg-blue-50 ${comicNeue.className} scroll-smooth
         dark:bg-gradient-to-tl dark:from-purple-950 from-5% dark:via-black dark:via-90% dark:to-purple-950
         transition-colors delay-100 duration-100
         `}
