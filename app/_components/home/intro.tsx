@@ -3,7 +3,6 @@ import React from "react";
 import ContactIcons from "./contact-icons";
 import { Button } from "@/components/ui/button";
 import { HiDownload } from "react-icons/hi";
-import { Link } from "lucide-react";
 
 export default function Intro() {
   return (
