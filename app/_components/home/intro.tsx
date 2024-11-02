@@ -59,11 +59,10 @@ export default function Intro() {
             level stuff ✨){""}
           </div>
           <div>
-            I also use various tools for productivity, code management and 📊
+            I also use various tools for productivity, code management and
             benchmarking like{" "}
             <strong>Git, VS Code, Postman, SonarQube, and Jenkins</strong>.
           </div>
-          ✍️
           <div>
             I am open to new opportunities so feel free to reach out to me 🤝.
           </div>
@@ -72,7 +71,6 @@ export default function Intro() {
             <ContactIcons className="" />
           </div>
         </div>
-        ✍️
       </div>
     </section>
   );

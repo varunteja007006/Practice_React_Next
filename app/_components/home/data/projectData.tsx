@@ -66,8 +66,9 @@ const projectData = [
   },
   {
     id: 10,
-    project_title: `Template_Next JS_Django`,
-    project_subtitle: `My experimental project to dive deep into the next js and django frameworks`,
+    project_title: `open_templates`,
+    project_subtitle: `My experimental project 🔬 to dive deep into the next js and django frameworks. 
+    To understand some core concepts like middleware, server actions, web sockets, etc...`,
     project_badges: [
       "Next JS",
       "Django",
@@ -80,8 +81,9 @@ const projectData = [
       `Experimenting and learning django authorization and authentication`,
       `Implemented Social Authentication - Via Google, Also Refresh and Access Token implementation.`,
       `On the Frontend part next js and using middleware, server actions, etc....`,
+      `Docker to spin up both frontend and backend.`,
     ],
-    project_github: "https://github.com/varunteja007006/template_nextjs_django",
+    project_github: "https://github.com/varunteja007006/open_templates",
     project_link: "",
     toShow: true,
     projectStatus: INPROGRESS,
