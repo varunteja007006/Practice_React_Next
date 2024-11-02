@@ -36,32 +36,34 @@ export default function Intro() {
         </div>
         <div className="col-span-2 p-2 space-y-4 text-base leading-loose text-center md:px-10">
           <div>
-            Hi 👋, I am a Software Engineer at Invest4Edu, an Ed-Fintech (as
-            in both Education as well as Finance based) startup where I build
-            web apps using <strong>Next.js, React, Node.js, and MSSQL.</strong>
+            Hi 👋, I am a Software Engineer at Invest4Edu, an Ed-Fintech (as in
+            both Education as well as Finance based) startup where I build web
+            apps using <strong>Next.js, React, Node.js, and MSSQL.</strong>
           </div>
           <div>
             My tech stack for the frontend includes{" "}
             <strong>Next.js, React.js, and Tailwind CSS</strong>. For the
             backend, I use{" "}
-            <strong>Node.js, Express.js, MSSQL and MongoDB</strong> and I have a
-            strong understanding of both <strong>SQL and NoSQL</strong>. I
+            <strong>Node.js, Express.js, MSSQL and MongoDB</strong> also I have
+            a strong understanding of both <strong>SQL and NoSQL</strong>. I
             started my journey with basics of{" "}
-            <strong>HTML, CSS, SCSS, a bit of Javascript and PHP</strong>, also{" "}
-            <strong>Django</strong> (<strong>Python</strong> based web
+            <strong>HTML, CSS, SCSS, a little of Javascript, PHP and</strong>{" "}
+            also <strong>Django</strong> (<strong>Python</strong> based web
             framework). Now I have a good understanding of them especially
             Javascript 😉.
           </div>
           <div>
-            I am passionate about learning and keep my skills updated .
-            Currently I am learning <strong>Django-Rest-Framework</strong>. Also
-            with plans to learn <strong>Go, Rust, and C</strong>. (Fascinated
-            about the low level stuff ✨){""}
+            I am passionate about learning and keep my skills updated. Currently
+            I am learning <strong>Django-Rest-Framework</strong>. Also plan to
+            learn <strong>Go, Rust, and C</strong>. (Fascinated about the low
+            level stuff ✨){""}
           </div>
           <div>
-            I also use various tools for productivity 💪 and benchmarking 📊
-            like Git, VS Code, Postman, SonarQube, and Jenkins.
+            I also use various tools for productivity, code management and 📊
+            benchmarking like{" "}
+            <strong>Git, VS Code, Postman, SonarQube, and Jenkins</strong>.
           </div>
+          ✍️
           <div>
             I am open to new opportunities so feel free to reach out to me 🤝.
           </div>
@@ -70,6 +72,7 @@ export default function Intro() {
             <ContactIcons className="" />
           </div>
         </div>
+        ✍️
       </div>
     </section>
   );
