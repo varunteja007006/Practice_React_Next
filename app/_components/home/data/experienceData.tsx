@@ -8,11 +8,13 @@ const experienceData = [
     dateOfJoining: "2023-12-18",
     dateOfResigning: "2023-12-18",
     jobDescription: [
-      "Developing on the frontend using Next JS & React JS, backend using Node JS & MS SQL.",
-      "Building of complex & efficient UI like dashboards, charts, filters, login etc. using Material UI, Highcharts, etc..",
-      "Worked towards SEO optimization by migrating the app to NEXT JS to take advantage of SSR(Server Side Rendering).",
-      "Frontend engineer for the application developed for sales and employees",
-      "Have used libraries like React Hook Forms, shadcn, Tailwind, Zod, and much more to maintain industry level standards and optimize performance for the app.",
+      `My core stack here is Next JS, React, Node, MSSQL.`,
+      `Building of complex & efficient UI like dashboards, charts, filters, login
+        etc. using Material UI, Highcharts, and many more, all while moving away from the class based architecture to functional components.`,
+      "Worked towards SEO optimization by migrating the app to NEXT JS to take advantage of SSR(Server Side Rendering) and caching by Next JS.",
+      `I am also part of developing a sales and employee CRM in which I used various libraries like React Hook Forms, shadcn,
+        Tailwind, Zod, and much more to maintain industry level standards on the frontend and on the backend writing optimized
+        queries for MSSQL and Node`,
     ],
     toShow: true,
     current: true,
