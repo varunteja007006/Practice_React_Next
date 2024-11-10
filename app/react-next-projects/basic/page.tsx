@@ -1,11 +1,19 @@
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
 
+const FOLDER = `react-next-projects`;
+
 const urls = [
   {
-    url: "/react-next-projects/basic/form-data",
+    url: `/${FOLDER}/basic/form-data`,
     title: "Form Data",
     description: "Basic form data",
+  },
+  {
+    url: `/${FOLDER}/basic/react-children`,
+    title: "React Children",
+    description: "Passing props to children props",
   },
 ];
 
@@ -25,9 +33,11 @@ export default function Page() {
               <span className="text-gray-600 dark:text-gray-400 text-sm">
                 {url.description}
               </span>
-              <Link href={url.url} className="text-sm">
-                Click here
-              </Link>
+              <Button variant={"default"} asChild>
+                <Link href={url.url} className="text-sm">
+                  Click here
+                </Link>
+              </Button>
             </div>
           </li>
         ))}

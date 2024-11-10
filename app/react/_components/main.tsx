@@ -14,6 +14,7 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { FaGithub } from "react-icons/fa6";
+import Link from "next/link";
 
 const LANGUAGE = "jsx";
 
@@ -27,7 +28,7 @@ const Main = () => {
               <Card className="w-full mx-auto md:w-2/3">
                 <CardHeader className="md:pb-1 md:px-10">
                   <CardTitle className="flex items-center gap-2">
-                    {item.title}
+                    <Link href={`#${item.id}`}>{item.title}</Link>
                     <a href={item.githubLink}>
                       <FaGithub />
                     </a>
