@@ -18,7 +18,7 @@ import {
 import { CommandList, CommandLoading } from "cmdk";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
-import { LoaderCircle } from "lucide-react";
+import { Check, LoaderCircle, Square } from "lucide-react";
 
 /**
  * Render a ComboBox component with a dropdown menu for selecting options.
@@ -40,13 +40,21 @@ export type ComboBoxProps = {
 };
 
 function ComboBox(props: Readonly<ComboBoxProps>) {
+  const { field, form, value, label, options } = props;
+
+  if (!field || !form) {
+    throw new Error("Field and form are required");
+  }
+
   const [open, setOpen] = React.useState(false);
+
   const [popoverContentDimensions, setPopoverContentDimensions] =
     React.useState<{ width: string }>({ width: "280px" });
+
   const popupRef = React.useRef<HTMLButtonElement>(null);
 
   //  To check the width of the button and set the popover content width accordingly
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     const refValue = popupRef?.current;
     if (refValue) {
       const width = refValue?.offsetWidth || 280;
@@ -56,46 +64,57 @@ function ComboBox(props: Readonly<ComboBoxProps>) {
     }
   }, [popupRef?.current]);
 
+  const modifiedOptions = React.useMemo(
+    () =>
+      options?.map((item, index) => {
+        return {
+          ...item,
+          value: item[value],
+          label: item[label],
+          index: index + 1,
+        };
+      }),
+    [options, value, label]
+  );
+
   // check if selectedValue is present or not and return true or false
   const checkSelectedValue = () => {
-    if (!props?.field.value) {
+    if (!field.value) {
       return true;
     }
-    return !props?.options?.find(
-      (item) => item[props?.value] === props?.field.value
-    )?.[props?.label];
+    return !modifiedOptions?.find((item) => item.value === field.value)?.label;
   };
 
   // get select value based on selectedValue & also reset the value of this dropdown
   // if selectedValue is not present
   const getSelectedValue = () => {
-    if (!props?.field.value) {
+    if (!field.value) {
       return "Select";
     }
-    const label = props?.options?.find(
-      (item) => item[props?.value] === props?.field.value
-    )?.[props?.label];
-    return label || "Select";
+    const selectedLabel = modifiedOptions?.find(
+      (item) => item.value === field.value
+    )?.label;
+    return selectedLabel || "Select";
   };
 
   const handleOnSelect = (item: any) => {
     if (props.required) {
       // if required is true then set the value and do not let user to un-select
-      props?.form?.setValue(props?.field.name, item[props?.value]);
+      form?.setValue(field.name, item.value);
     } else {
       // if required is false then set the value and let user to un-select
-      props?.form?.getValues(props?.field.name) === item[props?.value]
-        ? props?.form?.setValue(props?.field.name, props?.defaultValue)
-        : props?.form?.setValue(props?.field.name, item[props?.value]);
+      form?.getValues(field.name) === item.value
+        ? form?.setValue(field.name, props?.defaultValue ?? "")
+        : form?.setValue(field.name, item.value);
     }
 
     // if cbFunc is present then call it
     if (props.cbFunc && typeof props.cbFunc === "function") {
-      props.cbFunc(item[props?.value]);
+      props.cbFunc(item.value);
     }
 
     // clear the errors whenever the user selects an option
-    props?.form?.clearErrors(props?.field.name);
+    form?.clearErrors(field.name);
 
     // close the popover
     setOpen(false);
@@ -114,7 +133,7 @@ function ComboBox(props: Readonly<ComboBoxProps>) {
             )}
             ref={popupRef}
             disabled={props?.disabled}
-            id={props?.field.name}
+            id={field.name}
           >
             <span className="overflow-hidden text-ellipsis">
               {getSelectedValue()}
@@ -138,19 +157,24 @@ function ComboBox(props: Readonly<ComboBoxProps>) {
                 </CommandLoading>
               )}
               <CommandGroup>
-                {props?.options
-                  ? props?.options.map((item, index) => (
+                {modifiedOptions
+                  ? modifiedOptions.map((item) => (
                       <CommandItem
                         className={cn(
-                          ``,
-                          props?.form?.getValues(props?.field.name) ===
-                            item[props?.value] && "bg-slate-200"
+                          `flex cursor-default items-center justify-start`,
+                          form?.getValues(field.name) === item[value] &&
+                            "bg-slate-200"
                         )}
-                        value={`${item[props?.label] + item[props?.value]}`}
-                        key={index}
+                        value={`${item.label + item.value}`}
+                        key={item.index}
                         onSelect={() => handleOnSelect(item)}
                       >
-                        {item[props?.label]}
+                        {item.value === form?.getValues(field.name) ? (
+                          <Check className="mr-2 h-4 w-4" />
+                        ) : (
+                          <Square className="mr-2 h-4 w-4" />
+                        )}{" "}
+                        <span className="flex-1">{item.label}</span>
                       </CommandItem>
                     ))
                   : []}

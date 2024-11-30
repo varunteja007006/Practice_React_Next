@@ -16,12 +16,14 @@
 
 🔳 class components page needs fix
 
-🔳 Basic page make the cards better
-
 🔳 javascript page needs better info
 
 🔳 redux thunk api integration
 
-🔳 Custom ShadCN components has to be moved into UI so that I can reuse it
-
 🔳 Improve the portfolio UI
+
+🔳 Date range picker
+
+🔳 Multi-select
+
+🔳 Combo-box

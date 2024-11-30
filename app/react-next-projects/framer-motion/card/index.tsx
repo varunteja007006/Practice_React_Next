@@ -65,7 +65,7 @@ function Card() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, transition: { duration: 5 } }}
               >
-                "Bruh! you got flipped"
+                {"Bruh! you got flipped"}
               </motion.p>
             )}
           </motion.div>
@@ -75,7 +75,7 @@ function Card() {
             className=" w-fit h-fit bg-teal-300 p-3"
             animate={{ rotateY: 0, transition: { duration: 3 } }}
           >
-            "You fine Bruh!!"
+            {"You fine Bruh!!"}
           </motion.div>
         )}
 
@@ -83,7 +83,7 @@ function Card() {
           className="bg-red-300 px-3 py-0 border-2 border-red-700 hover:bg-red-700 hover:text-white"
           onClick={() => (flipcard ? setFlipcard(false) : setFlipcard(true))}
         >
-          Flip it bruh!!
+          {" Flip it bruh!!"}
         </button>
       </AnimatePresence>
     </div>
