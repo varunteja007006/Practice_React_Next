@@ -26,6 +26,7 @@ const FormSchema = z.object({
     message: "Please select an option ",
   }),
 });
+
 export default function ComboBoxForm() {
   const userData = useQuery("userData", async () => {
     return fetch("https://jsonplaceholder.typicode.com/users").then((res) =>
@@ -54,42 +55,37 @@ export default function ComboBoxForm() {
   }
 
   return (
-    <div>
-      <div>Combo Box</div>
-      <div>
-        <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="w-2/3 space-y-6"
-          >
-            <FormField
-              control={form.control}
-              name="username"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Username</FormLabel>
-                  <FormControl>
-                    <ComboBox
-                      options={userData.data}
-                      form={form}
-                      field={field}
-                      label="username"
-                      value="id"
-                      loading={userData.isLoading}
-                      defaultValue={0}
-                    />
-                  </FormControl>
-                  <FormDescription>
-                    This is your public display name.
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type="submit">Submit</Button>
-          </form>
-        </Form>
-      </div>
-    </div>
+    <Form {...form}>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="w-full lg:w-96 space-y-6"
+      >
+        <FormField
+          control={form.control}
+          name="username"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Username</FormLabel>
+              <FormControl>
+                <ComboBox
+                  options={userData.data}
+                  form={form}
+                  field={field}
+                  label="username"
+                  value="id"
+                  loading={userData.isLoading}
+                  defaultValue={0}
+                />
+              </FormControl>
+              <FormDescription>
+                This is your public display name.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit">Submit</Button>
+      </form>
+    </Form>
   );
 }

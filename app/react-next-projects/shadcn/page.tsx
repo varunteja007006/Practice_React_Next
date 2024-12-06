@@ -10,8 +10,12 @@ import ComboBoxForm from "./_components/combo-box-form";
 export default function Page() {
   return (
     <div className="space-y-5">
+      <h1 className="text-2xl font-semibold">Shadcn UI - React Hook Form</h1>
+      <p>An examples of shadcn ui and react hook form integration.</p>
+
       <SampleDatePicker />
 
+      <ComboBoxForm />
       <div>
         <DateRangePicker
           onUpdate={(values) => console.log(values)}
@@ -29,10 +33,6 @@ export default function Page() {
 
       <div>
         <Experimental />
-      </div>
-
-      <div>
-        <ComboBoxForm />
       </div>
     </div>
   );
