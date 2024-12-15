@@ -21,13 +21,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export default function Experimental() {
+export default function MultipleDialogs() {
   const [state1, setState1] = React.useState(false);
   const [state2, setState2] = React.useState(false);
 
   return (
-    <div className="space-y-4 flex flex-col justify-center items-center">
-      <div>{`Experimental Multiple Dialogs in a dropdown :-)`}</div>
+    <div className="space-y-4 flex flex-col justify-center items-start">
+      <div>{`Multiple Dialogs in a dropdown`}</div>
       <Dialog
         open={state1 || state2}
         onOpenChange={state1 ? setState1 : setState2}

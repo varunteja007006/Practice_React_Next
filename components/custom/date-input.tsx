@@ -199,13 +199,13 @@ const DateInput: React.FC<DateInputProps> = ({ value, onChange }) => {
     };
 
   return (
-    <div className="flex border rounded-lg items-center text-sm px-1">
+    <div className="flex border rounded-lg items-center text-sm px-1 bg-white py-1.5">
       <input
         type="text"
         ref={monthRef}
         max={12}
         maxLength={2}
-        value={date.month.toString()}
+        value={date.month.toString().padStart(2, "0")}
         onChange={handleInputChange("month")}
         onKeyDown={handleKeyDown("month")}
         onFocus={(e) => {
@@ -215,7 +215,7 @@ const DateInput: React.FC<DateInputProps> = ({ value, onChange }) => {
         }}
         onBlur={handleBlur("month")}
         className="p-0 outline-none w-6 border-none text-center"
-        placeholder="M"
+        placeholder="MM"
       />
       <span className="opacity-20 -mx-px">/</span>
       <input
@@ -223,7 +223,7 @@ const DateInput: React.FC<DateInputProps> = ({ value, onChange }) => {
         ref={dayRef}
         max={31}
         maxLength={2}
-        value={date.day.toString()}
+        value={date.day.toString().padStart(2, "0")}
         onChange={handleInputChange("day")}
         onKeyDown={handleKeyDown("day")}
         onFocus={(e) => {
@@ -233,7 +233,7 @@ const DateInput: React.FC<DateInputProps> = ({ value, onChange }) => {
         }}
         onBlur={handleBlur("day")}
         className="p-0 outline-none w-7 border-none text-center"
-        placeholder="D"
+        placeholder="DD"
       />
       <span className="opacity-20 -mx-px">/</span>
       <input

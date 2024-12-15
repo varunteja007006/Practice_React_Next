@@ -2,24 +2,20 @@
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 
+interface DebouncedInputProps
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange"> {
+  value: string;
+  onChange: (value: string) => void; // renamed from onChange to onChange
+  debounce?: number;
+}
+
 function DebouncedInput({
-  value: initialValue, // renamed value prop to initialValue
+  value: initialValue,
   onChange,
   debounce = 500,
   ...props
-}: Readonly<
-  | {
-      value: string;
-      onChange: (value: string) => void;
-      debounce?: number;
-    }
-  | any
->) {
+}: Readonly<DebouncedInputProps>) {
   const [value, setValue] = useState(initialValue); // local value state to track input
-
-  React.useEffect(() => {
-    setValue(initialValue);
-  }, [initialValue]);
 
   React.useEffect(() => {
     const timeout = setTimeout(() => {
