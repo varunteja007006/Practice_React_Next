@@ -35,4 +35,24 @@ export const problems_data = [
     url: `${PROBLEMS_ROUTE}/timer-problem`,
     githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-next-problems/timer-problem/page.tsx`,
   },
+  {
+    title: "Chess Board",
+    statement: [
+      `    
+       Problem Statement: Create a chess board, then on hover of each cell highlight the path of the bishop.
+      `,
+    ],
+    url: `${PROBLEMS_ROUTE}/chess-board`,
+    // githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-next-problems/timer-problem/page.tsx`,
+  },
+  {
+    title: "Reset clicks",
+    statement: [
+      `    
+       Problem Statement: User clicks on the buttons and you have to reset the clicks.
+      `,
+    ],
+    url: `${PROBLEMS_ROUTE}/reset-clicks`,
+    // githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-next-problems/timer-problem/page.tsx`,
+  },
 ];
