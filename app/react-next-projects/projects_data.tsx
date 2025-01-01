@@ -35,6 +35,14 @@ export const projects: {
     github_URL: ``,
   },
   {
+    title: "Drag & Drop",
+    href: `${rootPath}/drag-n-drop`,
+    description: "Create a component to drag and drop files.",
+    isNew: false,
+    inProgress: false,
+    github_URL: ``,
+  },
+  {
     title: "Unsplash",
     href: `${rootPath}/unsplash`,
     description: "Learn to use context, search, react-query, and unsplash API.",
