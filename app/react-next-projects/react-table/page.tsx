@@ -4,7 +4,7 @@ import { SortableDataTable } from "./_components/sortable-data-table";
 
 export default function ReactTablePage() {
   return (
-    <div>
+    <div className="space-y-5">
       <EditableTable />
       <SortableDataTable />
     </div>
