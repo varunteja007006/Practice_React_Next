@@ -11,16 +11,10 @@ import LearnUseStateDemo from "./learn-useState/learn-useState-demo";
 import LearnUseTransitionDemo from "./learn-useTransition/learn-useTransition-demo";
 
 const LearnUseMemoDemo = dynamic(
-  () => import("./learn-useMemo/learn-useMemo-demo"),
-  {
-    ssr: false,
-  }
+  () => import("./learn-useMemo/learn-useMemo-demo")
 );
 const LearnUseCallbackHook = dynamic(
-  () => import("./learn-useCallback/learn-useCallback-demo"),
-  {
-    ssr: false,
-  }
+  () => import("./learn-useCallback/learn-useCallback-demo")
 );
 
 export const react_data = [
@@ -39,11 +33,11 @@ export const react_data = [
     export default function SampleCode () {
     const [value, setValue] = React.useState(0);
     return (
-            <div className="flex flex-row items-center gap-4">
+            <div className="flex flex-row gap-4 items-center">
                 <Button onClick={() => setValue(value + 1)} className="w-40">
                     Click me
                 </Button>
-                <p className="w-40 p-2 text-center border-b-2 border-blue-800 hover:bg-slate-50">
+                <p className="p-2 w-40 text-center border-b-2 border-blue-800 hover:bg-slate-50">
                     {value}
                 </p>
             </div>
@@ -132,7 +126,7 @@ export const react_data = [
       const [count, dispatch] = React.useReducer(handleClick, 0);
 
       return (
-        <div className="flex flex-col md:flex-row gap-5 items-center">
+        <div className="flex flex-col gap-5 items-center md:flex-row">
           <Button variant={"outline"} onClick={handleIncrement}>
             Increment
           </Button>
@@ -277,7 +271,7 @@ export const react_data = [
         <div className="flex gap-5 items-center">
           <div>Count: {count}</div>
           <Button onClick={() => setCount(count + 1)}>Click Me</Button>
-          <div className="border p-3 rounded">
+          <div className="p-3 rounded border">
             Optimized Function:
             <div>{optimizedFunc(count)}</div>
           </div>
@@ -328,7 +322,7 @@ export const react_data = [
               return (
                 <Image
                   key={index}
-                  className=" h-40 w-50"
+                  className="h-40  w-50"
                   src="/other/crystal_blue_cube.jpg"
                   alt="crystal blue cube"
                   width={100}
@@ -348,7 +342,7 @@ export const react_data = [
             return (
               <Image
                 key={index}
-                className=" h-40 w-50"
+                className="h-40  w-50"
                 src="/other/crystal_blue_cube.jpg"
                 alt="crystal blue cube"
                 width={100}
@@ -368,7 +362,7 @@ export const react_data = [
             onChange={(e) => setText(e.target.value)}
             placeholder="Type something"
           />
-          <div className="flex items-center gap-4">
+          <div className="flex gap-4 items-center">
             <Button onClick={() => setShow(!show)}>Show Optimized Gallery</Button>
             <Button onClick={() => setSlowShow(!slowShow)}>
               Show Un-optimized Gallery
@@ -380,14 +374,14 @@ export const react_data = [
               (isLoading ? (
                 <p>Loading...</p>
               ) : (
-                <div className="flex items-center gap-4">{images}</div>
+                <div className="flex gap-4 items-center">{images}</div>
               ))}
             <ScrollBar orientation="horizontal" />
           </ScrollArea>
           <ScrollArea className="h-[180px] max-width-[500px] px-4 py-2">
             <p>Un-optimized Gallery</p>
             {slowShow && (
-              <div className="flex items-center gap-4">{slowImages}</div>
+              <div className="flex gap-4 items-center">{slowImages}</div>
             )}
             <ScrollBar orientation="horizontal" />
           </ScrollArea>
@@ -470,7 +464,7 @@ export const react_data = [
       const { incValue, setIncValue } = useLearnContext();
       const handleClick = () => setIncValue(incValue + 1);
       return (
-        <div className="flex items-center gap-4">
+        <div className="flex gap-4 items-center">
           <Button onClick={handleClick}>Click Me</Button>
           Count inside inner child -{" "}
           <span className="p-2 text-center border-b-2 border-blue-500 min-w-10">
@@ -614,7 +608,7 @@ export const react_data = [
             </Button>
           </div>
           <div className="space-y-5">
-            <div className="font-semibold text-lg">Parent Value: {valueParent}</div>
+            <div className="text-lg font-semibold">Parent Value: {valueParent}</div>
             <Child value={value} />
             <Separator />
             <ChildNoMemo value={value} />
@@ -645,16 +639,16 @@ export const react_data = [
       return (
         <div className="space-y-2">
           <p>Child Wrapped in Memo: {props?.value}</p>
-          <div className="flex items-center gap-2">
+          <div className="flex gap-2 items-center">
             Re-rendered: {countRef.current} ( I should only be re-rendered when you
             click <Badge>update child value</Badge>)
           </div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap gap-2 items-center">
             {dummyArray.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="inline-flex items-center justify-center p-1 dark:bg-blue-900 bg-blue-100 border border-blue-500 size-10"
+                  className="inline-flex justify-center items-center p-1 bg-blue-100 border border-blue-500 dark:bg-blue-900 size-10"
                 >
                   {item + 1}
                 </div>
@@ -687,16 +681,16 @@ export const react_data = [
       return (
         <div className="space-y-2">
           <p>Child Not wrapped in Memo: {props?.value}</p>
-          <div className="flex items-center gap-2">
+          <div className="flex gap-2 items-center">
             Re-rendered: {countRef.current} ( I re-render when you click
             <Badge>update child value</Badge> or <Badge>update parent value</Badge>)
           </div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap gap-2 items-center">
             {dummyArray.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="inline-flex items-center justify-center p-1 dark:bg-blue-900 bg-blue-100 border border-blue-500 size-10"
+                  className="inline-flex justify-center items-center p-1 bg-blue-100 border border-blue-500 dark:bg-blue-900 size-10"
                 >
                   {item + 1}
                 </div>

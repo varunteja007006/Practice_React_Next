@@ -9,9 +9,9 @@ import {
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { projects } from "@/app/react-next-projects/projects_data";
+import { projects } from "@/app/react-projects/projects_data";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function NavMobile() {
   return (
@@ -25,7 +25,7 @@ export default function NavMobile() {
         <SheetHeader>
           <SheetTitle>Menu</SheetTitle>
         </SheetHeader>
-        <div className="flex flex-col items-start gap-2">
+        <div className="flex flex-col gap-2 items-start">
           <ScrollArea className="h-[calc(100vh-10rem)] w-full mb-2">
             <ul className="grid gap-3 pl-0 p-3 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               <ListItem
@@ -36,7 +36,7 @@ export default function NavMobile() {
               <ListItem
                 key={"Problems"}
                 title={"Problems"}
-                href="/react-next-problems"
+                href="/react-problems"
               >{`React related problems to solve`}</ListItem>
               {projects.map((project) => (
                 <ListItem

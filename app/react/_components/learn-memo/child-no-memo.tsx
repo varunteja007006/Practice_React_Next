@@ -18,20 +18,20 @@ const ChildNoMemo = (props: { value: number }) => {
   return (
     <div className="space-y-2">
       <p className="font-semibold">Child Not wrapped in Memo: {props?.value}</p>
-      <div className="flex items-start flex-col md:items-center md:flex-row flex-wrap gap-2">
+      <div className="flex flex-col flex-wrap gap-2 items-start md:items-center md:flex-row">
         Times re-rendered: {countRef.current}
       </div>
-      <div className="text-xs font-semibold mt-2">
+      <div className="mt-2 text-xs font-semibold">
         I cause re-render when you click on both UPDATE CHILD VALUE and UPDATE
         PARENT VALUE
       </div>
       <ScrollArea className="h-[7rem] p-2">
-        <div className="flex flex-wrap items-center gap-2 ">
+        <div className="flex flex-wrap gap-2 items-center ">
           {dummyArray.map((item, index) => {
             return (
               <div
                 key={index}
-                className="rounded inline-flex items-center justify-center p-1 dark:bg-blue-900 bg-blue-100 border border-blue-500 size-10"
+                className="inline-flex justify-center items-center p-1 bg-blue-100 rounded border border-blue-500 dark:bg-blue-900 size-10"
               >
                 {item + 1}
               </div>

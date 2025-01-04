@@ -43,11 +43,11 @@ export function DateTimePicker() {
             !date && "text-muted-foreground"
           )}
         >
-          <CalendarIcon className="mr-2 h-4 w-4" />
+          <CalendarIcon className="mr-2 w-4 h-4" />
           {date ? format(date, "PPP HH:mm:ss") : <span>Pick a date</span>}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-auto p-0">
+      <PopoverContent className="p-0 w-auto">
         <Calendar
           mode="single"
           selected={date}

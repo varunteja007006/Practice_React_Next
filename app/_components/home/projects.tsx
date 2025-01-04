@@ -63,11 +63,11 @@ export default function Projects() {
           }
           return (
             <Card key={item.id} className="relative">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                 <div className="col-span-2">
                   <CardHeader className="pb-3">
                     <CardTitle>
-                      <span className="w-full flex flex-wrap gap-2 items-center justify-between">
+                      <span className="flex flex-wrap gap-2 justify-between items-center w-full">
                         {item.project_title}
                         <Badge
                           variant={
@@ -83,13 +83,13 @@ export default function Projects() {
                     <CardDescription className="py-2">
                       {item.project_subtitle}
                     </CardDescription>
-                    <div className="flex flex-wrap gap-2 items-center justify-start">
+                    <div className="flex flex-wrap gap-2 justify-start items-center">
                       {item.project_badges.map((item) => {
                         return (
                           <Badge
                             variant={"outline"}
                             key={item}
-                            className=" ring-1 ring-blue-400 dark:ring-purple-600"
+                            className="ring-1 ring-blue-400  dark:ring-purple-600"
                           >
                             {item}
                           </Badge>
@@ -97,7 +97,7 @@ export default function Projects() {
                       })}
                     </div>
                   </CardHeader>
-                  <CardContent className=" leading-loose">
+                  <CardContent className="leading-loose ">
                     {item.project_description.map((item, index) => {
                       return <p key={index}>{item}</p>;
                     })}

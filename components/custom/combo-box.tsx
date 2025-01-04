@@ -138,12 +138,12 @@ function ComboBox(props: Readonly<ComboBoxProps>) {
             <span className="overflow-hidden text-ellipsis">
               {getSelectedValue()}
             </span>
-            <HiOutlineChevronDown className="w-4 h-4 ml-2 opacity-50 shrink-0" />
+            <HiOutlineChevronDown className="ml-2 w-4 h-4 opacity-50 shrink-0" />
           </Button>
         </FormControl>
       </PopoverTrigger>
       <PopoverContent
-        className="p-0 overflow-auto"
+        className="overflow-auto p-0"
         style={{ ...popoverContentDimensions }}
       >
         <Command>
@@ -170,9 +170,9 @@ function ComboBox(props: Readonly<ComboBoxProps>) {
                         onSelect={() => handleOnSelect(item)}
                       >
                         {item.value === form?.getValues(field.name) ? (
-                          <Check className="mr-2 h-4 w-4" />
+                          <Check className="mr-2 w-4 h-4" />
                         ) : (
-                          <Square className="mr-2 h-4 w-4" />
+                          <Square className="mr-2 w-4 h-4" />
                         )}{" "}
                         <span className="flex-1">{item.label}</span>
                       </CommandItem>

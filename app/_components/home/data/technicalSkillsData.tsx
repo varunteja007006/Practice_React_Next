@@ -21,7 +21,6 @@ import {
   SiHeroku,
   SiRailway,
   SiGithub,
-  SiVisualstudiocode,
   SiPostman,
   SiJenkins,
   SiSonarqube,
@@ -32,6 +31,7 @@ import {
 import { BsFiletypeScss } from "react-icons/bs";
 import { GiTortoise } from "react-icons/gi";
 import { RiNextjsLine } from "react-icons/ri";
+import { DiVisualstudio } from "react-icons/di";
 
 const technicalSkillsData = {
   ProgrammingLanguages: {
@@ -75,7 +75,7 @@ const technicalSkillsData = {
     label: "Tools",
     skillList: [
       { name: "GitHub", icon: SiGithub, toShow: true },
-      { name: "VS Code", icon: SiVisualstudiocode, toShow: true },
+      { name: "VS Code", icon: DiVisualstudio, toShow: true },
       { name: "Postman", icon: SiPostman, toShow: true },
       { name: "TortoiseSVN", icon: GiTortoise, toShow: true },
       { name: "Jenkins", icon: SiJenkins, toShow: true },

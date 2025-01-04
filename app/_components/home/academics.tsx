@@ -13,7 +13,7 @@ export default function Academics() {
     <section id="academics" className="space-y-4">
       <h3 className="text-xl font-semibold">Academics</h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {academicData.map((item) => {
           if (!item.toShow) {
             return null;
@@ -21,7 +21,7 @@ export default function Academics() {
           return (
             <Card
               key={item.id}
-              className="flex flex-col h-full justify-between"
+              className="flex flex-col justify-between h-full"
             >
               <CardHeader>
                 <CardTitle className="text-lg">{item.course}</CardTitle>

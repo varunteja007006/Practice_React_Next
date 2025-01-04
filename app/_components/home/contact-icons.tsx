@@ -25,7 +25,7 @@ export default function ContactIcons({
   }
 
   return (
-    <div className="flex justify-center items-center gap-4">
+    <div className="flex gap-4 justify-center items-center">
       {contactData.map((item) => {
         return (
           <MyTooltip key={item.id} text={item.contact_value}>

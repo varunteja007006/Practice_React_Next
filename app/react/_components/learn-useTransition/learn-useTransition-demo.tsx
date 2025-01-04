@@ -24,7 +24,7 @@ export default function LearnUseTransitionDemo() {
           return (
             <Image
               key={index}
-              className=" h-40 w-50"
+              className="h-40  w-50"
               src="/other/crystal_blue_cube.jpg"
               alt="crystal blue cube"
               width={100}
@@ -44,7 +44,7 @@ export default function LearnUseTransitionDemo() {
         return (
           <Image
             key={index}
-            className=" h-40 w-50"
+            className="h-40  w-50"
             src="/other/crystal_blue_cube.jpg"
             alt="crystal blue cube"
             width={100}
@@ -64,7 +64,7 @@ export default function LearnUseTransitionDemo() {
         onChange={(e) => setText(e.target.value)}
         placeholder="Type something"
       />
-      <div className="flex items-center gap-4 flex-wrap">
+      <div className="flex flex-wrap gap-4 items-center">
         <Button onClick={() => setShow(!show)}>Show Optimized Gallery</Button>
         <Button onClick={() => setSlowShow(!slowShow)}>
           Show Un-optimized Gallery
@@ -76,14 +76,14 @@ export default function LearnUseTransitionDemo() {
           (isLoading ? (
             <p>Loading...</p>
           ) : (
-            <div className="flex items-center gap-4">{images}</div>
+            <div className="flex gap-4 items-center">{images}</div>
           ))}
         <ScrollBar className="px-2 mt-3" orientation="horizontal" />
       </ScrollArea>
       <ScrollArea className="h-[180px] max-width-[500px] px-4 py-2">
         <p>Un-optimized Gallery</p>
         {slowShow && (
-          <div className="flex items-center gap-4">{slowImages}</div>
+          <div className="flex gap-4 items-center">{slowImages}</div>
         )}
         <ScrollBar className="px-2 mt-3" orientation="horizontal" />
       </ScrollArea>

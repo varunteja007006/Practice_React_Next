@@ -3,19 +3,18 @@ import * as React from "react";
 import type { Metadata } from "next";
 import { Comic_Neue } from "next/font/google";
 import "./globals.css";
-import Provider from "./providers";
-import { ThemeProvider } from "@/components/theme-provider";
+import { Providers } from "./providers";
 
 import Navbar from "./_components/nav/Navbar";
 import Footer from "./_components/footer/Footer";
 import { Toaster } from "@/components/ui/toaster";
-import ProgressScroll from "./react-next-projects/progress-on-scroll/page";
+import ProgressScroll from "./react-projects/progress-on-scroll/page";
 
 const comicNeue = Comic_Neue({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Varun Teja",
-  description: "Practice React and Next JS",
+  description: "varunteja007006@gmail.com",
 };
 
 export default function RootLayout({
@@ -24,36 +23,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      
-        <body
-          className={`min-w-[300px]  bg-blue-50 ${comicNeue.className} scroll-smooth
-        dark:bg-gradient-to-tl dark:from-purple-950 from-5% dark:via-black dark:via-90% dark:to-purple-950
-        transition-colors delay-100 duration-100
-        `}
-        ><ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${comicNeue.className} antialiased scroll-smooth min-w-[300px]  bg-blue-50  dark:bg-gradient-to-tl dark:from-purple-950 from-5% dark:via-black dark:via-90% dark:to-purple-950
+        transition-colors delay-100 duration-100`}
       >
-          <Provider>
-            <React.Fragment>
-              <ProgressScroll
-                divStyles="hidden"
-                progressStyles="dark:bg-purple-800 bg-blue-300 h-1.5"
-              />
-              <Navbar />
-              <main className="min-h-[calc(100vh-20rem)] w-full">
-                {children}
-              </main>
-              <Footer />
-            </React.Fragment>
-          </Provider>
+        <Providers>
+          <React.Fragment>
+            <ProgressScroll
+              divStyles="hidden"
+              progressStyles="dark:bg-purple-800 bg-blue-300 h-1.5"
+            />
+            <Navbar />
+            <main className="min-h-[100vh] w-full">{children}</main>
+            <Footer />
+          </React.Fragment>
           <Toaster />
- </ThemeProvider>
-        </body>
-     
+        </Providers>
+      </body>
     </html>
   );
 }

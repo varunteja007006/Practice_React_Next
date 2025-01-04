@@ -300,7 +300,7 @@ export default function SimpleDataTable({
             </div>
           )}
           {showPagination && (
-            <div className="flex flex-row items-center justify-center gap-4">
+            <div className="flex flex-row gap-4 justify-center items-center">
               <MyTooltip text="Go to First Page">
                 <Button
                   variant="outline"

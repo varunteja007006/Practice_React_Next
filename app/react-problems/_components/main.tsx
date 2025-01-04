@@ -1,0 +1,79 @@
+import React from "react";
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+import { Button } from "@/components/ui/button";
+
+import { Card } from "@/components/ui/card";
+
+import { problems_data } from "../problems_data";
+import Link from "next/link";
+
+import { ArrowUpRight } from "lucide-react";
+import { FaGithub } from "react-icons/fa6";
+import MyTooltip from "@/components/custom/MyTooltip";
+
+const Main = () => {
+  return (
+    <Card className="p-5 pt-2">
+      <Accordion type="single" collapsible>
+        {problems_data.map((item, index) => {
+          return (
+            <AccordionItem
+              key={index}
+              value={`item-${index}`}
+              className="border-b-2"
+            >
+              <AccordionTrigger className="text-xl font-semibold">
+                {item.title}
+              </AccordionTrigger>
+              <AccordionContent>
+                {item.statement.map((statement, index) => {
+                  return (
+                    <p key={index} className="text-base">
+                      {statement}
+                    </p>
+                  );
+                })}
+                <div className="flex gap-2 justify-start items-center">
+                  <MyTooltip text="Check functionality">
+                    <Button
+                      size={"icon"}
+                      variant={"outline"}
+                      asChild={true}
+                      className="mt-5"
+                    >
+                      <Link href={item.url || ""}>
+                        <ArrowUpRight className="size-6" />
+                      </Link>
+                    </Button>
+                  </MyTooltip>
+
+                  <MyTooltip text="View on GitHub">
+                    <Button
+                      size={"icon"}
+                      variant={"outline"}
+                      asChild={true}
+                      className="mt-5"
+                    >
+                      <a href={item.githubURL || ""} target="_blank">
+                        <FaGithub className="size-6" />
+                      </a>
+                    </Button>
+                  </MyTooltip>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          );
+        })}
+      </Accordion>
+    </Card>
+  );
+};
+
+export default Main;

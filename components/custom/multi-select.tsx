@@ -116,7 +116,7 @@ const MultiSelect = React.forwardRef(function MultiSelect(
       </PopoverTrigger>
       <PopoverContent
         style={{ ...popoverContentDimensions }}
-        className="w-full p-0"
+        className="p-0 w-full"
       >
         <Command className={className}>
           <CommandInput placeholder="Search ..." />

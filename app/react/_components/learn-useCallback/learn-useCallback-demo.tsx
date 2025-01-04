@@ -17,7 +17,7 @@ export default function LearnUseCallbackHook() {
     <div className="flex gap-5 items-center">
       <div>Count: {count}</div>
       <Button onClick={() => setCount(count + 1)}>Click Me</Button>
-      <div className="border p-3 rounded">
+      <div className="p-3 rounded border">
         Optimized Function:
         <div>{optimizedFunc(count)}</div>
       </div>

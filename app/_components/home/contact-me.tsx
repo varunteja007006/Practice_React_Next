@@ -13,7 +13,7 @@ export default function ContactMe() {
           <TableBody>
             {contactData.map((item) => {
               return (
-                <TableRow key={item.id} className=" border-none">
+                <TableRow key={item.id} className="border-none ">
                   <TableCell className="font-medium capitalize">
                     {item.contact_type}
                   </TableCell>

@@ -353,7 +353,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
               }`}</div>
             </div>
             {rangeCompare != null && (
-              <div className="opacity-60 text-xs -mt-1">
+              <div className="-mt-1 text-xs opacity-60">
                 <>
                   vs. {formatDate(rangeCompare.from, locale)}
                   {rangeCompare.to != null
@@ -363,7 +363,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
               </div>
             )}
           </div>
-          <div className="pl-1 opacity-60 -mr-2 scale-125">
+          <div className="pl-1 -mr-2 opacity-60 scale-125">
             {isOpen ? (
               <ChevronUpIcon width={24} />
             ) : (
@@ -376,9 +376,9 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
         <div className="flex py-2">
           <div className="flex">
             <div className="flex flex-col">
-              <div className="flex flex-col lg:flex-row gap-2 px-3 justify-end items-center lg:items-start pb-4 lg:pb-0">
+              <div className="flex flex-col gap-2 justify-end items-center px-3 pb-4 lg:flex-row lg:items-start lg:pb-0">
                 {showCompare && (
-                  <div className="flex items-center space-x-2 pr-4 py-1">
+                  <div className="flex items-center py-1 pr-4 space-x-2">
                     <Switch
                       defaultChecked={Boolean(rangeCompare)}
                       onCheckedChange={(checked: boolean) => {
@@ -528,8 +528,8 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
             </div>
           </div>
           {!isSmallScreen && (
-            <div className="flex flex-col items-end gap-1 pr-2 pl-6 pb-6">
-              <div className="flex w-full flex-col items-end gap-1 pr-2 pl-6 pb-6">
+            <div className="flex flex-col gap-1 items-end pr-2 pb-6 pl-6">
+              <div className="flex flex-col gap-1 items-end pr-2 pb-6 pl-6 w-full">
                 {PRESETS.map((preset) => (
                   <PresetButton
                     key={preset.name}
@@ -542,7 +542,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
             </div>
           )}
         </div>
-        <div className="flex justify-end gap-2 py-2 pr-4">
+        <div className="flex gap-2 justify-end py-2 pr-4">
           <Button
             onClick={() => {
               setIsOpen(false);

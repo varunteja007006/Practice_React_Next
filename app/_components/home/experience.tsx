@@ -41,7 +41,7 @@ export default function Experience() {
           return (
             <Card key={item.id}>
               <CardHeader>
-                <CardTitle className="text-lg items-center flex gap-3">
+                <CardTitle className="flex gap-3 items-center text-lg">
                   {item.jobTitle}{" "}
                   {item.current && (
                     <Badge
@@ -70,14 +70,14 @@ export default function Experience() {
                 </CardTitle>
 
                 <div className="space-y-4">
-                  <p className="mb-2 dark:text-primary text-gray-600 text-sm">
+                  <p className="mb-2 text-sm text-gray-600 dark:text-primary">
                     {item.company}
                   </p>
                   <span>
-                    <p className="text-base font-semibold dark:text-primary text-black mb-2">
+                    <p className="mb-2 text-base font-semibold text-black dark:text-primary">
                       Job Description:
                     </p>
-                    <ul className="list-disc list-inside dark:text-primary text-black space-y-3">
+                    <ul className="space-y-3 list-disc list-inside text-black dark:text-primary">
                       {item.jobDescription.map((item, index) => (
                         <li key={index} className="text-sm">
                           {item}

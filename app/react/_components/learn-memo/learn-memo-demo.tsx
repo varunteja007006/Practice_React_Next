@@ -11,14 +11,14 @@ const LearnMemoDemo = () => {
   const [valueParent, setValueParent] = React.useState(0);
   return (
     <div className="space-y-4">
-      <div className="flex gap-3 items-center flex-wrap">
+      <div className="flex flex-wrap gap-3 items-center">
         <Button onClick={() => setValue(value + 1)}>UPDATE CHILD VALUE</Button>
         <Button onClick={() => setValueParent(valueParent + 1)}>
           UPDATE PARENT VALUE
         </Button>
       </div>
       <div className="space-y-5">
-        <div className="font-semibold text-lg">Parent Value: {valueParent}</div>
+        <div className="text-lg font-semibold">Parent Value: {valueParent}</div>
         <Child value={value} />
         <Separator />
         <ChildNoMemo value={value} />

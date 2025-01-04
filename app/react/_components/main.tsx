@@ -27,7 +27,7 @@ const Main = () => {
             <section key={index} id={item.id}>
               <Card className="w-full mx-auto md:w-2/3">
                 <CardHeader className="md:pb-1 md:px-10">
-                  <CardTitle className="flex items-center gap-2">
+                  <CardTitle className="flex gap-2 items-center">
                     <Link href={`#${item.id}`}>{item.title}</Link>
                     <a href={item.githubLink}>
                       <FaGithub />
@@ -41,12 +41,12 @@ const Main = () => {
                     ))}
                   </ul>
                 </CardHeader>
-                <CardContent className="p-2 m-3 mt-0 border rounded-md md:mx-10 md:my-5">
+                <CardContent className="p-2 m-3 mt-0 rounded-md border md:mx-10 md:my-5">
                   <p className="py-1 font-semibold">Code Demo:</p>
                   <div className="h-[1px] bg-zinc-500 w-full mb-3"></div>
                   {item?.Component ?? null}
                 </CardContent>
-                <CardContent className="p-0 m-3 overflow-hidden border border-gray-600 rounded md:mx-10 md:my-5 bg-gray-50">
+                <CardContent className="overflow-hidden p-0 m-3 bg-gray-50 rounded border border-gray-600 md:mx-10 md:my-5">
                   <ScrollArea className="min-h-[200px] min-w-[350px] flex">
                     <SyntaxHighlighter
                       style={atomDark}
@@ -58,7 +58,7 @@ const Main = () => {
                     <ScrollBar orientation="horizontal" />
                   </ScrollArea>
                 </CardContent>
-                <CardFooter className="flex items-center justify-center w-full">
+                <CardFooter className="flex justify-center items-center w-full">
                   <Button variant={"outline"} asChild>
                     <a href={item.href}>
                       <FaChevronDown className="w-4 h-4" />

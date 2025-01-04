@@ -14,8 +14,8 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { projects } from "../../react-next-projects/projects_data";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { projects } from "../../react-projects/projects_data";
+import { ThemeToggle } from "@/components/theme-toggle";
 import NavMobile from "./NavMobile";
 import { Badge } from "@/components/ui/badge";
 import Icon from "./Icon";
@@ -91,7 +91,7 @@ function Navbar() {
             </MotionDivWrapper>
             <MotionDivWrapper>
               <NavigationMenuItem>
-                <Link href="/react-next-problems" legacyBehavior passHref>
+                <Link href="/react-problems" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Problems
                   </NavigationMenuLink>

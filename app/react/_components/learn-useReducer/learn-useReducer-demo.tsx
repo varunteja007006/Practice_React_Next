@@ -26,7 +26,7 @@ export default function LearnUseReducerDemo() {
   const [count, dispatch] = React.useReducer(handleClick, 0);
 
   return (
-    <div className="flex flex-col md:flex-row gap-5 items-center">
+    <div className="flex flex-col gap-5 items-center md:flex-row">
       <Button variant={"outline"} onClick={handleIncrement}>
         Increment
       </Button>

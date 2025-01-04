@@ -10,8 +10,8 @@ export default function Intro() {
       id="intro"
       className="space-y-4 min-h-[calc(100vh-10rem)] items-center flex flex-col justify-center"
     >
-      <div className="grid items-start grid-cols-1 gap-5 p-2 md:grid-cols-3 md:p-5">
-        <div className="flex flex-col items-center gap-5">
+      <div className="grid grid-cols-1 gap-5 items-start p-2 md:grid-cols-3 md:p-5">
+        <div className="flex flex-col gap-5 items-center">
           <Image
             alt="profile"
             src={"/profile.webp"}
@@ -24,11 +24,11 @@ export default function Intro() {
           <div>
             <Button
               variant={"outline"}
-              className="ring-1 dark:ring-purple-300 font-bold text-lg"
+              className="text-lg font-bold ring-1 dark:ring-purple-300"
               asChild
             >
               <a download href="/resume_varun.pdf">
-                Download my resume <HiDownload className="w-4 h-4 ml-2" />
+                Download my resume <HiDownload className="ml-2 w-4 h-4" />
               </a>
             </Button>
           </div>

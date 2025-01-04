@@ -30,11 +30,11 @@ const DatePicker = React.forwardRef<
           {...btnProps}
           ref={ref}
         >
-          <CalendarIcon className="mr-2 h-4 w-4" />
+          <CalendarIcon className="mr-2 w-4 h-4" />
           {date ? format(date, "PPP") : <span>Pick a date</span>}
         </Button>
       </PopoverTrigger>
-      <PopoverContent align="start" className=" w-auto p-0">
+      <PopoverContent align="start" className="p-0 w-auto ">
         <Calendar
           mode="single"
           captionLayout="dropdown-buttons"

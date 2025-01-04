@@ -1,4 +1,4 @@
-import { useQuery, useMutation, useQueryClient } from "react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { customFetch } from "@/utils/custom-fetch";
 import { useToast } from "@/hooks/use-toast";
 import { AxiosError } from "axios";
@@ -19,7 +19,7 @@ export const useCreateTask = () => {
 
   const { toast } = useToast();
 
-  const { mutate: createTask, isLoading } = useMutation({
+  const { mutate: createTask, isPending: isLoading } = useMutation({
     mutationFn: (taskTitle) => customFetch.post("/", { title: taskTitle }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["tasks"] });
@@ -49,7 +49,7 @@ export const useEditTask = () => {
 export const useDeleteTask = () => {
   const queryClient = useQueryClient();
 
-  const { mutate: deleteTask, isLoading: deleteTaskLoading } = useMutation({
+  const { mutate: deleteTask, isPending: deleteTaskLoading } = useMutation({
     mutationFn: (taskId) => {
       return customFetch.delete(`/${taskId}`);
     },

@@ -144,7 +144,7 @@ export function VirtualizedCombobox({
           {selectedOption
             ? options.find((option) => option === selectedOption)
             : searchPlaceholder}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronsUpDown className="ml-2 w-4 h-4 opacity-50 shrink-0" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="p-0" style={{ width: width }}>
