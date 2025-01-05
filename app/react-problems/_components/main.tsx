@@ -41,7 +41,7 @@ const Main = () => {
                   );
                 })}
                 <div className="flex gap-2 justify-start items-center">
-                  <MyTooltip text="Check functionality">
+                  <MyTooltip text="Check it out">
                     <Button
                       size={"icon"}
                       variant={"outline"}
@@ -54,7 +54,7 @@ const Main = () => {
                     </Button>
                   </MyTooltip>
 
-                  <MyTooltip text="View on GitHub">
+                  <MyTooltip text="View source code on github">
                     <Button
                       size={"icon"}
                       variant={"outline"}

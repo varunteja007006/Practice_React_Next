@@ -68,13 +68,17 @@ function Navbar() {
                   <ScrollArea className="h-[300px]">
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                       {projects.map((project) => (
-                        <ListItemLink
+                        <span
                           key={project.title}
-                          title={project.title}
-                          href={project.href}
+                          className="flex flex-col hover:border hover:border-blue-200 dark:hover:border-purple-600 border border-transparent"
                         >
-                          {project.description}
-                          <span className="flex items-center mt-2">
+                          <ListItemLink
+                            title={project.title}
+                            href={project.href}
+                          >
+                            {project.description}
+                          </ListItemLink>
+                          <span className="flex items-center p-2.5 pt-0">
                             {project.isNew && (
                               <Badge variant="success">New</Badge>
                             )}
@@ -82,7 +86,7 @@ function Navbar() {
                               <Badge variant="warning">In Progress</Badge>
                             )}
                           </span>
-                        </ListItemLink>
+                        </span>
                       ))}
                     </ul>
                   </ScrollArea>
