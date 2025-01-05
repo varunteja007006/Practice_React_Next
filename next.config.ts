@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-import createMDX from '@next/mdx'
+import createMDX from "@next/mdx";
 
 const nextConfig = {
   images: {
@@ -17,6 +17,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "raw.githubusercontent.com",
       },
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+      },
     ],
   },
   eslint: {
@@ -31,12 +35,12 @@ const nextConfig = {
     // your project has type errors.
     ignoreBuildErrors: true,
   },
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 };
 
 const withMDX = createMDX({
   // Add markdown plugins here, as desired
-})
- 
+});
+
 // Merge MDX config with Next.js config
 export default withMDX(nextConfig);

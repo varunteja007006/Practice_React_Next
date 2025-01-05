@@ -55,4 +55,25 @@ export const problems_data = [
     url: `${PROBLEMS_ROUTE}/reset-clicks`,
     // githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-problems/timer-problem/page.tsx`,
   },
+  {
+    title: "Carousel",
+    statement: [
+      `    
+       Problem Statement: Create a carousel, that auto scrolls every 1.5seconds and also provide buttons to scroll left and right.
+      `,
+    ],
+    url: `${PROBLEMS_ROUTE}/carousel`,
+    // githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-problems/timer-problem/page.tsx`,
+  },
+  {
+    title: "Pagination",
+    statement: [
+      `    
+       Problem Statement: Create a pagination to display products.
+      `,
+      `Prev and Next button should be disabled if there are no pages to navigate, also highlight the current page.`,
+    ],
+    url: `${PROBLEMS_ROUTE}/pagination`,
+    // githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-problems/timer-problem/page.tsx`,
+  },
 ];
