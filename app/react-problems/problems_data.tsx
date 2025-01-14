@@ -76,4 +76,34 @@ export const problems_data = [
     url: `${PROBLEMS_ROUTE}/pagination`,
     // githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-problems/timer-problem/page.tsx`,
   },
+  {
+    title: "Traffic Light",
+    statement: [
+      `    
+       Problem Statement: Create a traffic light that toggles between the red, yellow and green color.
+      `,
+    ],
+    url: `${PROBLEMS_ROUTE}/traffic-light`,
+    // githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-problems/timer-problem/page.tsx`,
+  },
+  {
+    title: "Simple Form",
+    statement: [
+      `    
+       Problem Statement: Create a simple form with name, email and password.
+      `,
+    ],
+    url: `${PROBLEMS_ROUTE}/simple-form`,
+    // githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-problems/timer-problem/page.tsx`,
+  },
+  {
+    title: "Swap the odds",
+    statement: [
+      `    
+       Problem Statement: You will have two carts. Each cart will have 5 different items .Add a button on the screen, on click of the button swap only the odd item from cart A, with odd items in cart B.
+      `,
+    ],
+    url: `${PROBLEMS_ROUTE}/swap-the-odds`,
+    // githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-problems/timer-problem/page.tsx`,
+  },
 ];

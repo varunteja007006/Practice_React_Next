@@ -19,27 +19,17 @@ export default function FetchAgain() {
   }: { data: Data[] | null; isLoading: boolean; error: unknown } =
     useFetchAgainHook(url, 5000);
 
-  if (error) {
-    return (
-      <div className=" min-h-[calc(100vh-20rem)]">
-        Oops something went wrong!!!
-      </div>
-    );
-  }
-
-  if (isLoading) {
-    return <div className=" min-h-[calc(100vh-20rem)]">Loading...</div>;
-  }
-
-  if (_.isEmpty(data)) {
-    return <div className=" min-h-[calc(100vh-20rem)]">No data</div>;
-  }
-
   return (
     <div>
       ------------- FetchAgain ----------------
-      <div>
-        {data ? (data as Data[]).map((item: Data) => item.title) : null}
+      <div className="min-h-[calc(100vh-20rem)]">
+        {error
+          ? `Oops something went wrong!!!`
+          : isLoading
+          ? `Loading...`
+          : data && !_.isEmpty(data)
+          ? (data as Data[]).map((item: Data) => item.title)
+          : `No data`}
       </div>
     </div>
   );
