@@ -70,14 +70,14 @@ export default function Experience() {
                 </CardTitle>
 
                 <div className="space-y-4">
-                  <p className="mb-2 text-sm text-gray-600 dark:text-primary">
+                  <p className="mb-2 text-sm text-gray-600 dark:text-white">
                     {item.company}
                   </p>
                   <span>
-                    <p className="mb-2 text-base font-semibold text-black dark:text-primary">
+                    <p className="mb-2 text-base font-semibold text-black dark:text-white">
                       Job Description:
                     </p>
-                    <ul className="space-y-3 list-disc list-inside text-black dark:text-primary">
+                    <ul className="space-y-3 list-disc list-inside text-black dark:text-white">
                       {item.jobDescription.map((item, index) => (
                         <li key={index} className="text-sm">
                           {item}
