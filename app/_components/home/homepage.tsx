@@ -9,7 +9,7 @@ import Projects from "./projects";
 
 export default function Homepage() {
   return (
-    <div className="p-2 space-y-20 md:py-3 md:px-10 lg:py-5 lg:px-24">
+    <div className="p-2 space-y-20 md:py-3 md:px-10 lg:py-5 lg:px-24 max-w-[1500px] mx-auto">
       {/* sections */}
       <Intro />
       <Skills />
