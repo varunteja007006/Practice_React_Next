@@ -106,4 +106,16 @@ export const problems_data = [
     url: `${PROBLEMS_ROUTE}/swap-the-odds`,
     // githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-problems/timer-problem/page.tsx`,
   },
+  {
+    title: "Excel Mock Up",
+    statement: [
+      `    
+       Problem Statement: Create an excel mock up. 
+      `,
+      `Add row and col buttons`,
+      `Ability to input the data in the cells`,
+    ],
+    url: `${PROBLEMS_ROUTE}/excel-mock-up`,
+    // githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-problems/timer-problem/page.tsx`,
+  },
 ];
