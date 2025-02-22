@@ -54,18 +54,20 @@ const Main = () => {
                     </Button>
                   </MyTooltip>
 
-                  <MyTooltip text="View source code on github">
-                    <Button
-                      size={"icon"}
-                      variant={"outline"}
-                      asChild={true}
-                      className="mt-5"
-                    >
-                      <a href={item.githubURL || ""} target="_blank">
-                        <FaGithub className="size-6" />
-                      </a>
-                    </Button>
-                  </MyTooltip>
+                  {item.githubURL && (
+                    <MyTooltip text="View source code on github">
+                      <Button
+                        size={"icon"}
+                        variant={"outline"}
+                        asChild={true}
+                        className="mt-5"
+                      >
+                        <a href={item.githubURL || ""} target="_blank">
+                          <FaGithub className="size-6" />
+                        </a>
+                      </Button>
+                    </MyTooltip>
+                  )}
                 </div>
               </AccordionContent>
             </AccordionItem>

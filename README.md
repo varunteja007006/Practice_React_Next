@@ -22,12 +22,20 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## List of helpful Packages
 
-1. React Slick
-2. Scroll - lock
-3. React Just Parallax
-4. React Spring - For making animations
-5. React Remotion - For making programmatic videos
-6. Anime js - Animations
+- Tanstack Query
+- Tanstack Table
+- Tanstack Virtualization
+- Zod
+- Validator
+- Zustand
+- useHooks
+- lodash
+- React Slick
+- Scroll - lock
+- React Just Parallax
+- React Spring - For making animations
+- React Remotion - For making programmatic videos
+- Anime js - Animations
 
 ## Some Good Blogs
 
@@ -38,6 +46,20 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ###
 
 ## NEXT JS
+
+#### Best Practices
+
+- Protected Routes
+
+- Middleware (middleware is a function that runs before the request is handled, it can be used to check for authentication and Authorization)
+
+- Protect the server actions
+
+- Static vs Dynamic Rendering (Static Rendering is faster than Dynamic Rendering)
+
+- Authorization check before making db calls in the server actions
+
+- Create a **DAL (Data Access Layer)** this will help you organize the code for all the API calls that require db connection and valid authentication and Authorization checks.
 
 #### Topic to prepare
 

@@ -118,4 +118,24 @@ export const problems_data = [
     url: `${PROBLEMS_ROUTE}/excel-mock-up`,
     // githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-problems/timer-problem/page.tsx`,
   },
+  {
+    title: "Progress bar",
+    statement: [
+      `    
+       Problem Statement: Create a progress bar. 
+      `,
+    ],
+    url: `${PROBLEMS_ROUTE}/progress-bar`,
+    // githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-problems/timer-problem/page.tsx`,
+  },
+  {
+    title: "Google Search",
+    statement: [
+      `    
+       Problem Statement: Create a Google Search. 
+      `,
+    ],
+    url: `${PROBLEMS_ROUTE}/google-search`,
+    // githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-problems/timer-problem/page.tsx`,
+  },
 ];
