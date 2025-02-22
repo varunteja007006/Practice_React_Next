@@ -3,7 +3,6 @@ import React from "react";
 import ContactIcons from "./contact-icons";
 import { Button } from "@/components/ui/button";
 import { HiDownload } from "react-icons/hi";
-import { SparklingGrid } from "@/components/custom/sparkling-grid";
 
 export default function Intro() {
   return (
@@ -11,7 +10,6 @@ export default function Intro() {
       id="intro"
       className="space-y-4 min-h-[calc(100vh-10rem)] items-center flex flex-col justify-center"
     >
-      <SparklingGrid />
       <div className="grid grid-cols-1 gap-5 items-start p-2 md:grid-cols-3 md:p-5">
         <div className="flex flex-col gap-5 items-center">
           <Image
