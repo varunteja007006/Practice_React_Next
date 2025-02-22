@@ -71,8 +71,8 @@ export default function ExcelMockUp() {
         </CardHeader>
         <CardContent className="space-y-4">
           <form onSubmit={onSubmit} className="space-y-4">
-            {excelGrid.map((row: any, index: number) => (
-              <div key={index} className="flex flex-row gap-3">
+            {excelGrid.map((row: any, rowIndex: number) => (
+              <div key={rowIndex} className="flex flex-row gap-3">
                 {row.map((cell: any, cellIndex: number) => (
                   <Input
                     key={cellIndex}
@@ -80,8 +80,8 @@ export default function ExcelMockUp() {
                     onChange={(e) =>
                       setExcelGrid((prev: any) => {
                         const newGrid = [...prev];
-                        newGrid[index][cellIndex] = {
-                          ...newGrid[index][cellIndex],
+                        newGrid[rowIndex][cellIndex] = {
+                          ...newGrid[rowIndex][cellIndex],
                           value: e.target.value,
                         };
                         return newGrid;
@@ -104,9 +104,6 @@ export default function ExcelMockUp() {
             </Button>
           </div>
         </CardContent>
-        <CardFooter>
-          <p>Machine coding...</p>
-        </CardFooter>
       </Card>
     </div>
   );

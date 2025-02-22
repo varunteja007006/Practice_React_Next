@@ -338,3 +338,7 @@ export default function Page() {
 #### ShadCN UI extensions
 
 https://jidefr.medium.com/shadcn-ui-add-components-and-resources-0846b0f57596
+
+https://github.com/birobirobiro/awesome-shadcn-ui?tab=readme-ov-file
+
+https://awesome-shadcn-ui.vercel.app/

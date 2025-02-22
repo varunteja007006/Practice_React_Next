@@ -20,7 +20,10 @@ import MyTooltip from "@/components/custom/MyTooltip";
 
 const Main = () => {
   return (
-    <Card className="p-5 pt-2">
+    <Card className="p-5 pt-2 space-y-2">
+      <h1 className="mt-2 text-2xl font-semibold underline">
+        Machine Coding Problem Statements:
+      </h1>
       <Accordion type="single" collapsible>
         {problems_data.map((item, index) => {
           return (
@@ -29,7 +32,7 @@ const Main = () => {
               value={`item-${index}`}
               className="border-b-2"
             >
-              <AccordionTrigger className="text-xl font-semibold">
+              <AccordionTrigger className="text-lg font-semibold">
                 {item.title}
               </AccordionTrigger>
               <AccordionContent>
