@@ -1,6 +1,6 @@
 const rootPath = "/react-projects";
 
-export const projects: {
+export const data: {
   title: string;
   href: string;
   description: string;
@@ -225,6 +225,4 @@ export const projects: {
   },
 ];
 
-export const PROJECTS_GITHUB_LINKS = {
-  PROGRESS_ON_SCROLL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/tree/main/app/react-projects/progress-on-scroll`,
-};
+export const projects = data.sort((a, b) => a.title.localeCompare(b.title));

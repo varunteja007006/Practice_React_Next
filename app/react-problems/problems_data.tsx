@@ -1,6 +1,6 @@
 const PROBLEMS_ROUTE = `/react-problems`;
 
-export const problems_data = [
+const data = [
   {
     title: "Delayed Input",
     statement: [
@@ -138,4 +138,18 @@ export const problems_data = [
     url: `${PROBLEMS_ROUTE}/google-search`,
     // githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-problems/timer-problem/page.tsx`,
   },
+  {
+    title: "Folder Tree",
+    statement: [
+      `    
+       Problem Statement: Create a folder tree to display hierarchical folder structures.
+      `,
+    ],
+    url: `${PROBLEMS_ROUTE}/folder-tree`,
+    // githubURL: `${process.env.NEXT_PUBLIC_GITHUB_URL}/Practice_React_Next/blob/main/app/react-problems/timer-problem/page.tsx`,
+  },
 ];
+
+export const problems_data = data.sort((a, b) =>
+  a.title.localeCompare(b.title)
+);

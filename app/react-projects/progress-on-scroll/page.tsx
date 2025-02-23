@@ -1,8 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import GithubLink from "../_components/github-link";
-import { PROJECTS_GITHUB_LINKS } from "@/app/react-projects/projects_data";
 
 function ProgressScroll({
   progressStyles,
@@ -33,9 +31,6 @@ function ProgressScroll({
       ></div>
       <div className={cn("h-[200vh]", divStyles)}>
         <h1 className="sticky top-24">Scroll down to see the progress</h1>
-        <div className="sticky top-36">
-          <GithubLink href={PROJECTS_GITHUB_LINKS.PROGRESS_ON_SCROLL} />
-        </div>
       </div>
     </div>
   );
