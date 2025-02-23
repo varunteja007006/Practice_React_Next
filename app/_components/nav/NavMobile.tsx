@@ -17,7 +17,12 @@ export default function NavMobile() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button className="flex lg:hidden" variant={"outline"} size={"icon"}>
+        <Button
+          className="flex lg:hidden"
+          variant={"outline"}
+          size={"icon"}
+          aria-label="Menu"
+        >
           <GiHamburgerMenu className="w-4 h-4" />
         </Button>
       </SheetTrigger>

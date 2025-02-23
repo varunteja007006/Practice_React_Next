@@ -53,7 +53,7 @@ const projectData = [
       enhanced security.`,
     ],
     project_github: "https://github.com/varunteja007006/Practice_React_Next",
-    project_link: "https://jobtoday.netlify.app/",
+    project_link: "",
     project_images: [jobtoday, jobtoday1],
     toShow: true,
     projectStatus: COMPLETED,

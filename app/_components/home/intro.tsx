@@ -15,8 +15,8 @@ export default function Intro() {
           <Image
             alt="profile"
             src={"/profile.webp"}
-            width={100}
-            height={100}
+            width={400}
+            height={400}
             className="w-full h-auto rounded-lg"
             unoptimized={true}
             priority={true}

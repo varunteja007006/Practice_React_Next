@@ -76,7 +76,7 @@ export default function ReactDataSheetGrid() {
 
   return (
     <div className="space-y-3">
-      <p className="text-xl font-semibold">ReactDataSheetGrid</p>
+      <h1 className="text-xl font-semibold">ReactDataSheetGrid</h1>
       <DataSheetGrid value={data} onChange={setData} columns={columns} />
       <div>
         <p className="text-lg font-semibold">

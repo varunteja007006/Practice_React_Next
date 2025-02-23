@@ -37,6 +37,7 @@ export default function ContactIcons({
                 className
               )}
               onClick={() => handleCopy(item.contact_value)}
+              aria-label={item.contact_value}
             >
               <item.contact_icon className="size-5" />
             </Button>

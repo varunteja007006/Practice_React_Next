@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${comicNeue.className} antialiased scroll-smooth min-w-[300px]  bg-blue-50  dark:bg-gradient-to-tl dark:from-purple-950 from-5% dark:via-black dark:via-90% dark:to-purple-950
+        className={`${comicNeue.className} antialiased scroll-smooth min-w-[300px] bg-blue-50  dark:bg-gradient-to-tl dark:from-purple-950 from-5% dark:via-black dark:via-90% dark:to-purple-950
         transition-colors delay-100 duration-100`}
       >
         <Providers>
