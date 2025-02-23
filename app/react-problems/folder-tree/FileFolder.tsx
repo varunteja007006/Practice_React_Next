@@ -208,27 +208,39 @@ const RenderFileFolder = (
     name: string
   ): FileFolder[] => {
     return list.map((item) => {
-      if (item.id === id) {
+      if (item.id === id && item.children && Array.isArray(item.children)) {
+        // if ID matches and the children are present
         if (type === "file") {
-          if (item.children && Array.isArray(item.children)) {
-            return {
-              ...item,
-              children: [...item.children, { name, type, id }],
-            };
-          }
+          // if file type then no children
+          return {
+            ...item,
+            children: [
+              ...item.children,
+              { name, type, id: new Date().toLocaleString() },
+            ],
+          };
         }
         if (type === "folder") {
-          if (item.children && Array.isArray(item.children)) {
-            return {
-              ...item,
-              children: [...item.children, { name, type, id, children: [] }],
-            };
-          }
+          // if folder type then children
+          return {
+            ...item,
+            children: [
+              ...item.children,
+              {
+                name,
+                type,
+                id: new Date().toLocaleString(),
+                children: [],
+              },
+            ],
+          };
         }
-        return item;
-      }
-      if (item.children && Array.isArray(item.children)) {
-        item.children = handleNewFileFolder(item.children, type, name);
+      } else {
+        // when does not match and the children are present check them
+        if (item.children && Array.isArray(item.children)) {
+          let res = handleNewFileFolder(item.children, type, name);
+          return { ...item, children: res };
+        }
       }
       return item;
     });
@@ -317,11 +329,6 @@ const RenderFileFolder = (
           <Input value={name} onChange={(e) => setName(e.target.value)} />
           <DialogFooter className="sm:justify-start">
             <DialogClose asChild>
-              <Button type="button" variant="secondary">
-                Close
-              </Button>
-            </DialogClose>
-            <DialogClose asChild>
               <Button
                 type="button"
                 variant="success"
@@ -329,6 +336,11 @@ const RenderFileFolder = (
                 disabled={createType === "" || name === ""}
               >
                 Submit
+              </Button>
+            </DialogClose>
+            <DialogClose asChild>
+              <Button type="button" variant="secondary">
+                Close
               </Button>
             </DialogClose>
           </DialogFooter>
