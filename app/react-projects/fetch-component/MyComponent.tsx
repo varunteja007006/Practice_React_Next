@@ -4,8 +4,8 @@ export default function MyComponent({
   data,
 }: Readonly<{ data: React.ReactNode }>) {
   return (
-    <div className="prose">
-      <h1>Data & button from server</h1>
+    <div className="prose dark:text-white">
+      <h1 className="dark:text-white">Data & button from server</h1>
       <p>
         <span className="font-bold">page.tsx</span> fetches the data, and passes
         it as props to <span className="font-bold">MyComponent.tsx</span>. Now

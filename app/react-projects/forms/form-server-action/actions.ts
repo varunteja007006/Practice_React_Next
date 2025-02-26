@@ -7,7 +7,7 @@ export const postTodo = async (formData: FormData) => {
   const description = formData.get("description");
 
   const res = await fetch(`${localAPI}/todos`, {
-    method: "POST",
+    method: "post",
     headers: {
       "Content-Type": "application/json",
     },

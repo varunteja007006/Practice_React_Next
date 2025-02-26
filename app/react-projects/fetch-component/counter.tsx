@@ -9,7 +9,7 @@ export default function Counter({
 }: Readonly<{ data: User[] | undefined }>) {
   const [count, setCount] = React.useState(0);
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5 dark:text-white">
       <div>
         {data &&
           data.length > 0 &&

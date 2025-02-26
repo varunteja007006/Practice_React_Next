@@ -11,18 +11,12 @@ import {
 } from "@/components/ui/card";
 
 export default function AdvancedZustand() {
-  const { users, fetchUser } = useStore((state) => ({
-    users: state.users,
-    fetchUser: state.fetchUser,
-  }));
+  const users = useStore((state) => state.users);
+  const fetchUser = useStore((state) => state.fetchUser);
 
   React.useEffect(() => {
     fetchUser();
   }, []);
-
-  React.useEffect(() => {
-    console.log(users);
-  }, [users]);
 
   return (
     <Card className="">
