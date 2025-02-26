@@ -118,7 +118,7 @@ export default function SwapTheOdds() {
           ))}
         </div>
         <Button onClick={onClickSwap2} variant={"destructive"}>
-          Swap the odds
+          Swap the checked
         </Button>
       </div>
     </div>

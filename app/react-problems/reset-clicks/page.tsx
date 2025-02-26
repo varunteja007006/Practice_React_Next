@@ -25,7 +25,6 @@ export default function ResetClicks() {
       const newState = [...prev];
       newState[id - 1].isClicked = true;
       newState[id - 1].order = order;
-      console.log("new", newState);
       return newState;
     });
     if (order === 7) restState();
@@ -40,7 +39,12 @@ export default function ResetClicks() {
       }, timer);
     });
 
-    let dupState: any = [...state].sort((a, b) => b.order - a.order);
+    let dupState: {
+      id: number;
+      visible: boolean;
+      order: number;
+      isClicked: boolean;
+    }[] = [...state].sort((a, b) => b.order - a.order);
 
     for (let i = 0; i < dupState.length; i++) {
       const ele = dupState[i];
