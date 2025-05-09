@@ -9,6 +9,7 @@ import Navbar from "./_components/nav/Navbar";
 import Footer from "./_components/footer/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import ProgressScroll from "./react-projects/progress-on-scroll/page";
+import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 
 const comicNeue = Comic_Neue({ weight: "400", subsets: ["latin"] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({
             <Footer />
           </React.Fragment>
           <Toaster />
+          <SonnerToaster />
         </Providers>
       </body>
     </html>
